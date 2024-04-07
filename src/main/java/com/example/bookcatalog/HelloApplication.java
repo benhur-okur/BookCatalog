@@ -22,6 +22,6 @@ public class HelloApplication extends Application {
 
         System.out.println("merge error !");
 
-        System.out.println("deneme");
+        System.out.println("deneme2");
     }
 }
