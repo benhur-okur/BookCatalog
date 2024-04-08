@@ -11,9 +11,9 @@ public class Book {
     private int edition;
     private int pageNumber;
     private String coverType;
-    private boolean hasSubtitle; //kullanıcı 'yes' butonuna bastığında tekrar bir textfield açılacak
+    private boolean hasSubtitle; //check box yapılacak
     private String subtitle;
-    private boolean isTranslation; //kullanıcı 'yes' butonuna bastığında tekrar bir textfield açılacak
+    private boolean isTranslation; //check box yapılacak
     private String translator;
 
     public Book(String title, ArrayList<String> authors, String isbn,
