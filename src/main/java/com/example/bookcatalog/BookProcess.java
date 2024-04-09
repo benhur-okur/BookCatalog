@@ -15,6 +15,6 @@ public class BookProcess {
         int edition = Integer.parseInt(popUpScreen.t4.getText());
         int pageNumber = Integer.parseInt(popUpScreen.t5.getText());
         String coverType = popUpScreen.t6.getText();
-        
+
     }
 }
