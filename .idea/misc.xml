@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="19" project-jdk-type="JavaSDK">
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
 >>>>>>> 04bda15bf5a2f1b1b61f0d4dfefeaa91d2c59914
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+>>>>>>> Stashed changes
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
