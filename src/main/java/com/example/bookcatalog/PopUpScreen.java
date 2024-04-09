@@ -7,17 +7,17 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Library extends Application {
+public class PopUpScreen extends Application {
 
     public static void main(String[] args) {
         launch(args);
     }
 
+    VBox popupContent;
     Book book;
     ArrayList<Book> books = new ArrayList<>();
     Label l1, l2, l3, l4, l5, l6, l7, l8, l9, l10;
@@ -33,6 +33,7 @@ public class Library extends Application {
         VBox mainLayout = new VBox(10);
         mainLayout.setPadding(new Insets(10));
 
+        /*
         MenuBar menu = new MenuBar();
         Menu file = new Menu("File");
         add = new MenuItem("Add");
@@ -41,15 +42,16 @@ public class Library extends Application {
         file.getItems().add(add);
         menu.getMenus().add(file);
         mainLayout.getChildren().add(menu);
-
-        Scene scene = new Scene(mainLayout, 600, 600);
+        */
+        showPopup(stage);
+        Scene scene = new Scene(popupContent, 600, 600);
         stage.setScene(scene);
         stage.setTitle("BOOK CATALOG");
         stage.show();
     }
     public void showPopup(Stage stage){
 
-        VBox popupContent = new VBox(10);
+        popupContent = new VBox(10);
         popupStage = new Stage();
         popupStage.initModality(Modality.APPLICATION_MODAL);
         popupStage.initOwner(stage);
@@ -133,7 +135,6 @@ public class Library extends Application {
         }else {
             h8.setVisible(false);
         }
-
     }
 
     public void checkTranslation(){
@@ -144,7 +145,6 @@ public class Library extends Application {
         }else {
             h10.setVisible(false);
         }
-
     }
 
     public void cancelButton(Stage stage){
