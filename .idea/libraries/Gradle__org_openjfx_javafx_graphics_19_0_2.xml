@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openjfx:javafx-graphics:19.0.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.openjfx" artifactId="javafx-graphics" version="19.0.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/19.0.2/fef4194305f4cb3c50437a389f18ee2b3df31444/javafx-graphics-19.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/19.0.2/28ece4875457ccb23999fea95c9c2196ab6b9d83/javafx-graphics-19.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
