@@ -4,23 +4,24 @@
     <output-test url="file://$MODULE_DIR$/../../build/classes/java/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../src/test" />
+    <content url="file://$MODULE_DIR$/../../src/test" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="BookCatalog.main" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:mac-aarch64:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:19.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:mac-aarch64:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:19.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:mac-aarch64:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:19.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:mac-aarch64:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:win:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.10.1" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.9.2" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.9.2" level="project" />
     <orderEntry type="library" name="Gradle: org.opentest4j:opentest4j:1.2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.9.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.9.2" level="project" />
-    <orderEntry type="library" name="google.code.gson" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="BookCatalog.main" />
 </module>

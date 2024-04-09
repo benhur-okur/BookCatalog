@@ -1,8 +1,8 @@
 <component name="libraryTable">
-  <library name="Gradle: org.openjfx:javafx-fxml:mac-aarch64:19.0.2" type="java-imported" external-system-id="GRADLE">
+  <library name="Gradle: org.openjfx:javafx-fxml:win:19.0.2" type="java-imported" external-system-id="GRADLE">
     <properties groupId="org.openjfx" artifactId="javafx-fxml" version="19.0.2" />
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/19.0.2/f89a639115366232a82b7d12d7aca2d5f24e5625/javafx-fxml-19.0.2-mac-aarch64.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/19.0.2/26eaef75197fa036624f61fe19e1f3a90089c1d4/javafx-fxml-19.0.2-win.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
