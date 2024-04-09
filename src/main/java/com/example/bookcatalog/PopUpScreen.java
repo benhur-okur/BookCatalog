@@ -18,16 +18,16 @@ public class PopUpScreen extends Application {
         launch(args);
     }
 
-    VBox popupContent;
-    Book book;
-    ArrayList<Book> books = new ArrayList<>();
-    Label l1, l2, l3, l4, l5, l6, l7, l8, l9, l10;
-    TextField t1, t2, t3, t4, t5, t6, t8, t10;
-    HBox h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11;
-    MenuItem add;
-    Button saveBttn, cancelBttn;
-    Stage popupStage;
-    CheckBox checkSubtitle, checkTranslation;
+        VBox popupContent;
+        Book book;
+        ArrayList<Book> books = new ArrayList<>();
+        Label l1, l2, l3, l4, l5, l6, l7, l8, l9, l10;
+        TextField t1, t2, t3, t4, t5, t6, t8, t10;
+        HBox h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11;
+        MenuItem add;
+        Button saveBttn, cancelBttn;
+        Stage popupStage;
+        CheckBox checkSubtitle, checkTranslation;
     @Override
     public void start(Stage stage) {
 

@@ -5,22 +5,21 @@ import java.util.ArrayList;
 public class Book {
 
     private String title;
-    private ArrayList<String> authors;
+   // private ArrayList<String> authors;
     private String isbn;
     private String publisher;
     private int edition;
     private int pageNumber;
     private String coverType;
-    private boolean hasSubtitle; //check box yapılacak
+    private boolean hasSubtitle;
     private String subtitle;
-    private boolean isTranslation; //check box yapılacak
+    private boolean isTranslation;
     private String translator;
 
-    public Book(String title, ArrayList<String> authors, String isbn,
+    public Book(String title, String isbn,
                 String publisher, int edition, int pageNumber, String coverType,
                 boolean hasSubtitle, String subtitle, boolean isTranslation, String translator) {
         this.title = title;
-        this.authors = authors;
         this.isbn = isbn;
         this.publisher = publisher;
         this.edition = edition;
@@ -32,6 +31,7 @@ public class Book {
         this.translator = translator;
     }
 
+
     public String getTitle() {
         return title;
     }
@@ -40,6 +40,7 @@ public class Book {
         this.title = title;
     }
 
+    /*
     public ArrayList<String> getAuthors() {
         return authors;
     }
@@ -47,6 +48,8 @@ public class Book {
     public void setAuthors(ArrayList<String> authors) {
         this.authors = authors;
     }
+
+     */
 
     public String getIsbn() {
         return isbn;
