@@ -1,26 +1,26 @@
 package com.example.bookcatalog;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Book {
 
     private String title;
-    private ArrayList<String> authors;
     private String isbn;
     private String publisher;
     private int edition;
     private int pageNumber;
     private String coverType;
-    private boolean hasSubtitle; //check box yapılacak
+    private boolean hasSubtitle;
     private String subtitle;
-    private boolean isTranslation; //check box yapılacak
+    private boolean isTranslation;
     private String translator;
+    private List<String> tags; // New field for storing tags
 
-    public Book(String title, ArrayList<String> authors, String isbn,
-                String publisher, int edition, int pageNumber, String coverType,
-                boolean hasSubtitle, String subtitle, boolean isTranslation, String translator) {
+    public Book(String title, String isbn, String publisher, int edition, int pageNumber,
+                String coverType, boolean hasSubtitle, String subtitle, boolean isTranslation,
+                String translator) {
         this.title = title;
-        this.authors = authors;
         this.isbn = isbn;
         this.publisher = publisher;
         this.edition = edition;
@@ -30,6 +30,7 @@ public class Book {
         this.subtitle = subtitle;
         this.isTranslation = isTranslation;
         this.translator = translator;
+        this.tags = new ArrayList<>();
     }
 
     public String getTitle() {
@@ -38,14 +39,6 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public ArrayList<String> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(ArrayList<String> authors) {
-        this.authors = authors;
     }
 
     public String getIsbn() {
@@ -118,5 +111,13 @@ public class Book {
 
     public void setTranslator(String translator) {
         this.translator = translator;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 }

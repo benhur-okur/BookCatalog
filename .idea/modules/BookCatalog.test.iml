@@ -7,13 +7,17 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="BookCatalog.main" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:mac-aarch64:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:19.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:mac-aarch64:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:19.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:mac-aarch64:19.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:19.0.2" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:mac-aarch64:19.0.2" level="project" />
+=======
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:win:19.0.2" level="project" />
+>>>>>>> 5c033ec840f2c7b6022eff506a465702b924cc81
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.10.1" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.9.2" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.9.2" level="project" />
