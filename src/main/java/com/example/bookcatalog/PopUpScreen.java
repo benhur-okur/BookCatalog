@@ -2,6 +2,7 @@ package com.example.bookcatalog;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -26,7 +27,7 @@ public class PopUpScreen extends Application {
     MenuItem add;
     Button saveBttn, cancelBttn;
     Stage popupStage;
-    CheckBox checkSubYes, checkSubNo, checkTranslationYes, checkTranslationNo;
+    CheckBox checkSubtitle, checkTranslation;
     @Override
     public void start(Stage stage) {
 
@@ -83,12 +84,10 @@ public class PopUpScreen extends Application {
         h6.getChildren().addAll(l6, t6);
 
         h7 = new HBox(8);
-        checkSubYes = new CheckBox("Yes");
-        checkSubYes.setOnAction(e -> checkSubtitle());
-        checkSubNo = new CheckBox("No");
-        checkSubNo.setOnAction(e -> checkSubtitle());
-        l7 = new Label("Subtitle?");
-        h7.getChildren().addAll(l7, checkSubYes, checkSubNo);
+        checkSubtitle = new CheckBox();
+        checkSubtitle.setOnAction(e -> checkSubtitle());
+        l7 = new Label("Subtitle");
+        h7.getChildren().addAll(l7, checkSubtitle);
 
         h8 = new HBox(8);
         l8 = new Label("Subtitle");
@@ -97,12 +96,10 @@ public class PopUpScreen extends Application {
         h8.setVisible(false);
 
         h9 = new HBox(8);
-        checkTranslationYes = new CheckBox("Yes");
-        checkTranslationYes.setOnAction(e -> checkTranslation());
-        checkTranslationNo = new CheckBox("No");
-        checkTranslationNo.setOnAction(e -> checkTranslation());
-        l9 = new Label("Translation?");
-        h9.getChildren().addAll(l9, checkTranslationYes, checkTranslationNo);
+        checkTranslation = new CheckBox();
+        checkTranslation.setOnAction(e -> checkTranslation());
+        l9 = new Label("Translation");
+        h9.getChildren().addAll(l9, checkTranslation);
 
         h10 = new HBox(8);
         l10 = new Label("Translator");
@@ -114,7 +111,8 @@ public class PopUpScreen extends Application {
         saveBttn = new Button("Save");
         cancelBttn = new Button("Cancel");
         cancelBttn.setOnAction(e -> cancelButton(stage));
-        h11.getChildren().addAll(saveBttn, cancelBttn);
+        h11.getChildren().addAll(cancelBttn, saveBttn);
+        h11.setAlignment(Pos.CENTER_RIGHT);
         popupContent.getChildren().addAll(h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11);
 
         Scene scene = new Scene(popupContent, 400, 400);
@@ -129,9 +127,8 @@ public class PopUpScreen extends Application {
 
     public void checkSubtitle(){
 
-        if(checkSubYes.isSelected()){
+        if(checkSubtitle.isSelected()){
             h8.setVisible(true);
-            checkSubNo.setSelected(false);
         }else {
             h8.setVisible(false);
         }
@@ -139,9 +136,8 @@ public class PopUpScreen extends Application {
 
     public void checkTranslation(){
 
-        if(checkTranslationYes.isSelected()){
+        if(checkTranslation.isSelected()){
             h10.setVisible(true);
-            checkTranslationNo.setSelected(false);
         }else {
             h10.setVisible(false);
         }
