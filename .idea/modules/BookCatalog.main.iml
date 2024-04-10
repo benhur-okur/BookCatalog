@@ -20,8 +20,6 @@
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:win:19.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:mac-aarch64:19.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:win:19.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.10.1" level="project" />
   </component>
 </module>
