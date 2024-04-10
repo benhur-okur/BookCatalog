@@ -9,25 +9,17 @@ public class BookProcess {
     private ArrayList<Book> books = new ArrayList<>();
     private String subtitle = "";
     private String translator = "";
-    private void addBook(){
 
-        String title = popUpScreen.t1.getText();
-        String isbn = popUpScreen.t2.getText();
-        String publisher = popUpScreen.t3.getText();
-        int edition = Integer.parseInt(popUpScreen.t4.getText());
-        int pageNumber = Integer.parseInt(popUpScreen.t5.getText());
-        String coverType = popUpScreen.t6.getText();
-        boolean isSubtitle = popUpScreen.checkSubtitle.isSelected();
-        boolean isTranslation = popUpScreen.checkTranslation.isSelected();
-        if(isSubtitle){
-            subtitle = popUpScreen.t8.getText();
-        }
-        if(isTranslation){
-            translator = popUpScreen.t10.getText();
-        }
-        book = new Book(title,isbn,publisher,edition,pageNumber,coverType,isSubtitle,subtitle,isTranslation,translator);
+    public void addBook(String title, String isbn, String publisher, int edition, int pageNumber,
+                        String coverType, boolean hasSubtitle, String subtitle, boolean isTranslation,
+                        String translator, ArrayList<String> tags) {
+        book = new Book(title, isbn, publisher, edition, pageNumber, coverType,
+                hasSubtitle, subtitle, isTranslation, translator);
+        book.setTags(tags); // Set the tags for the book
         books.add(book);
     }
+
+    // Other methods...
 
     public PopUpScreen getPopUpScreen() {
         return popUpScreen;
