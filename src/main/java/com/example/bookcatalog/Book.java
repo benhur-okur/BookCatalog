@@ -10,6 +10,7 @@ public class Book {
     private String publisher;
     private int edition;
     private int pageNumber;
+    private ArrayList<String> authors; // yapılacak
     private String coverType;
     private boolean hasSubtitle;
     private String subtitle;
@@ -47,6 +48,14 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public ArrayList<String> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(ArrayList<String> authors) {
+        this.authors = authors;
     }
 
     public String getPublisher() {
