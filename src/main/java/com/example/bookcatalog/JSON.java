@@ -2,11 +2,14 @@ package com.example.bookcatalog;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 
 public class JSON {
     private ArrayList<Book> bookArrayList;
@@ -21,15 +24,17 @@ public class JSON {
         myJson = gson.toJson(bookArrayList);
     }
 
-    private void saveFile () {
+    public void saveFile () {
         try {
             fileWriter.write(myJson);
             fileWriter.close();
+            JOptionPane.showMessageDialog(null, "Kitap kataloga başarılı bi şekilde kaydedildi");
         } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Kitap kataloga kaydedilirken bi hata oluştu");
             throw new RuntimeException(e);
         }
     }
-    private ArrayList<Book> readFile () {
+    public ArrayList<Book> readFile () {
         ArrayList<Book> booksFromJson;
         Type bookListType = new TypeToken<ArrayList<Book>>(){}.getType();
         try {
