@@ -37,8 +37,9 @@ public class AddBookController {
     @FXML
     private DialogPane dialogPane;
 
+    private JSON json;
     private Book book;
-    public static ArrayList<Book> books;
+    public ArrayList<Book> books = new ArrayList<>();
 
     private String subtitle = null;
     private String translator = null;
@@ -52,7 +53,7 @@ public class AddBookController {
         this.book = book;
     }
 
-    /*public ArrayList<Book> getBooks() {
+    public ArrayList<Book> getBooks() {
         return books;
     }
 
@@ -60,12 +61,18 @@ public class AddBookController {
         this.books = books;
     }
 
-     */
+
 
     @FXML
    private Button addButton;
     public void addBook(ActionEvent event) throws InvocationTargetException {
 
+<<<<<<< HEAD
+
+        }
+
+        //checkNullOrNot(event);
+=======
             isTextNull(event);
             if(isNull){
                 NullAlert(event);
@@ -86,6 +93,7 @@ public class AddBookController {
                 books.add(book);
                 dialogPane.getOnDragExited();
             }
+>>>>>>> 7386f8885f54af1b3a3f1d970b3dc6de17e33303
 
     }
 
