@@ -1,5 +1,8 @@
 package com.example.bookcatalog;
 
+import javax.swing.text.html.ImageView;
+import java.awt.*;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +11,8 @@ public class Book {
     private String title;
     private String isbn;
     private String publisher;
-    private int edition;
-    private int pageNumber;
+    private Integer edition;
+    private Integer pageNumber;
     private ArrayList<String> authors; // yapılacak
     private String coverType;
     private boolean hasSubtitle;
@@ -19,8 +22,8 @@ public class Book {
 
     private List<String> tags; // New field for storing tags
 
-    public Book(String title, String isbn, String publisher, int edition, int pageNumber,
-                String coverType,String subtitle, String translator) {
+    public Book (String title, String isbn, String publisher, Integer edition, Integer pageNumber,
+                String coverType, String subtitle, String translator) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
@@ -32,6 +35,7 @@ public class Book {
         this.isTranslation = isTranslation;
         this.translator = translator;
         this.tags = new ArrayList<>();
+
     }
 
     public String getTitle() {
@@ -66,19 +70,19 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public int getEdition() {
+    public Integer getEdition() {
         return edition;
     }
 
-    public void setEdition(int edition) {
+    public void setEdition(Integer edition) {
         this.edition = edition;
     }
 
-    public int getPageNumber() {
+    public Integer getPageNumber() {
         return pageNumber;
     }
 
-    public void setPageNumber(int pageNumber) {
+    public void setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
     }
 
