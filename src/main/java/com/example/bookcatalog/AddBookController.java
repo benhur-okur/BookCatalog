@@ -87,10 +87,27 @@ public class AddBookController {
             books.add(book);
         }
 
+        if(isNull){
+            NullAlert(event);
+        }else {
+            String title = t1.getText();
+            String isbn = t2.getText();
+            String publisher = t3.getText();
+            int edition = Integer.parseInt(t4.getText());
+            int pageNumber = Integer.parseInt(t5.getText());
+            String coverType = t6.getText();
+            if(checkSubtitle.isSelected()){
+                subtitle = t7.getText();
+            }
+            if(checkTranslator.isSelected()){
+                translator = t8.getText();
+            }
+            book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
+            books.add(book);
+            dialogPane.getOnDragExited();
+        }
 
-
-    }
-
+        }
 
 
     public void NullAlert(ActionEvent event){
