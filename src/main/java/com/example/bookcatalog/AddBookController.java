@@ -67,35 +67,30 @@ public class AddBookController {
    private Button addButton;
     public void addBook(ActionEvent event) throws InvocationTargetException {
 
-<<<<<<< HEAD
-
+        isTextNull(event);
+        if(isNull){
+            NullAlert(event);
+        }else {
+            String title = t1.getText();
+            String isbn = t2.getText();
+            String publisher = t3.getText();
+            int edition = Integer.parseInt(t4.getText());
+            int pageNumber = Integer.parseInt(t5.getText());
+            String coverType = t6.getText();
+            if(checkSubtitle.isSelected()){
+                subtitle = t7.getText();
+            }
+            if(checkTranslator.isSelected()){
+                translator = t8.getText();
+            }
+            book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
+            books.add(book);
         }
 
-        //checkNullOrNot(event);
-=======
-            isTextNull(event);
-            if(isNull){
-                NullAlert(event);
-            }else {
-                String title = t1.getText();
-                String isbn = t2.getText();
-                String publisher = t3.getText();
-                int edition = Integer.parseInt(t4.getText());
-                int pageNumber = Integer.parseInt(t5.getText());
-                String coverType = t6.getText();
-                if(checkSubtitle.isSelected()){
-                    subtitle = t7.getText();
-                }
-                if(checkTranslator.isSelected()){
-                    translator = t8.getText();
-                }
-                book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
-                books.add(book);
 
-            }
->>>>>>> 7386f8885f54af1b3a3f1d970b3dc6de17e33303
 
     }
+
 
 
     public void NullAlert(ActionEvent event){
