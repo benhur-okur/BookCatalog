@@ -7,6 +7,8 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
+
 public class AddBookController {
 
     @FXML
@@ -35,6 +37,27 @@ public class AddBookController {
     @FXML
     private Dialog<DialogPane> dialog = new Dialog<>();
 
+    private Book book;
+    private ArrayList<Book> books = new ArrayList<>();
+    private String subtitle = "";
+    private String translator = "";
+
+    public void addBook(ActionEvent event){
+        String title = t1.getText();
+        String isbn = t2.getText();
+        String publisher = t3.getText();
+        int edition = Integer.parseInt(t4.getText());
+        int pageNumber = Integer.parseInt(t5.getText());
+        String coverType = t6.getText();
+        if(checkSubtitle.isSelected()){
+            subtitle = t7.getText();
+        }
+        if(checkTranslator.isSelected()){
+            translator = t8.getText();
+        }
+        book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator);
+        books.add(book);
+    }
     public void checkSubtitle(ActionEvent event) {
         if (checkSubtitle.isSelected()) {
             t7.setVisible(true);
@@ -50,6 +73,7 @@ public class AddBookController {
             t8.setVisible(false);
         }
     }
+
 
     /*
     public void closeScreen(ActionEvent event){

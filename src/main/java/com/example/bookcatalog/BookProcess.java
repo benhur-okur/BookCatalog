@@ -10,6 +10,7 @@ public class BookProcess {
     private String subtitle = "";
     private String translator = "";
 
+    /*
     public void addBook(String title, String isbn, String publisher, int edition, int pageNumber,
                         String coverType, boolean hasSubtitle, String subtitle, boolean isTranslation,
                         String translator, ArrayList<String> tags) {
@@ -18,6 +19,8 @@ public class BookProcess {
         book.setTags(tags); // Set the tags for the book
         books.add(book);
     }
+
+     */
 
     // Other methods...
 
