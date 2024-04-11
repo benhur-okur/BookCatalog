@@ -13,24 +13,23 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainScreenController {
-    private ArrayList<Book> bookArrayList = new ArrayList<>();
+    private ArrayList<Book> bookArrayList;
 
 
     private JSON json;
 
-    {
-        try {
-            //bookArrayList.add(book);
-            json = new JSON(bookArrayList);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
     @FXML
     private MenuItem save;
 
     @FXML
     public void setSave () {
+        try {
+            //bookArrayList.add(book);
+            json = new JSON(AddBookController.books);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         json.saveFile();
     }
     @FXML
