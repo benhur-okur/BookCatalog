@@ -16,11 +16,11 @@ public class Book {
     private String subtitle;
     private boolean isTranslation;
     private String translator;
+
     private List<String> tags; // New field for storing tags
 
     public Book(String title, String isbn, String publisher, int edition, int pageNumber,
-                String coverType, boolean hasSubtitle, String subtitle, boolean isTranslation,
-                String translator) {
+                String coverType,String subtitle, String translator) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;

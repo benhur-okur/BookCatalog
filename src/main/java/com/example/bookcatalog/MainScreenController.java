@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class MainScreenController {
     private ArrayList<Book> bookArrayList = new ArrayList<>();
 
+
     private JSON json;
 
     {
