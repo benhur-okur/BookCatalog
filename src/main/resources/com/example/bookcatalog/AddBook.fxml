@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<DialogPane prefHeight="350.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.AddBookController">
+<DialogPane fx:id="dialogPane" prefHeight="350.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.AddBookController">
    <header>
       <GridPane prefHeight="240.0" prefWidth="434.0">
         <columnConstraints>
