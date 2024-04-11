@@ -82,8 +82,8 @@ public class AddBookController {
             String title = t1.getText();
             String isbn = t2.getText();
             String publisher = t3.getText();
-            Integer edition = Integer.valueOf(t4.getText());
-            Integer pageNumber = Integer.valueOf(t5.getText());
+            int edition = Integer.parseInt(t4.getText());
+            int pageNumber = Integer.parseInt(t5.getText());
             String coverType = t6.getText();
             if(checkSubtitle.isSelected()){
                 subtitle = t7.getText();
@@ -93,6 +93,7 @@ public class AddBookController {
             }
             book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
             books.add(book);
+
         }
 
         //checkNullOrNot(event);
