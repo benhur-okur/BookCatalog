@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainScreenController {
-    private ArrayList<Book> bookArrayList;
+    private ArrayList<Book> bookArrayList = new ArrayList<>();
 
 
     private JSON json;
@@ -24,9 +24,10 @@ public class MainScreenController {
 
     @FXML
     public void setSave () {
+
         try {
             //bookArrayList.add(book);
-            json = new JSON(AddBookController.books);
+            json = new JSON(bookArrayList);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -36,6 +37,9 @@ public class MainScreenController {
     public void openAddBookScreen(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
         Parent root = fxmlLoader.load();
+
+        AddBookController addBookController1 = fxmlLoader.getController();
+        addBookController1.setBooks(bookArrayList);
 
         //yeni stage oluştur ve .fxml'i göster
         Stage stage = new Stage();

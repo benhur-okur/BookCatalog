@@ -47,8 +47,9 @@ public class AddBookController {
     @FXML
     private Dialog<DialogPane> dialog = new Dialog<>();
 
+    private JSON json;
     private Book book;
-    public static ArrayList<Book> books;
+    public ArrayList<Book> books = new ArrayList<>();
 
     private String subtitle = null;
     private String translator = null;
@@ -61,7 +62,7 @@ public class AddBookController {
         this.book = book;
     }
 
-    /*public ArrayList<Book> getBooks() {
+    public ArrayList<Book> getBooks() {
         return books;
     }
 
@@ -69,7 +70,7 @@ public class AddBookController {
         this.books = books;
     }
 
-     */
+
 
     @FXML
    private Button addButton;
@@ -96,6 +97,7 @@ public class AddBookController {
             }
             book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
             books.add(book);
+
 
         }
 
