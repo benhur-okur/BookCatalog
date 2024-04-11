@@ -2,19 +2,9 @@ package com.example.bookcatalog;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
-import javax.swing.text.html.ImageView;
-import java.awt.*;
-import java.io.IOException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -45,7 +35,7 @@ public class AddBookController {
     private CheckBox checkTranslator;
 
     @FXML
-    private Dialog<DialogPane> dialog = new Dialog<>();
+    private DialogPane dialogPane;
 
     private JSON json;
     private Book book;
@@ -53,6 +43,7 @@ public class AddBookController {
 
     private String subtitle = null;
     private String translator = null;
+    private boolean isNull = false;
 
     public Book getBook() {
         return book;
@@ -75,51 +66,57 @@ public class AddBookController {
     @FXML
    private Button addButton;
     public void addBook(ActionEvent event) throws InvocationTargetException {
-        if(t1.getText().isBlank() || t2.getText().isBlank() || t3.getText().isBlank() || t4.getText().isEmpty()
-                || t5.getText().isEmpty()|| t6.getText().isBlank()){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill the all texts!");
-            alert.showAndWait();
-        }else {
-            String title = t1.getText();
-            String isbn = t2.getText();
-            String publisher = t3.getText();
-            int edition = Integer.parseInt(t4.getText());
-            int pageNumber = Integer.parseInt(t5.getText());
-            String coverType = t6.getText();
-            if(checkSubtitle.isSelected()){
-                subtitle = t7.getText();
-            }
-            if(checkTranslator.isSelected()){
-                translator = t8.getText();
-            }
-            book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
-            books.add(book);
 
+<<<<<<< HEAD
 
         }
 
         //checkNullOrNot(event);
+=======
+            isTextNull(event);
+            if(isNull){
+                NullAlert(event);
+            }else {
+                String title = t1.getText();
+                String isbn = t2.getText();
+                String publisher = t3.getText();
+                int edition = Integer.parseInt(t4.getText());
+                int pageNumber = Integer.parseInt(t5.getText());
+                String coverType = t6.getText();
+                if(checkSubtitle.isSelected()){
+                    subtitle = t7.getText();
+                }
+                if(checkTranslator.isSelected()){
+                    translator = t8.getText();
+                }
+                book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
+                books.add(book);
+                dialogPane.getOnDragExited();
+            }
+>>>>>>> 7386f8885f54af1b3a3f1d970b3dc6de17e33303
 
     }
 
+    public void NullAlert(ActionEvent event){
 
-    /*
-    public void checkNullOrNot(ActionEvent event){
-        if(t1.getText().isBlank() || t2.getText().isBlank() || t3.getText().isBlank() || t4.getText().isBlank()
-                || t5.getText().isBlank() || t6.getText().isBlank()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Please fill the all texts!");
+            alert.setContentText("Please fill all the texts!");
             alert.showAndWait();
-        }
 
     }
 
-     */
+    public void isTextNull(ActionEvent event){
+        if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
+                || t4.getText().isBlank() ||t5.getText().isBlank() ||t6.getText().isBlank()
+                || checkSubtitle.isSelected() && t7.getText().isBlank() || checkTranslator.isSelected() && t8.getText().isBlank()){
+
+            isNull = true;
+            return;
+        }
+        isNull = false;
+    }
 
     public void checkSubtitle(ActionEvent event) {
         if (checkSubtitle.isSelected()) {
