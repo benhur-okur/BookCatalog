@@ -8,20 +8,20 @@ import java.util.List;
 
 public class Book {
 
-    private String title;
-    private String isbn;
-    private String publisher;
-    private int edition;
-    private int pageNumber;
-    private ArrayList<String> authors; // yapılacak
-    private String coverType;
-    private boolean hasSubtitle;
-    private String subtitle;
-    private boolean isTranslation;
-    private String translator;
+    public String title;
+    public String isbn;
+    public String publisher;
+    public int edition;
+    public int pageNumber;
+    public ArrayList<String> authors; // yapılacak
+    public String coverType;
+    public boolean hasSubtitle;
+    public String subtitle;
+    public boolean isTranslation;
+    public String translator;
 
 
-    private List<String> tags; // New field for storing tags
+    public List<String> tags; // New field for storing tags
 
     public Book (String title, String isbn, String publisher, int edition, int pageNumber,
                 String coverType, String subtitle, String translator) throws InvocationTargetException {
