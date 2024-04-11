@@ -84,10 +84,11 @@ public class AddBookController {
                 }
                 book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
                 books.add(book);
-                dialogPane.getOnDragExited();
+
             }
 
     }
+
 
     public void NullAlert(ActionEvent event){
 
