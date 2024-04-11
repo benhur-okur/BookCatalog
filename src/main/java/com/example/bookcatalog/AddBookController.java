@@ -52,23 +52,25 @@ public class AddBookController {
     private String subtitle = null;
     private String translator = null;
 
-   @FXML
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(ArrayList<Book> books) {
+        this.books = books;
+    }
+
+    @FXML
    private Button addButton;
     public void addBook(ActionEvent event) throws InvocationTargetException {
-        String title = t1.getText();
-        String isbn = t2.getText();
-        String publisher = t3.getText();
-        Integer edition = Integer.valueOf(t4.getText());
-        Integer pageNumber = Integer.valueOf(t5.getText());
-        String coverType = t6.getText();
-        if(checkSubtitle.isSelected()){
-            subtitle = t7.getText();
-        }
-        if(checkTranslator.isSelected()){
-            translator = t8.getText();
-        }
-
-        //checkNullOrNot(event);
         if(t1.getText().isBlank() || t2.getText().isBlank() || t3.getText().isBlank() || t4.getText().isEmpty()
                 || t5.getText().isEmpty()|| t6.getText().isBlank()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -77,9 +79,24 @@ public class AddBookController {
             alert.setContentText("Please fill the all texts!");
             alert.showAndWait();
         }else {
+            String title = t1.getText();
+            String isbn = t2.getText();
+            String publisher = t3.getText();
+            Integer edition = Integer.valueOf(t4.getText());
+            Integer pageNumber = Integer.valueOf(t5.getText());
+            String coverType = t6.getText();
+            if(checkSubtitle.isSelected()){
+                subtitle = t7.getText();
+            }
+            if(checkTranslator.isSelected()){
+                translator = t8.getText();
+            }
             book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
             books.add(book);
         }
+
+        //checkNullOrNot(event);
+
     }
 
 

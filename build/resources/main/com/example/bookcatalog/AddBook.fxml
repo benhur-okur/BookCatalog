@@ -27,7 +27,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="29.00000610351563" minHeight="10.0" prefHeight="29.00000610351563" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="36.199987792968756" minHeight="10.0" prefHeight="25.79999389648438" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label prefHeight="18.0" prefWidth="51.0" text="Title">
