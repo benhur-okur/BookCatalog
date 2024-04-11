@@ -17,14 +17,11 @@ public class MainScreen extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainScreen.class.getResource("MainScreen.fxml"));
-<<<<<<< HEAD
         FXMLLoader fxmlLoader1 = new FXMLLoader(MainScreen.class.getResource("AddBook.fxml"));
-        Scene scene = new Scene(fxmlLoader1.load(), 320, 240);
-=======
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
->>>>>>> main
+        Scene scene1 = new Scene(fxmlLoader1.load(), 320, 240);
         primaryStage.setTitle("Hello Guys!");
-        primaryStage.setScene(scene);
+        primaryStage.setScene(scene1);
         primaryStage.show();
 
     }

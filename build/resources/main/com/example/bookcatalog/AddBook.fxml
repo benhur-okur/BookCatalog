@@ -123,7 +123,7 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="46.0" text="Save" />
+            <Button mnemonicParsing="false" onAction="#addBook" prefHeight="26.0" prefWidth="46.0" text="Add" />
          </children>
       </HBox>
    </content>
