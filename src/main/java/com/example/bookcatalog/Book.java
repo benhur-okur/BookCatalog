@@ -11,8 +11,8 @@ public class Book {
     private String title;
     private String isbn;
     private String publisher;
-    private Integer edition;
-    private Integer pageNumber;
+    private int edition;
+    private int pageNumber;
     private ArrayList<String> authors; // yapılacak
     private String coverType;
     private boolean hasSubtitle;
@@ -23,7 +23,7 @@ public class Book {
 
     private List<String> tags; // New field for storing tags
 
-    public Book (String title, String isbn, String publisher, Integer edition, Integer pageNumber,
+    public Book (String title, String isbn, String publisher, int edition, int pageNumber,
                 String coverType, String subtitle, String translator) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
@@ -71,19 +71,19 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Integer getEdition() {
+    public int getEdition() {
         return edition;
     }
 
-    public void setEdition(Integer edition) {
+    public void setEdition(int edition) {
         this.edition = edition;
     }
 
-    public Integer getPageNumber() {
+    public int getPageNumber() {
         return pageNumber;
     }
 
-    public void setPageNumber(Integer pageNumber) {
+    public void setPageNumber(int pageNumber) {
         this.pageNumber = pageNumber;
     }
 
@@ -129,6 +129,22 @@ public class Book {
 
     public List<String> getTags() {
         return tags;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", edition=" + edition +
+                ", pageNumber=" + pageNumber +
+                ", coverType='" + coverType + '\'' +
+                ", hasSubtitle=" + hasSubtitle +
+                ", subtitle='" + subtitle + '\'' +
+                ", isTranslation=" + isTranslation +
+                ", translator='" + translator + '\'' +
+                '}';
     }
 
     public void setTags(List<String> tags) {
