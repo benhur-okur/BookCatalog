@@ -38,7 +38,8 @@ public class AddBookController {
     private DialogPane dialogPane;
 
     private Book book;
-    private ArrayList<Book> books = new ArrayList<>();
+    public static ArrayList<Book> books;
+
     private String subtitle = null;
     private String translator = null;
     private boolean isNull = false;
@@ -51,13 +52,15 @@ public class AddBookController {
         this.book = book;
     }
 
-    public ArrayList<Book> getBooks() {
+    /*public ArrayList<Book> getBooks() {
         return books;
     }
 
     public void setBooks(ArrayList<Book> books) {
         this.books = books;
     }
+
+     */
 
     @FXML
    private Button addButton;
