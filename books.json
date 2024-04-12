@@ -1,277 +1,38 @@
 [
   {
-    "title": "doaaaaa",
-    "isbn": "sddsd",
-    "publisher": "dffsd",
-    "edition": 1,
-    "rate": 2,
+    "title": "as",
+    "isbn": 2,
+    "publisher": "3",
+    "edition": 4,
+    "rate": 5,
     "authors": [
-      "sdsad",
-      "sadsdas"
+      "werwe"
     ],
-    "cover type": "dsada",
+    "cover type": "6",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "asd",
+    "date": "28/03/2003"
+  },
+  {
+    "title": "1",
+    "isbn": 2,
+    "publisher": "3",
+    "edition": 4,
+    "rate": 5,
+    "authors": [
+      "9"
+    ],
+    "cover type": "6",
     "has subtitle": false,
     "is translation": true,
     "translators": [
-      "sadad",
-      "dsad",
-      "dasd"
+      "7"
     ],
     "tags": [],
-    "language": "dasd"
-  },
-  {
-    "title": "DOAGNS",
-    "isbn": "sasf",
-    "publisher": "sdsd",
-    "edition": 3,
-    "rate": 2,
-    "authors": [
-      "oooooooooooo",
-      "ppppppppppp",
-      "uuuuuuuuuu"
-    ],
-    "cover type": "sdsd",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "RAHMANUS AMAGUS",
-    "isbn": "dfdfs",
-    "publisher": "dffsf",
-    "edition": 3169,
-    "rate": 2,
-    "authors": [
-      "rrrrrrrrrrrrr",
-      "tttttttttttt",
-      "eeeeeeeeeee"
-    ],
-    "cover type": "dasd",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "dsad",
-    "isbn": "sdadas",
-    "publisher": "sasadsa",
-    "edition": 31,
-    "rate": 2,
-    "cover type": "sda",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "RHMN",
-    "isbn": "sdad",
-    "publisher": "dsadsd",
-    "edition": 0,
-    "rate": 2,
-    "cover type": "dsadas",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "RHMN",
-    "isbn": "sdad",
-    "publisher": "dsadsd",
-    "edition": 3,
-    "rate": 2,
-    "cover type": "dsadas",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "suc ve ceza",
-    "isbn": "sadda",
-    "publisher": "sadad",
-    "edition": 0,
-    "rate": 1,
-    "cover type": "czxcscszs",
-    "has subtitle": true,
-    "subtitle": "sczczcsz",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "suc ve ceza",
-    "isbn": "sadda",
-    "publisher": "sadad",
-    "edition": 6,
-    "rate": 1,
-    "cover type": "czxcscszs",
-    "has subtitle": true,
-    "subtitle": "sczczcsz",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "ssads",
-    "isbn": "sad",
-    "publisher": "sada",
-    "edition": 0,
-    "rate": 4,
-    "cover type": "fdsf",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "ssads",
-    "isbn": "sad",
-    "publisher": "sada",
-    "edition": 5,
-    "rate": 4,
-    "cover type": "fdsf",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "sasds",
-    "isbn": "sdsa",
-    "publisher": "sda",
-    "edition": 1,
-    "rate": 2,
-    "cover type": "dfsdfsdf",
-    "has subtitle": true,
-    "subtitle": "dfsf",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "111",
-    "isbn": "asd",
-    "publisher": "asd",
-    "edition": 0,
-    "rate": 2,
-    "cover type": "fggfgfdf",
-    "has subtitle": true,
-    "subtitle": "fddf",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "111",
-    "isbn": "asd",
-    "publisher": "asd",
-    "edition": 1,
-    "rate": 2,
-    "cover type": "fggfgfdf",
-    "has subtitle": true,
-    "subtitle": "fddf",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "eee",
-    "isbn": "asfga",
-    "publisher": "agga",
-    "edition": 0,
-    "rate": 1,
-    "cover type": "2",
-    "has subtitle": true,
-    "subtitle": "asga",
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "eee",
-    "isbn": "asfga",
-    "publisher": "agga",
-    "edition": 55,
-    "rate": 1,
-    "cover type": "jk",
-    "has subtitle": true,
-    "subtitle": "asga",
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "dffgsd",
-    "isbn": "dsgsd",
-    "publisher": "sdg",
-    "edition": 2,
-    "rate": 333,
-    "cover type": "fa",
-    "has subtitle": true,
-    "subtitle": "fff",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "asggas",
-    "isbn": "asgasg",
-    "publisher": "asg",
-    "edition": 2,
-    "rate": 3,
-    "cover type": "aggsag",
-    "has subtitle": true,
-    "subtitle": "asgag",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "ewefw",
-    "isbn": "ewfw",
-    "publisher": "wef",
-    "edition": 11,
-    "rate": 11,
-    "cover type": "asga",
-    "has subtitle": false,
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "sagdsgds",
-    "isbn": "asffa",
-    "publisher": "asf",
-    "edition": 2,
-    "rate": 3,
-    "cover type": "dsgsdg",
-    "has subtitle": true,
-    "subtitle": "asfsaf",
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "gfhdsf",
-    "isbn": "hsfhs",
-    "publisher": "sad",
-    "edition": 1111,
-    "rate": 2222,
-    "cover type": "ags",
-    "has subtitle": true,
-    "subtitle": "fdggsd",
-    "is translation": true,
-    "tags": []
-  },
-  {
-    "title": "asga",
-    "isbn": "asga",
-    "publisher": "adfg",
-    "edition": 33,
-    "rate": 33,
-    "cover type": "asg",
-    "has subtitle": true,
-    "subtitle": "dfgssf",
-    "is translation": false,
-    "tags": []
-  },
-  {
-    "title": "asf",
-    "isbn": "asga",
-    "publisher": "asg",
-    "edition": 2,
-    "rate": 2,
-    "cover type": "ag",
-    "has subtitle": true,
-    "subtitle": "sss",
-    "is translation": false,
-    "tags": []
+    "language": "8",
+    "date": "28/03/2003"
   }
 ]

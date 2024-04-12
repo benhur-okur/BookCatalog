@@ -41,6 +41,7 @@ public class MainScreenController {
         json.readFile(bookArrayList);
 
     }
+    
     @FXML
     public void openAddBookScreen(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBook.fxml"));

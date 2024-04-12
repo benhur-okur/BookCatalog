@@ -98,7 +98,7 @@ public class AddBookController {
         fileChooser.setTitle("Select Image");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.png"),
-                new FileChooser.ExtensionFilter("All Files", ".png", ".jpg")
+                new FileChooser.ExtensionFilter("All Files", "*.png", "*.jpg")
         );
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null) {
@@ -178,6 +178,7 @@ public class AddBookController {
                 }
                 mainScreenController.getBookArrayList().add(book);
                 mainScreenController.refreshBookList();
+
             }
         }
     }
@@ -207,7 +208,7 @@ public class AddBookController {
         if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
                 || t4.getText().isBlank() ||t5.getText().isBlank() ||t6.getText().isBlank()
                 || checkSubtitle.isSelected() && t7.getText().isBlank()
-                || t9.getText().isBlank() || checkTranslator.isSelected() && listView.getItems().isEmpty() || listView2.getItems().isEmpty()){
+                || t9.getText().isBlank() || checkTranslator.isSelected() && listView2.getItems().isEmpty() || listView.getItems().isEmpty()){
             isNull = true;
             return;
         }
