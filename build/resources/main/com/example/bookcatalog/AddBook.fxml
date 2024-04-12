@@ -146,10 +146,10 @@
                   <Insets left="25.0" />
                </GridPane.margin>
             </Label>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <TextField fx:id="t10" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
             <ImageView fx:id="imageView" fitHeight="25.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Button mnemonicParsing="false" text="Add Author" GridPane.columnIndex="3" GridPane.rowIndex="10">
+            <Button mnemonicParsing="false" onAction="#addAuthor" text="Add Author" GridPane.columnIndex="3" GridPane.rowIndex="10">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>

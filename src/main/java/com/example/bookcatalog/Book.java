@@ -11,7 +11,6 @@ public class Book {
     private String publisher;
     private int edition;
     private int rate;
-    private ArrayList<String> authors; // yapılacak
     private String coverType;
     private boolean hasSubtitle;
     private String subtitle;
@@ -19,11 +18,11 @@ public class Book {
     private String translator;
     public List<String> tags; // New field for storing tags
     private String language;
+    private ArrayList<String> authors; // yapılacak
 
-    
 
     public Book (String title, String isbn, String publisher, int edition, int rate,
-                String coverType, String subtitle, String translator, String language) throws InvocationTargetException {
+                String coverType, String subtitle, String translator, String language, ArrayList<String> authors) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;

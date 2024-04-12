@@ -1,5 +1,6 @@
 package com.example.bookcatalog;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +37,11 @@ public class AddBookController {
     private TextField t8;
     @FXML
     private TextField t9;
+    @FXML
+    private TextField t10;
 
+    @FXML
+    private ListView<String> listView;
 
     @FXML
     private CheckBox checkSubtitle;
@@ -54,6 +59,7 @@ public class AddBookController {
     private String subtitle = null;
     private String translator = null;
     private boolean isNull = false;
+    private ArrayList<String> authors;
 
     public Book getBook() {
         return book;
@@ -62,7 +68,7 @@ public class AddBookController {
     public void setBook(Book book) {
         this.book = book;
     }
-    
+
     @FXML
     private ImageView imageView;
 
@@ -92,6 +98,7 @@ public class AddBookController {
         if (isNull) {
             NullAlert(event);
         } else {
+            addAuthor(event);
             int edition = 0;
             int rate = 0;
             String title = t1.getText();
@@ -123,7 +130,7 @@ public class AddBookController {
                 translator = t8.getText();
             }
             String language = t9.getText();
-            book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language);
+            book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language, authors);
 
             if (checkSubtitle.isSelected()) {
                 book.setHasSubtitle(true);
@@ -136,6 +143,14 @@ public class AddBookController {
         }
     }
 
+    public void addAuthor(ActionEvent event){
+        if (t10.getText().isBlank()) return;
+        listView.getItems().add(t10.getText());
+        t10.clear();
+        ObservableList<String> selectedItems = listView.getSelectionModel().getSelectedItems();
+        authors.addAll(selectedItems);
+
+    }
     public void NullAlert(ActionEvent event){
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -150,7 +165,7 @@ public class AddBookController {
         if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
                 || t4.getText().isBlank() ||t5.getText().isBlank() ||t6.getText().isBlank()
                 || checkSubtitle.isSelected() && t7.getText().isBlank() || checkTranslator.isSelected() && t8.getText().isBlank()
-                || t9.getText().isBlank()){
+                || t9.getText().isBlank() || listView.getItems().isEmpty()){
 
             isNull = true;
             return;
