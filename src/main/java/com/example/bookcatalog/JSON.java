@@ -1,5 +1,6 @@
 package com.example.bookcatalog;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 
@@ -20,7 +21,8 @@ public class JSON {
     private final FileReader fileReader = new FileReader("books.json");
 
     public JSON(ArrayList<Book> bookArrayList) throws IOException {
-        gson = new Gson();
+        //gson = new Gson();
+        gson = new GsonBuilder().registerTypeAdapter(Book.class, new BookTypeAdaptor()).create();
         this.bookArrayList = bookArrayList;
         myJson = gson.toJson(bookArrayList);
     }
