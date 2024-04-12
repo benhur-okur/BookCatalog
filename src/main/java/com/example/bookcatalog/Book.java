@@ -33,7 +33,7 @@ public class Book {
         this.translator = translator;
         this.tags = new ArrayList<>();
         this.language = language;
-
+        this.authors = authors;
     }
 
     public Book() {
@@ -138,9 +138,8 @@ public class Book {
     public List<String> getTags() {
         return tags;
     }
-
-
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
 }

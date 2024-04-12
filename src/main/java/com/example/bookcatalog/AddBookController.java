@@ -59,7 +59,7 @@ public class AddBookController {
     private String subtitle = null;
     private String translator = null;
     private boolean isNull = false;
-    private ArrayList<String> authors;
+    private ArrayList<String> authors = new ArrayList<>();
 
     public Book getBook() {
         return book;
@@ -98,7 +98,7 @@ public class AddBookController {
         if (isNull) {
             NullAlert(event);
         } else {
-            addAuthor(event);
+            authors.addAll(listView.getItems());
             int edition = 0;
             int rate = 0;
             String title = t1.getText();
@@ -107,6 +107,7 @@ public class AddBookController {
             try {
                 edition = Integer.parseInt(t4.getText());
             } catch (Exception e) {
+                t4.clear();
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -116,6 +117,7 @@ public class AddBookController {
             try {
                 rate = Integer.parseInt(t5.getText());
             } catch (Exception e) {
+                t5.clear();
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -147,9 +149,6 @@ public class AddBookController {
         if (t10.getText().isBlank()) return;
         listView.getItems().add(t10.getText());
         t10.clear();
-        ObservableList<String> selectedItems = listView.getSelectionModel().getSelectedItems();
-        authors.addAll(selectedItems);
-
     }
     public void NullAlert(ActionEvent event){
 
