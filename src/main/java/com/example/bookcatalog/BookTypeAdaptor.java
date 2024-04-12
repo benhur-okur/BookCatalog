@@ -14,7 +14,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         out.name("isbn").value(book.getIsbn());
         out.name("publisher").value(book.getPublisher());
         out.name("edition").value(book.getEdition());
-        out.name("page number").value(book.getPageNumber());
+        out.name("rate").value(book.getRate());
         /*out.name("authors").beginArray();
         for (String author : book.getAuthors()) {
             out.value(author);

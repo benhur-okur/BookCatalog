@@ -12,31 +12,30 @@ public class Book {
     private String isbn;
     private String publisher;
     private int edition;
-    private int pageNumber;
+    private int rate;
     private ArrayList<String> authors; // yapılacak
     private String coverType;
     private boolean hasSubtitle;
     private String subtitle;
     private boolean isTranslation;
     private String translator;
-
     public List<String> tags; // New field for storing tags
+    private String language;
 
     
 
-    public Book (String title, String isbn, String publisher, int edition, int pageNumber,
-                String coverType, String subtitle, String translator) throws InvocationTargetException {
+    public Book (String title, String isbn, String publisher, int edition, int rate,
+                String coverType, String subtitle, String translator, String language) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
         this.edition = edition;
-        this.pageNumber = pageNumber;
+        this.rate = rate;
         this.coverType = coverType;
-        this.hasSubtitle = hasSubtitle;
         this.subtitle = subtitle;
-        this.isTranslation = isTranslation;
         this.translator = translator;
         this.tags = new ArrayList<>();
+        this.language = language;
 
     }
 
@@ -63,6 +62,22 @@ public class Book {
         return authors;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
+
     public void setAuthors(ArrayList<String> authors) {
         this.authors = authors;
     }
@@ -81,14 +96,6 @@ public class Book {
 
     public void setEdition(int edition) {
         this.edition = edition;
-    }
-
-    public int getPageNumber() {
-        return pageNumber;
-    }
-
-    public void setPageNumber(int pageNumber) {
-        this.pageNumber = pageNumber;
     }
 
     public String getCoverType() {
@@ -135,22 +142,6 @@ public class Book {
         return tags;
     }
 
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", edition=" + edition +
-                ", pageNumber=" + pageNumber +
-                ", coverType='" + coverType + '\'' +
-                ", hasSubtitle=" + hasSubtitle +
-                ", subtitle='" + subtitle + '\'' +
-                ", isTranslation=" + isTranslation +
-                ", translator='" + translator + '\'' +
-                '}';
-    }
 
     public void setTags(List<String> tags) {
         this.tags = tags;
