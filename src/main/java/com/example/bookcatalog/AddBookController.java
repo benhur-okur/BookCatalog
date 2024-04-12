@@ -2,8 +2,6 @@ package com.example.bookcatalog;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -97,15 +95,13 @@ public class AddBookController {
         if (isNull) {
             NullAlert(event);
         } else {
-            authors.addAll(listView.getItems());
+            boolean hasError = false;
             int edition = 0;
             int rate = 0;
-            String title = t1.getText();
-            String isbn = t2.getText(); // TODO: regex kullanarak isbn kontrolü yapılacak!!!
-            String publisher = t3.getText();
             try {
                 edition = Integer.parseInt(t4.getText());
             } catch (Exception e) {
+                hasError = true;
                 t4.clear();
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
@@ -116,6 +112,7 @@ public class AddBookController {
             try {
                 rate = Integer.parseInt(t5.getText());
             } catch (Exception e) {
+                hasError = true;
                 t5.clear();
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
@@ -123,24 +120,30 @@ public class AddBookController {
                 alert.setContentText("Please enter a integer for Rate!");
                 alert.showAndWait();
             }
-            String coverType = t6.getText();
-            if (checkSubtitle.isSelected()) {
-                subtitle = t7.getText();
-            }
-            if (checkTranslator.isSelected()) {
-                translator = t8.getText();
-            }
-            String language = t9.getText();
-            book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language, authors);
 
-            if (checkSubtitle.isSelected()) {
-                book.setHasSubtitle(true);
+            if(!hasError){
+                authors.addAll(listView.getItems());
+                String title = t1.getText();
+                String isbn = t2.getText(); // TODO: regex kullanarak isbn kontrolü yapılacak!!!
+                String publisher = t3.getText();
+                String coverType = t6.getText();
+                if (checkSubtitle.isSelected()) {
+                    subtitle = t7.getText();
+                }
+                if (checkTranslator.isSelected()) {
+                    translator = t8.getText();
+                }
+                String language = t9.getText();
+                book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language, authors);
+                if (checkSubtitle.isSelected()) {
+                    book.setHasSubtitle(true);
+                }
+                if (checkTranslator.isSelected()) {
+                    book.setTranslation(true);
+                }
+                mainScreenController.getBookArrayList().add(book);
+                mainScreenController.refreshBookList();
             }
-            if (checkTranslator.isSelected()) {
-                book.setTranslation(true);
-            }
-            mainScreenController.getBookArrayList().add(book);
-            mainScreenController.refreshBookList();
         }
     }
 
@@ -148,10 +151,6 @@ public class AddBookController {
         if (t10.getText().isBlank()) return;
         listView.getItems().add(t10.getText());
         t10.clear();
-<<<<<<< Updated upstream
-=======
-        authors.addAll(listView.getItems());
->>>>>>> Stashed changes
     }
     public void NullAlert(ActionEvent event){
 

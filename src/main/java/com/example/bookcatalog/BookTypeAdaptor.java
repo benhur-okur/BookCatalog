@@ -68,7 +68,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                         authors.add(in.nextString());
                     }
                     in.endArray();
-                    book.setTags(authors);
+                    book.setAuthors(authors);
                     break;
                 case "cover type":
                     book.setCoverType(in.nextString());
