@@ -5,7 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
@@ -61,21 +65,63 @@ public class AddBookController {
         this.books = books;
     }
 
-
+    @FXML
+    private ImageView imageView;
 
     @FXML
    private Button addButton;
+
+    @FXML
+    private void selectImage() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png"),
+                new FileChooser.ExtensionFilter("All Files", "*.png", "*.jpg")
+        );
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            Image image = new Image(selectedFile.toURI().toString());
+            imageView.setImage(image);
+        }
+    }
     public void addBook(ActionEvent event) throws InvocationTargetException {
 
         isTextNull(event);
         if(isNull){
             NullAlert(event);
         }else {
+<<<<<<< HEAD
+            int edition = 0;
+            int pageNumber = 0;
+            String title = t1.getText();
+            String isbn = t2.getText(); // TODO: regex kullanarak isbn kontrolü yapılacak!!!
+            String publisher = t3.getText();
+            try{
+                edition = Integer.parseInt(t4.getText());
+            }catch (Exception e){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter a integer for Edition!");
+                alert.showAndWait();
+            }
+            try{
+                pageNumber = Integer.parseInt(t5.getText());
+            }catch (Exception e){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter a integer for Page Number!");
+                alert.showAndWait();
+            }
+=======
             String title = t1.getText();
             String isbn = t2.getText();
             String publisher = t3.getText();
             int edition = Integer.parseInt(t4.getText());
             int pageNumber = Integer.parseInt(t5.getText());
+>>>>>>> ccf7279981b87e854355750e3805420e487a6e3f
             String coverType = t6.getText();
             if(checkSubtitle.isSelected()){
                 subtitle = t7.getText();
@@ -85,6 +131,11 @@ public class AddBookController {
             }
             book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
             books.add(book);
+<<<<<<< HEAD
+
+        }
+    }
+=======
         }
 
         if(isNull){
@@ -108,6 +159,7 @@ public class AddBookController {
         }
 
         }
+>>>>>>> ccf7279981b87e854355750e3805420e487a6e3f
 
 
     public void NullAlert(ActionEvent event){
@@ -154,8 +206,8 @@ public class AddBookController {
     }
 
      */
+    }
 
-}
 
 
 

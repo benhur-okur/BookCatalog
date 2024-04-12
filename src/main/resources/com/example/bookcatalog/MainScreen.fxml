@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.MainScreenController">
    <children>
-      <Button fx:id="b1" layoutX="245.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Buttonum benhur" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="245.0" AnchorPane.topAnchor="175.0" />
       <MenuBar layoutY="2.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -33,5 +32,6 @@
             </Menu>
         </menus>
       </MenuBar>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
