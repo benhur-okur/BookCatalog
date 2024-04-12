@@ -15,14 +15,14 @@ public class Book {
     private boolean hasSubtitle;
     private String subtitle;
     private boolean isTranslation;
-    private String translator;
+    private ArrayList<String> translators;
     public List<String> tags; // New field for storing tags
     private String language;
     private ArrayList<String> authors; // yapılacak
 
 
     public Book (String title, String isbn, String publisher, int edition, int rate,
-                String coverType, String subtitle, String translator, String language, ArrayList<String> authors) throws InvocationTargetException {
+                String coverType, String subtitle, ArrayList<String> translators, String language, ArrayList<String> authors) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
@@ -30,7 +30,7 @@ public class Book {
         this.rate = rate;
         this.coverType = coverType;
         this.subtitle = subtitle;
-        this.translator = translator;
+        this.translators = translators;
         this.tags = new ArrayList<>();
         this.language = language;
         this.authors = authors;
@@ -127,12 +127,12 @@ public class Book {
         isTranslation = translation;
     }
 
-    public String getTranslator() {
-        return translator;
+    public ArrayList<String> getTranslators() {
+        return translators;
     }
 
-    public void setTranslator(String translator) {
-        this.translator = translator;
+    public void setTranslators(ArrayList<String> translators) {
+        this.translators = translators;
     }
 
     public List<String> getTags() {

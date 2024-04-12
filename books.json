@@ -1,5 +1,26 @@
 [
   {
+    "title": "doaaaaa",
+    "isbn": "sddsd",
+    "publisher": "dffsd",
+    "edition": 1,
+    "rate": 2,
+    "authors": [
+      "sdsad",
+      "sadsdas"
+    ],
+    "cover type": "dsada",
+    "has subtitle": false,
+    "is translation": true,
+    "translators": [
+      "sadad",
+      "dsad",
+      "dasd"
+    ],
+    "tags": [],
+    "language": "dasd"
+  },
+  {
     "title": "DOAGNS",
     "isbn": "sasf",
     "publisher": "sdsd",
@@ -13,9 +34,7 @@
     "cover type": "sdsd",
     "has subtitle": false,
     "is translation": true,
-    "translator": "sdad",
-    "tags": [],
-    "language": "sddasdad"
+    "tags": []
   },
   {
     "title": "RAHMANUS AMAGUS",
@@ -31,7 +50,6 @@
     "cover type": "dasd",
     "has subtitle": false,
     "is translation": true,
-    "translator": "sadasd",
     "tags": []
   },
   {
@@ -43,7 +61,6 @@
     "cover type": "sda",
     "has subtitle": false,
     "is translation": true,
-    "translator": "sadasd",
     "tags": []
   },
   {
@@ -55,7 +72,6 @@
     "cover type": "dsadas",
     "has subtitle": false,
     "is translation": true,
-    "translator": "sdadad",
     "tags": []
   },
   {
@@ -67,7 +83,6 @@
     "cover type": "dsadas",
     "has subtitle": false,
     "is translation": true,
-    "translator": "sdadad",
     "tags": []
   },
   {
@@ -103,7 +118,6 @@
     "cover type": "fdsf",
     "has subtitle": false,
     "is translation": true,
-    "translator": "sfsdfsdf",
     "tags": []
   },
   {
@@ -115,7 +129,6 @@
     "cover type": "fdsf",
     "has subtitle": false,
     "is translation": true,
-    "translator": "sfsdfsdf",
     "tags": []
   },
   {
@@ -164,7 +177,6 @@
     "has subtitle": true,
     "subtitle": "asga",
     "is translation": true,
-    "translator": "agg",
     "tags": []
   },
   {
@@ -177,7 +189,6 @@
     "has subtitle": true,
     "subtitle": "asga",
     "is translation": true,
-    "translator": "agg",
     "tags": []
   },
   {
@@ -213,7 +224,6 @@
     "cover type": "asga",
     "has subtitle": false,
     "is translation": true,
-    "translator": "fgdf",
     "tags": []
   },
   {
@@ -226,7 +236,6 @@
     "has subtitle": true,
     "subtitle": "asfsaf",
     "is translation": true,
-    "translator": "safaf",
     "tags": []
   },
   {
@@ -239,7 +248,6 @@
     "has subtitle": true,
     "subtitle": "fdggsd",
     "is translation": true,
-    "translator": "sdfg",
     "tags": []
   },
   {
