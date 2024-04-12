@@ -5,6 +5,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookTypeAdaptor extends TypeAdapter<Book> {
     @Override
@@ -15,7 +17,8 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         out.name("publisher").value(book.getPublisher());
         out.name("edition").value(book.getEdition());
         out.name("rate").value(book.getRate());
-        /*out.name("authors").beginArray();
+        /*
+        out.name("authors").beginArray();
         for (String author : book.getAuthors()) {
             out.value(author);
         }
@@ -27,6 +30,12 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         out.name("subtitle").value(book.getSubtitle());
         out.name("is translation").value(book.isTranslation());
         out.name("translator").value(book.getTranslator());
+        out.name("tags").beginArray();
+        for (String tag : book.getTags()) {
+            out.value(tag);
+        }
+        out.endArray();
+        out.name("language").value(book.getLanguage());
         out.endObject();
     }
 
@@ -51,6 +60,17 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                 case "rate":
                     book.setRate(in.nextInt());
                     break;
+                /*case "authors":
+                    in.beginArray();
+                    ArrayList<String> authors = new ArrayList<>();
+                    while (in.hasNext()) {
+                        authors.add(in.nextString());
+                    }
+                    in.endArray();
+                    book.setTags(authors);
+                    break;
+
+                 */
                 case "cover type":
                     book.setCoverType(in.nextString());
                     break;
@@ -65,6 +85,15 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                     break;
                 case "translator":
                     book.setTranslator(in.nextString());
+                    break;
+                case "tags":
+                    in.beginArray();
+                    List<String> tags = new ArrayList<>();
+                    while (in.hasNext()) {
+                        tags.add(in.nextString());
+                    }
+                    in.endArray();
+                    book.setTags(tags);
                     break;
                 default:
                     in.skipValue(); // Geçersiz bir alanı atla
