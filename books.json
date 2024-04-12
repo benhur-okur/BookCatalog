@@ -1,86 +1,15 @@
 [
   {
-    "title": "DOGA",
+    "title": "2222",
     "isbn": "sad",
-    "publisher": "sada",
-    "edition": 1,
-    "rate": 2,
-    "cover type": "dsfds",
-    "has subtitle": true,
-    "subtitle": "dsffsfsf",
-    "is translation": false
-  },
-
-  {
-    "title": "su� ve ceza",
-    "isbn": "sfdf",
-    "publisher": "dfs",
-    "edition": 1,
-    "rate": 2,
-    "cover type": "sfdfs",
-    "has subtitle": false,
-    "is translation": false
-  },
-
-  {
-    "title": "sad",
-    "isbn": "sdsd",
-    "publisher": "sa",
-    "edition": 1,
-    "rate": 1,
-    "cover type": "dsf",
-    "has subtitle": false,
-    "is translation": false
-  },
-  {
-    "title": "asdas",
-    "isbn": "asf",
-    "publisher": "asf",
+    "publisher": "asd",
     "edition": 2,
     "rate": 3,
     "cover type": "asf",
     "has subtitle": false,
-    "is translation": false
-  },
-  {
-    "title": "son title ",
-    "isbn": "sad",
-    "publisher": "asf",
-    "edition": 2,
-    "rate": 0,
-    "cover type": " asd",
-    "has subtitle": false,
-    "is translation": false
-  },
-  {
-    "title": "son",
-    "isbn": "sad",
-    "publisher": "asd",
-    "edition": 2,
-    "rate": 0,
-    "cover type": "saf",
-    "has subtitle": false,
-    "subtitle": "fdffffffff",
-    "is translation": false
-  },
-  {
-    "title": "asd",
-    "isbn": "fasf",
-    "publisher": "asf",
-    "edition": 2,
-    "rate": 0,
-    "cover type": "gas",
-    "has subtitle": false,
-    "is translation": false
-  },
-  {
-    "title": "fsg",
-    "isbn": "gdsg",
-    "publisher": "gds",
-    "edition": 3,
-    "rate": 0,
-    "cover type": "gdas",
-    "has subtitle": false,
-    "is translation": false
+    "is translation": true,
+    "translator": "ggggg",
+    "tags": [],
+    "language": "asdad"
   }
 ]
