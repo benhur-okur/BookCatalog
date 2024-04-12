@@ -1,0 +1,43 @@
+[
+  {
+    "title": "son title ",
+    "isbn": "sad",
+    "publisher": "asf",
+    "edition": 2,
+    "page number": 3,
+    "cover type": " asd",
+    "has subtitle": false,
+    "is translation": false
+  },
+  {
+    "title": "son",
+    "isbn": "sad",
+    "publisher": "asd",
+    "edition": 2,
+    "page number": 3,
+    "cover type": "saf",
+    "has subtitle": false,
+    "subtitle": "fdffffffff",
+    "is translation": false
+  },
+  {
+    "title": "asd",
+    "isbn": "fasf",
+    "publisher": "asf",
+    "edition": 2,
+    "page number": 3,
+    "cover type": "gas",
+    "has subtitle": false,
+    "is translation": false
+  },
+  {
+    "title": "fsg",
+    "isbn": "gdsg",
+    "publisher": "gds",
+    "edition": 3,
+    "page number": 4,
+    "cover type": "gdas",
+    "has subtitle": false,
+    "is translation": false
+  }
+]
