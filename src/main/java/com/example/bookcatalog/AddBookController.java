@@ -62,9 +62,7 @@ public class AddBookController {
     public void setBook(Book book) {
         this.book = book;
     }
-
-
-
+    
     @FXML
     private ImageView imageView;
 
@@ -125,8 +123,14 @@ public class AddBookController {
                 translator = t8.getText();
             }
             String language = t9.getText();
-
             book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language);
+
+            if (checkSubtitle.isSelected()) {
+                book.setHasSubtitle(true);
+            }
+            if (checkTranslator.isSelected()) {
+                book.setTranslation(true);
+            }
             mainScreenController.getBookArrayList().add(book);
             mainScreenController.refreshBookList();
         }
