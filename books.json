@@ -1,10 +1,20 @@
 [
   {
+    "title": "asdas",
+    "isbn": "asf",
+    "publisher": "asf",
+    "edition": 2,
+    "rate": 3,
+    "cover type": "asf",
+    "has subtitle": false,
+    "is translation": false
+  },
+  {
     "title": "son title ",
     "isbn": "sad",
     "publisher": "asf",
     "edition": 2,
-    "page number": 3,
+    "rate": 0,
     "cover type": " asd",
     "has subtitle": false,
     "is translation": false
@@ -14,7 +24,7 @@
     "isbn": "sad",
     "publisher": "asd",
     "edition": 2,
-    "page number": 3,
+    "rate": 0,
     "cover type": "saf",
     "has subtitle": false,
     "subtitle": "fdffffffff",
@@ -25,7 +35,7 @@
     "isbn": "fasf",
     "publisher": "asf",
     "edition": 2,
-    "page number": 3,
+    "rate": 0,
     "cover type": "gas",
     "has subtitle": false,
     "is translation": false
@@ -35,7 +45,7 @@
     "isbn": "gdsg",
     "publisher": "gds",
     "edition": 3,
-    "page number": 4,
+    "rate": 0,
     "cover type": "gdas",
     "has subtitle": false,
     "is translation": false

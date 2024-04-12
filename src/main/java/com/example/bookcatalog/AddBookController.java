@@ -43,12 +43,13 @@ public class AddBookController {
     @FXML
     private CheckBox checkTranslator;
 
+    private MainScreenController mainScreenController;
+
     @FXML
     private DialogPane dialogPane;
 
     private JSON json;
     private Book book;
-    public ArrayList<Book> books = new ArrayList<>();
 
     private String subtitle = null;
     private String translator = null;
@@ -62,13 +63,7 @@ public class AddBookController {
         this.book = book;
     }
 
-    public ArrayList<Book> getBooks() {
-        return books;
-    }
 
-    public void setBooks(ArrayList<Book> books) {
-        this.books = books;
-    }
 
     @FXML
     private ImageView imageView;
@@ -76,6 +71,9 @@ public class AddBookController {
     @FXML
     private Button addButton;
 
+    public void setMainScreenController (MainScreenController mainScreenController) {
+        this.mainScreenController = mainScreenController;
+    }
     @FXML
     private void selectImage() {
         FileChooser fileChooser = new FileChooser();
@@ -93,26 +91,26 @@ public class AddBookController {
     public void addBook(ActionEvent event) throws InvocationTargetException, IOException {
 
         isTextNull(event);
-        if(isNull){
+        if (isNull) {
             NullAlert(event);
-        }else {
+        } else {
             int edition = 0;
             int rate = 0;
             String title = t1.getText();
             String isbn = t2.getText(); // TODO: regex kullanarak isbn kontrolü yapılacak!!!
             String publisher = t3.getText();
-            try{
+            try {
                 edition = Integer.parseInt(t4.getText());
-            }catch (Exception e){
+            } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Please enter a integer for Edition!");
                 alert.showAndWait();
             }
-            try{
+            try {
                 rate = Integer.parseInt(t5.getText());
-            }catch (Exception e){
+            } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -120,17 +118,17 @@ public class AddBookController {
                 alert.showAndWait();
             }
             String coverType = t6.getText();
-            if(checkSubtitle.isSelected()){
+            if (checkSubtitle.isSelected()) {
                 subtitle = t7.getText();
             }
-            if(checkTranslator.isSelected()){
+            if (checkTranslator.isSelected()) {
                 translator = t8.getText();
             }
             String language = t9.getText();
 
-            book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language) ;
-            books.add(book);
-
+            book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language);
+            mainScreenController.getBookArrayList().add(book);
+            mainScreenController.refreshBookList();
         }
     }
 

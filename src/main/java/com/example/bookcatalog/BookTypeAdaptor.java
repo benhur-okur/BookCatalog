@@ -48,8 +48,8 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                 case "edition":
                     book.setEdition(in.nextInt());
                     break;
-                case "page number":
-                    book.setPageNumber(in.nextInt());
+                case "rate":
+                    book.setRate(in.nextInt());
                     break;
                 case "cover type":
                     book.setCoverType(in.nextString());
