@@ -1,7 +1,5 @@
 package com.example.bookcatalog;
 
-import javax.swing.text.html.ImageView;
-import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
