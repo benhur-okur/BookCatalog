@@ -39,6 +39,8 @@ public class AddBookController {
 
     @FXML
     private ListView<String> listView;
+    @FXML
+    private ListView<String> listView2;
 
     @FXML
     private CheckBox checkSubtitle;
@@ -57,7 +59,7 @@ public class AddBookController {
     private String translator = null;
     private boolean isNull = false;
     private ArrayList<String> authors = new ArrayList<>();
-
+    private ArrayList<String> translators = new ArrayList<>();
     public Book getBook() {
         return book;
     }
@@ -71,6 +73,8 @@ public class AddBookController {
 
     @FXML
     private Button addButton;
+    @FXML
+    private Button addTranslator;
 
     public void setMainScreenController (MainScreenController mainScreenController) {
         this.mainScreenController = mainScreenController;
@@ -131,10 +135,10 @@ public class AddBookController {
                     subtitle = t7.getText();
                 }
                 if (checkTranslator.isSelected()) {
-                    translator = t8.getText();
+                    translators.addAll(listView2.getItems());
                 }
                 String language = t9.getText();
-                book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language, authors);
+                book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translators, language, authors);
                 if (checkSubtitle.isSelected()) {
                     book.setHasSubtitle(true);
                 }
@@ -152,6 +156,11 @@ public class AddBookController {
         listView.getItems().add(t10.getText());
         t10.clear();
     }
+    public void addTranslator(ActionEvent event){
+        if (t8.getText().isBlank()) return;
+        listView2.getItems().add(t8.getText());
+        t8.clear();
+    }
     public void NullAlert(ActionEvent event){
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -165,8 +174,8 @@ public class AddBookController {
     public void isTextNull(ActionEvent event){
         if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
                 || t4.getText().isBlank() ||t5.getText().isBlank() ||t6.getText().isBlank()
-                || checkSubtitle.isSelected() && t7.getText().isBlank() || checkTranslator.isSelected() && t8.getText().isBlank()
-                || t9.getText().isBlank() || listView.getItems().isEmpty()){
+                || checkSubtitle.isSelected() && t7.getText().isBlank()
+                || t9.getText().isBlank() || listView.getItems().isEmpty() || listView2.getItems().isEmpty()){
 
             isNull = true;
             return;
@@ -185,11 +194,15 @@ public class AddBookController {
     public void checkTranslator(ActionEvent event) {
         if (checkTranslator.isSelected()) {
             t8.setVisible(true);
+            listView2.setVisible(true);
+            addTranslator.setVisible(true);
+
         } else {
             t8.setVisible(false);
+            listView2.setVisible(false);
+            addTranslator.setVisible(false);
         }
     }
-
 
     /*
     public void closeScreen(ActionEvent event){

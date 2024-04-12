@@ -28,7 +28,13 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         out.name("has subtitle").value(book.isHasSubtitle());
         out.name("subtitle").value(book.getSubtitle());
         out.name("is translation").value(book.isTranslation());
-        out.name("translator").value(book.getTranslator());
+        if (book.getTranslators() != null) {
+            out.name("translators").beginArray();
+            for (String translator : book.getTranslators()) {
+                out.value(translator);
+            }
+            out.endArray();
+        }
         if (book.getTags() != null) {
             out.name("tags").beginArray();
             for (String tag : book.getTags()) {
@@ -82,8 +88,14 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                 case "is translation":
                     book.setTranslation(in.nextBoolean());
                     break;
-                case "translator":
-                    book.setTranslator(in.nextString());
+                case "translators":
+                    in.beginArray();
+                    ArrayList<String> translators = new ArrayList<>();
+                    while (in.hasNext()) {
+                        translators.add(in.nextString());
+                    }
+                    in.endArray();
+                    book.setTranslators(translators);
                     break;
                 case "tags":
                     in.beginArray();
