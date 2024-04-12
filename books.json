@@ -1,22 +1,146 @@
 [
   {
+    "title": "DOAGNS",
+    "isbn": "sasf",
+    "publisher": "sdsd",
+    "edition": 3,
+    "rate": 2,
+    "authors": [
+      "oooooooooooo",
+      "ppppppppppp",
+      "uuuuuuuuuu"
+    ],
+    "cover type": "sdsd",
+    "has subtitle": false,
+    "is translation": true,
+    "translator": "sdad",
+    "tags": [],
+    "language": "sddasdad"
+  },
+  {
+    "title": "RAHMANUS AMAGUS",
+    "isbn": "dfdfs",
+    "publisher": "dffsf",
+    "edition": 3169,
+    "rate": 2,
+    "authors": [
+      "rrrrrrrrrrrrr",
+      "tttttttttttt",
+      "eeeeeeeeeee"
+    ],
+    "cover type": "dasd",
+    "has subtitle": false,
+    "is translation": true,
+    "translator": "sadasd",
+    "tags": []
+  },
+  {
+    "title": "dsad",
+    "isbn": "sdadas",
+    "publisher": "sasadsa",
+    "edition": 31,
+    "rate": 2,
+    "cover type": "sda",
+    "has subtitle": false,
+    "is translation": true,
+    "translator": "sadasd",
+    "tags": []
+  },
+  {
+    "title": "RHMN",
+    "isbn": "sdad",
+    "publisher": "dsadsd",
+    "edition": 0,
+    "rate": 2,
+    "cover type": "dsadas",
+    "has subtitle": false,
+    "is translation": true,
+    "translator": "sdadad",
+    "tags": []
+  },
+  {
+    "title": "RHMN",
+    "isbn": "sdad",
+    "publisher": "dsadsd",
+    "edition": 3,
+    "rate": 2,
+    "cover type": "dsadas",
+    "has subtitle": false,
+    "is translation": true,
+    "translator": "sdadad",
+    "tags": []
+  },
+  {
+    "title": "suc ve ceza",
+    "isbn": "sadda",
+    "publisher": "sadad",
+    "edition": 0,
+    "rate": 1,
+    "cover type": "czxcscszs",
+    "has subtitle": true,
+    "subtitle": "sczczcsz",
+    "is translation": false,
+    "tags": []
+  },
+  {
+    "title": "suc ve ceza",
+    "isbn": "sadda",
+    "publisher": "sadad",
+    "edition": 6,
+    "rate": 1,
+    "cover type": "czxcscszs",
+    "has subtitle": true,
+    "subtitle": "sczczcsz",
+    "is translation": false,
+    "tags": []
+  },
+  {
+    "title": "ssads",
+    "isbn": "sad",
+    "publisher": "sada",
+    "edition": 0,
+    "rate": 4,
+    "cover type": "fdsf",
+    "has subtitle": false,
+    "is translation": true,
+    "translator": "sfsdfsdf",
+    "tags": []
+  },
+  {
+    "title": "ssads",
+    "isbn": "sad",
+    "publisher": "sada",
+    "edition": 5,
+    "rate": 4,
+    "cover type": "fdsf",
+    "has subtitle": false,
+    "is translation": true,
+    "translator": "sfsdfsdf",
+    "tags": []
+  },
+  {
+    "title": "sasds",
+    "isbn": "sdsa",
+    "publisher": "sda",
+    "edition": 1,
+    "rate": 2,
+    "cover type": "dfsdfsdf",
+    "has subtitle": true,
+    "subtitle": "dfsf",
+    "is translation": false,
+    "tags": []
+  },
+  {
     "title": "111",
     "isbn": "asd",
     "publisher": "asd",
     "edition": 0,
     "rate": 2,
-    "authors": [
-      "benhur",
-      "okur",
-      "benhur",
-      "okur"
-    ],
     "cover type": "fggfgfdf",
     "has subtitle": true,
     "subtitle": "fddf",
     "is translation": false,
-    "tags": [],
-    "language": "fgfd"
+    "tags": []
   },
   {
     "title": "111",
@@ -24,18 +148,11 @@
     "publisher": "asd",
     "edition": 1,
     "rate": 2,
-    "authors": [
-      "benhur",
-      "okur",
-      "benhur",
-      "okur"
-    ],
     "cover type": "fggfgfdf",
     "has subtitle": true,
     "subtitle": "fddf",
     "is translation": false,
-    "tags": [],
-    "language": "fgfd"
+    "tags": []
   },
   {
     "title": "eee",
