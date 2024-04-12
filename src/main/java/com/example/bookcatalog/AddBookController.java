@@ -12,6 +12,7 @@ import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class AddBookController {
@@ -36,6 +37,17 @@ public class AddBookController {
     private TextField t9;
     @FXML
     private TextField t10;
+    @FXML
+    private  TextField t11;
+
+    @FXML
+    private Label l1;
+    @FXML
+    private Label l2;
+    @FXML
+    private Label l3;
+    @FXML
+    private Label l4;
 
     @FXML
     private ListView<String> listView;
@@ -57,6 +69,7 @@ public class AddBookController {
 
     private String subtitle = null;
     private String translator = null;
+    private final String dateFormat = "dd/MM/yyyy";
     private boolean isNull = false;
     private ArrayList<String> authors = new ArrayList<>();
     private ArrayList<String> translators = new ArrayList<>();
@@ -99,36 +112,52 @@ public class AddBookController {
         if (isNull) {
             NullAlert(event);
         } else {
+            l1.setVisible(false);
+            l2.setVisible(false);
+            l3.setVisible(false);
+            l4.setVisible(false);
             boolean hasError = false;
+
             int edition = 0;
             int rate = 0;
+            int isbn = 0;
+            String date = t11.getText();
+            if (!date.matches("\\d{2}/\\d{2}/\\d{4}")) {
+                l4.setVisible(true);
+                hasError = true;
+                t11.clear();
+            }
+            else {
+                SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+            }
+
+            try {
+                isbn = Integer.parseInt(t2.getText());
+            } catch (Exception e) {
+                hasError = true;
+                t5.clear();
+                l1.setVisible(true);
+            }
+
             try {
                 edition = Integer.parseInt(t4.getText());
             } catch (Exception e) {
                 hasError = true;
                 t4.clear();
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Please enter a integer for Edition!");
-                alert.showAndWait();
+                l2.setVisible(true);
             }
+
             try {
                 rate = Integer.parseInt(t5.getText());
             } catch (Exception e) {
                 hasError = true;
                 t5.clear();
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Please enter a integer for Rate!");
-                alert.showAndWait();
+                l3.setVisible(true);
             }
 
             if(!hasError){
                 authors.addAll(listView.getItems());
                 String title = t1.getText();
-                String isbn = t2.getText(); // TODO: regex kullanarak isbn kontrolü yapılacak!!!
                 String publisher = t3.getText();
                 String coverType = t6.getText();
                 if (checkSubtitle.isSelected()) {
@@ -137,8 +166,10 @@ public class AddBookController {
                 if (checkTranslator.isSelected()) {
                     translators.addAll(listView2.getItems());
                 }
+
                 String language = t9.getText();
-                book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translators, language, authors);
+
+                book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translators, language, authors, date);
                 if (checkSubtitle.isSelected()) {
                     book.setHasSubtitle(true);
                 }
@@ -150,6 +181,7 @@ public class AddBookController {
             }
         }
     }
+
 
     public void addAuthor(ActionEvent event){
         if (t10.getText().isBlank()) return;
@@ -175,8 +207,7 @@ public class AddBookController {
         if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
                 || t4.getText().isBlank() ||t5.getText().isBlank() ||t6.getText().isBlank()
                 || checkSubtitle.isSelected() && t7.getText().isBlank()
-                || t9.getText().isBlank() || listView.getItems().isEmpty() || listView2.getItems().isEmpty()){
-
+                || t9.getText().isBlank() || checkTranslator.isSelected() && listView.getItems().isEmpty() || listView2.getItems().isEmpty()){
             isNull = true;
             return;
         }
