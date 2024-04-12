@@ -34,6 +34,8 @@ public class AddBookController {
     private TextField t7;
     @FXML
     private TextField t8;
+    @FXML
+    private TextField t9;
 
 
     @FXML
@@ -47,7 +49,6 @@ public class AddBookController {
     private JSON json;
     private Book book;
     public ArrayList<Book> books = new ArrayList<>();
-    private MainScreenController mainScreenController;
 
     private String subtitle = null;
     private String translator = null;
@@ -75,9 +76,6 @@ public class AddBookController {
     @FXML
     private Button addButton;
 
-    public void setMainScreenController (MainScreenController mainScreenController) {
-        this.mainScreenController = mainScreenController;
-    }
     @FXML
     private void selectImage() {
         FileChooser fileChooser = new FileChooser();
@@ -99,7 +97,7 @@ public class AddBookController {
             NullAlert(event);
         }else {
             int edition = 0;
-            int pageNumber = 0;
+            int rate = 0;
             String title = t1.getText();
             String isbn = t2.getText(); // TODO: regex kullanarak isbn kontrolü yapılacak!!!
             String publisher = t3.getText();
@@ -113,19 +111,14 @@ public class AddBookController {
                 alert.showAndWait();
             }
             try{
-                pageNumber = Integer.parseInt(t5.getText());
+                rate = Integer.parseInt(t5.getText());
             }catch (Exception e){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("Please enter a integer for Page Number!");
+                alert.setContentText("Please enter a integer for Rate!");
                 alert.showAndWait();
             }
-            title = t1.getText();
-            isbn = t2.getText(); //TODO isbn string girerse nolucak ??
-            publisher = t3.getText();
-            edition = Integer.parseInt(t4.getText());
-            pageNumber = Integer.parseInt(t5.getText());
             String coverType = t6.getText();
             if(checkSubtitle.isSelected()){
                 subtitle = t7.getText();
@@ -133,16 +126,13 @@ public class AddBookController {
             if(checkTranslator.isSelected()){
                 translator = t8.getText();
             }
-            book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
-            mainScreenController.getBookArrayList().add(book);
-            mainScreenController.refreshBookList();
+            String language = t9.getText();
 
+            book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translator, language) ;
+            books.add(book);
 
         }
     }
-
-
-
 
     public void NullAlert(ActionEvent event){
 
@@ -157,7 +147,8 @@ public class AddBookController {
     public void isTextNull(ActionEvent event){
         if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
                 || t4.getText().isBlank() ||t5.getText().isBlank() ||t6.getText().isBlank()
-                || checkSubtitle.isSelected() && t7.getText().isBlank() || checkTranslator.isSelected() && t8.getText().isBlank()){
+                || checkSubtitle.isSelected() && t7.getText().isBlank() || checkTranslator.isSelected() && t8.getText().isBlank()
+                || t9.getText().isBlank()){
 
             isNull = true;
             return;
