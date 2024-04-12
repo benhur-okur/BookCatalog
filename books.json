@@ -1,5 +1,38 @@
 [
   {
+    "title": "DOGA",
+    "isbn": "sad",
+    "publisher": "sada",
+    "edition": 1,
+    "rate": 2,
+    "cover type": "dsfds",
+    "has subtitle": true,
+    "subtitle": "dsffsfsf",
+    "is translation": false
+  },
+
+  {
+    "title": "su� ve ceza",
+    "isbn": "sfdf",
+    "publisher": "dfs",
+    "edition": 1,
+    "rate": 2,
+    "cover type": "sfdfs",
+    "has subtitle": false,
+    "is translation": false
+  },
+
+  {
+    "title": "sad",
+    "isbn": "sdsd",
+    "publisher": "sa",
+    "edition": 1,
+    "rate": 1,
+    "cover type": "dsf",
+    "has subtitle": false,
+    "is translation": false
+  },
+  {
     "title": "asdas",
     "isbn": "asf",
     "publisher": "asf",
