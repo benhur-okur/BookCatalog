@@ -127,7 +127,6 @@ public class AddBookController {
         }
     }
 
-
     public void NullAlert(ActionEvent event){
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -172,7 +171,7 @@ public class AddBookController {
     }
 
      */
-    }
+}
 
 
 
