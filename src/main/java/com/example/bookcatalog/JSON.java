@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -15,21 +16,23 @@ import javax.swing.JOptionPane;
 
 public class JSON {
     private ArrayList<Book> bookArrayList;
+    //private ArrayList<Book> existingBookArraylist = new ArrayList<>();
     private Gson gson;
     private String myJson;
-    private final FileWriter fileWriter = new FileWriter("books.json");
-    private final FileReader fileReader = new FileReader("books.json");
+
 
     public JSON(ArrayList<Book> bookArrayList) throws IOException {
         //gson = new Gson();
-        gson = new GsonBuilder().registerTypeAdapter(Book.class, new BookTypeAdaptor()).create();
         this.bookArrayList = bookArrayList;
-        myJson = gson.toJson(bookArrayList);
+        gson = new GsonBuilder().registerTypeAdapter(Book.class, new BookTypeAdaptor()).
+                setPrettyPrinting().create();
+        //myJson = gson.toJson(existingBookArraylist);
     }
 
     public void saveFile () {
         try {
-            fileWriter.write(myJson);
+            FileWriter fileWriter = new FileWriter("books.json");
+            gson.toJson(bookArrayList, fileWriter);
             fileWriter.close();
             JOptionPane.showMessageDialog(null, "Kitap kataloga başarılı bi şekilde kaydedildi");
         } catch (IOException e) {
@@ -37,15 +40,31 @@ public class JSON {
             throw new RuntimeException(e);
         }
     }
-    public ArrayList<Book> readFile () {
-        ArrayList<Book> booksFromJson;
+    public void readFile (ArrayList<Book> bookArrayList) {
         Type bookListType = new TypeToken<ArrayList<Book>>(){}.getType();
-        try {
-            booksFromJson = gson.fromJson(fileReader, bookListType);
-            fileReader.close();
+        try (Reader reader = new FileReader("books.json")) {
+            ArrayList<Book> existingBooks = gson.fromJson(reader, bookListType);
+            if (existingBooks != null) {
+                bookArrayList.addAll(existingBooks);
+            }
+            reader.close();
+            JOptionPane.showMessageDialog(null, "Kitap katalog başarıyla okundu.");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return booksFromJson;
     }
+
+    /*
+    public ArrayList<Book> getBookArrayList() {
+        return bookArrayList;
+    }
+
+    public void setBookArrayList(ArrayList<Book> bookArrayList) {
+        this.bookArrayList = bookArrayList;
+    }
+
+     */
+
+
+
 }

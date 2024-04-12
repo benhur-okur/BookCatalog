@@ -39,6 +39,36 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                 case "title":
                     book.setTitle(in.nextString());
                     break;
+                case "isbn":
+                    book.setIsbn(in.nextString());
+                    break;
+                case "publisher":
+                    book.setPublisher(in.nextString());
+                    break;
+                case "edition":
+                    book.setEdition(in.nextInt());
+                    break;
+                case "page number":
+                    book.setPageNumber(in.nextInt());
+                    break;
+                case "cover type":
+                    book.setCoverType(in.nextString());
+                    break;
+                case "has subtitle":
+                    book.setHasSubtitle(in.nextBoolean());
+                    break;
+                case "subtitle":
+                    book.setSubtitle(in.nextString());
+                    break;
+                case "is translation":
+                    book.setTranslation(in.nextBoolean());
+                    break;
+                case "translator":
+                    book.setTranslator(in.nextString());
+                    break;
+                default:
+                    in.skipValue(); // Geçersiz bir alanı atla
+                    break;
             }
         }
         in.endObject();

@@ -47,6 +47,7 @@ public class AddBookController {
     private JSON json;
     private Book book;
     public ArrayList<Book> books = new ArrayList<>();
+    private MainScreenController mainScreenController;
 
     private String subtitle = null;
     private String translator = null;
@@ -74,6 +75,9 @@ public class AddBookController {
     @FXML
     private Button addButton;
 
+    public void setMainScreenController (MainScreenController mainScreenController) {
+        this.mainScreenController = mainScreenController;
+    }
     @FXML
     private void selectImage() {
         FileChooser fileChooser = new FileChooser();
@@ -117,11 +121,14 @@ public class AddBookController {
                 alert.setContentText("Please enter a integer for Page Number!");
                 alert.showAndWait();
             }
+<<<<<<< HEAD
+=======
             title = t1.getText();
             isbn = t2.getText(); //TODO isbn string girerse nolucak ??
             publisher = t3.getText();
             edition = Integer.parseInt(t4.getText());
             pageNumber = Integer.parseInt(t5.getText());
+>>>>>>> f33defacad1b4e538a42b41b6b143af76fb1ff5d
             String coverType = t6.getText();
             if(checkSubtitle.isSelected()){
                 subtitle = t7.getText();
@@ -130,11 +137,19 @@ public class AddBookController {
                 translator = t8.getText();
             }
             book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
+<<<<<<< HEAD
+            mainScreenController.getBookArrayList().add(book);
+            mainScreenController.refreshBookList();
+
+=======
             books.add(book);
+>>>>>>> f33defacad1b4e538a42b41b6b143af76fb1ff5d
 
         }
     }
 
+<<<<<<< HEAD
+=======
         /*
         if(isNull){
             NullAlert(event);
@@ -159,6 +174,7 @@ public class AddBookController {
         }
 
          */
+>>>>>>> f33defacad1b4e538a42b41b6b143af76fb1ff5d
 
 
     public void NullAlert(ActionEvent event){
