@@ -20,8 +20,9 @@ public class Book {
     private boolean isTranslation;
     private String translator;
 
-
     public List<String> tags; // New field for storing tags
+
+    
 
     public Book (String title, String isbn, String publisher, int edition, int pageNumber,
                 String coverType, String subtitle, String translator) throws InvocationTargetException {
