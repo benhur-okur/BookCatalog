@@ -1,6 +1,5 @@
 package com.example.bookcatalog;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -149,6 +148,10 @@ public class AddBookController {
         if (t10.getText().isBlank()) return;
         listView.getItems().add(t10.getText());
         t10.clear();
+<<<<<<< Updated upstream
+=======
+        authors.addAll(listView.getItems());
+>>>>>>> Stashed changes
     }
     public void NullAlert(ActionEvent event){
 
