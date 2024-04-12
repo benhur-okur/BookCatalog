@@ -1,5 +1,33 @@
-<<<<<<< HEAD
-[{"title":"eowjep","isbn":"erer","publisher":"ewar","edition":1,"pageNumber":2,"coverType":"dffs","hasSubtitle":false,"subtitle":"dsfsd","isTranslation":false,"translator":"dfsfsf","tags":[]},{"title":"sakdjhksj","isbn":"ada","publisher":"asd","edition":1,"pageNumber":2,"coverType":"dfsdf","hasSubtitle":false,"isTranslation":false,"tags":[]}]
-=======
-[{"title":"fdshd","isbn":"sd","publisher":"fda","edition":2,"page number":23,"cover type":"afg","has subtitle":false,"subtitle":"g","is translation":false,"translator":"f"}]
->>>>>>> ccf7279981b87e854355750e3805420e487a6e3f
+[
+  {
+    "title": "son",
+    "isbn": "sad",
+    "publisher": "asd",
+    "edition": 2,
+    "page number": 3,
+    "cover type": "saf",
+    "has subtitle": false,
+    "subtitle": "fdffffffff",
+    "is translation": false
+  },
+  {
+    "title": "asd",
+    "isbn": "fasf",
+    "publisher": "asf",
+    "edition": 2,
+    "page number": 3,
+    "cover type": "gas",
+    "has subtitle": false,
+    "is translation": false
+  },
+  {
+    "title": "fsg",
+    "isbn": "gdsg",
+    "publisher": "gds",
+    "edition": 3,
+    "page number": 4,
+    "cover type": "gdas",
+    "has subtitle": false,
+    "is translation": false
+  }
+]

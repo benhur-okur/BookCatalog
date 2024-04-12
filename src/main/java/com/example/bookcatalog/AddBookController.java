@@ -2,6 +2,8 @@ package com.example.bookcatalog;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -10,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
@@ -44,6 +47,7 @@ public class AddBookController {
     private JSON json;
     private Book book;
     public ArrayList<Book> books = new ArrayList<>();
+    private MainScreenController mainScreenController;
 
     private String subtitle = null;
     private String translator = null;
@@ -71,6 +75,9 @@ public class AddBookController {
     @FXML
    private Button addButton;
 
+    public void setMainScreenController (MainScreenController mainScreenController) {
+        this.mainScreenController = mainScreenController;
+    }
     @FXML
     private void selectImage() {
         FileChooser fileChooser = new FileChooser();
@@ -85,13 +92,12 @@ public class AddBookController {
             imageView.setImage(image);
         }
     }
-    public void addBook(ActionEvent event) throws InvocationTargetException {
+    public void addBook(ActionEvent event) throws InvocationTargetException, IOException {
 
         isTextNull(event);
         if(isNull){
             NullAlert(event);
         }else {
-<<<<<<< HEAD
             int edition = 0;
             int pageNumber = 0;
             String title = t1.getText();
@@ -115,13 +121,6 @@ public class AddBookController {
                 alert.setContentText("Please enter a integer for Page Number!");
                 alert.showAndWait();
             }
-=======
-            String title = t1.getText();
-            String isbn = t2.getText();
-            String publisher = t3.getText();
-            int edition = Integer.parseInt(t4.getText());
-            int pageNumber = Integer.parseInt(t5.getText());
->>>>>>> ccf7279981b87e854355750e3805420e487a6e3f
             String coverType = t6.getText();
             if(checkSubtitle.isSelected()){
                 subtitle = t7.getText();
@@ -130,36 +129,13 @@ public class AddBookController {
                 translator = t8.getText();
             }
             book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
-            books.add(book);
-<<<<<<< HEAD
+            mainScreenController.getBookArrayList().add(book);
+            mainScreenController.refreshBookList();
+
 
         }
     }
-=======
-        }
 
-        if(isNull){
-            NullAlert(event);
-        }else {
-            String title = t1.getText();
-            String isbn = t2.getText();
-            String publisher = t3.getText();
-            int edition = Integer.parseInt(t4.getText());
-            int pageNumber = Integer.parseInt(t5.getText());
-            String coverType = t6.getText();
-            if(checkSubtitle.isSelected()){
-                subtitle = t7.getText();
-            }
-            if(checkTranslator.isSelected()){
-                translator = t8.getText();
-            }
-            book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
-            books.add(book);
-            dialogPane.getOnDragExited();
-        }
-
-        }
->>>>>>> ccf7279981b87e854355750e3805420e487a6e3f
 
 
     public void NullAlert(ActionEvent event){
