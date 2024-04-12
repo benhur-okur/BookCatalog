@@ -17,24 +17,25 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         out.name("publisher").value(book.getPublisher());
         out.name("edition").value(book.getEdition());
         out.name("rate").value(book.getRate());
-        /*
-        out.name("authors").beginArray();
-        for (String author : book.getAuthors()) {
-            out.value(author);
+        if (book.getAuthors() != null) {
+            out.name("authors").beginArray();
+            for (String author : book.getAuthors()) {
+                out.value(author);
+            }
+            out.endArray();
         }
-        out.endArray();
-
-         */
         out.name("cover type").value(book.getCoverType());
         out.name("has subtitle").value(book.isHasSubtitle());
         out.name("subtitle").value(book.getSubtitle());
         out.name("is translation").value(book.isTranslation());
         out.name("translator").value(book.getTranslator());
-        out.name("tags").beginArray();
-        for (String tag : book.getTags()) {
-            out.value(tag);
+        if (book.getTags() != null) {
+            out.name("tags").beginArray();
+            for (String tag : book.getTags()) {
+                out.value(tag);
+            }
+            out.endArray();
         }
-        out.endArray();
         out.name("language").value(book.getLanguage());
         out.endObject();
     }
@@ -60,7 +61,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                 case "rate":
                     book.setRate(in.nextInt());
                     break;
-                /*case "authors":
+                case "authors":
                     in.beginArray();
                     ArrayList<String> authors = new ArrayList<>();
                     while (in.hasNext()) {
@@ -69,8 +70,6 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                     in.endArray();
                     book.setTags(authors);
                     break;
-
-                 */
                 case "cover type":
                     book.setCoverType(in.nextString());
                     break;
