@@ -121,14 +121,11 @@ public class AddBookController {
                 alert.setContentText("Please enter a integer for Page Number!");
                 alert.showAndWait();
             }
-<<<<<<< HEAD
-=======
             title = t1.getText();
             isbn = t2.getText(); //TODO isbn string girerse nolucak ??
             publisher = t3.getText();
             edition = Integer.parseInt(t4.getText());
             pageNumber = Integer.parseInt(t5.getText());
->>>>>>> f33defacad1b4e538a42b41b6b143af76fb1ff5d
             String coverType = t6.getText();
             if(checkSubtitle.isSelected()){
                 subtitle = t7.getText();
@@ -137,44 +134,14 @@ public class AddBookController {
                 translator = t8.getText();
             }
             book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
-<<<<<<< HEAD
             mainScreenController.getBookArrayList().add(book);
             mainScreenController.refreshBookList();
 
-=======
-            books.add(book);
->>>>>>> f33defacad1b4e538a42b41b6b143af76fb1ff5d
 
         }
     }
 
-<<<<<<< HEAD
-=======
-        /*
-        if(isNull){
-            NullAlert(event);
-        }else {
-            String title = t1.getText();
-            String isbn = t2.getText();
-            String publisher = t3.getText();
-            int edition = Integer.parseInt(t4.getText());
-            int pageNumber = Integer.parseInt(t5.getText());
-            String coverType = t6.getText();
-            if(checkSubtitle.isSelected()){
-                subtitle = t7.getText();
-            }
-            if(checkTranslator.isSelected()){
-                translator = t8.getText();
-            }
-            book = new Book(title, isbn, publisher, edition, pageNumber, coverType, subtitle, translator) ;
-            books.add(book);
-            dialogPane.getOnDragExited();
-        }
 
-        }
-
-         */
->>>>>>> f33defacad1b4e538a42b41b6b143af76fb1ff5d
 
 
     public void NullAlert(ActionEvent event){
