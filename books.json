@@ -1,5 +1,14 @@
-<<<<<<< HEAD
 [
+  {
+    "title": "son title ",
+    "isbn": "sad",
+    "publisher": "asf",
+    "edition": 2,
+    "page number": 3,
+    "cover type": " asd",
+    "has subtitle": false,
+    "is translation": false
+  },
   {
     "title": "son",
     "isbn": "sad",
@@ -32,5 +41,3 @@
     "is translation": false
   }
 ]
-=======
->>>>>>> f33defacad1b4e538a42b41b6b143af76fb1ff5d
