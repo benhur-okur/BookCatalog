@@ -7,7 +7,7 @@ import java.util.List;
 public class Book {
 
     private String title;
-    private String isbn;
+    private int isbn;
     private String publisher;
     private int edition;
     private int rate;
@@ -19,10 +19,12 @@ public class Book {
     public List<String> tags; // New field for storing tags
     private String language;
     private ArrayList<String> authors; // yapılacak
+    private String date;
 
 
-    public Book (String title, String isbn, String publisher, int edition, int rate,
-                String coverType, String subtitle, ArrayList<String> translators, String language, ArrayList<String> authors) throws InvocationTargetException {
+    public Book (String title, int isbn, String publisher, int edition, int rate,
+                String coverType, String subtitle, ArrayList<String> translators, String language,
+                 ArrayList<String> authors, String date) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
@@ -34,6 +36,7 @@ public class Book {
         this.tags = new ArrayList<>();
         this.language = language;
         this.authors = authors;
+        this.date = date;
     }
 
     public Book() {
@@ -47,12 +50,20 @@ public class Book {
         this.title = title;
     }
 
-    public String getIsbn() {
+    public int getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(int isbn) {
         this.isbn = isbn;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public ArrayList<String> getAuthors() {

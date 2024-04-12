@@ -43,6 +43,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
             out.endArray();
         }
         out.name("language").value(book.getLanguage());
+        out.name("date").value(book.getDate());
         out.endObject();
     }
 
@@ -56,7 +57,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                     book.setTitle(in.nextString());
                     break;
                 case "isbn":
-                    book.setIsbn(in.nextString());
+                    book.setIsbn(in.nextInt());
                     break;
                 case "publisher":
                     book.setPublisher(in.nextString());
@@ -105,6 +106,12 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                     }
                     in.endArray();
                     book.setTags(tags);
+                    break;
+                case "date":
+                    book.setDate(in.nextString());
+                    break;
+                case "language":
+                    book.setLanguage(in.nextString());
                     break;
                 default:
                     in.skipValue(); // Geçersiz bir alanı atla
