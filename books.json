@@ -1,5 +1,67 @@
 [
   {
+    "title": "cakil",
+    "isbn": 12345,
+    "publisher": "selin",
+    "edition": 1,
+    "rate": 3,
+    "authors": [
+      "cakıl"
+    ],
+    "cover type": "plastic",
+    "has subtitle": false,
+    "is translation": true,
+    "translators": [
+      "doga",
+      "selin"
+    ],
+    "tags": [],
+    "language": "turkish",
+    "date": "11/12/2002",
+    "image path": "src\\images\\resim.jpg.jpg"
+  },
+  {
+    "title": "sfsds",
+    "isbn": 1233,
+    "publisher": "dssas",
+    "edition": 1,
+    "rate": 3,
+    "authors": [
+      "sdad"
+    ],
+    "cover type": "adsd",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "sdasd",
+    "date": "11/02/2002",
+    "image path": "src\\images\\resim.jpg.jpg"
+  },
+  {
+    "title": "dogagunes",
+    "isbn": 1234567,
+    "publisher": "asadsa",
+    "edition": 1,
+    "rate": 2,
+    "authors": [
+      "asdasd",
+      "sadsd",
+      "asdasd"
+    ],
+    "cover type": "dsfssdf",
+    "has subtitle": false,
+    "is translation": true,
+    "translators": [
+      "sdfsd",
+      "sdfsdf"
+    ],
+    "tags": [],
+    "language": "sadadasd",
+    "date": "11/04/2020",
+    "image path": "src\\images\\resim.jpg.jpg"
+  },
+  {
     "title": "asdsad",
     "isbn": 12421,
     "publisher": "asd",
