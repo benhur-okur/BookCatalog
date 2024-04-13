@@ -2,6 +2,7 @@ package com.example.bookcatalog;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -21,8 +22,9 @@ import java.net.URL;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class AddBookController {
+public class AddBookController implements Initializable {
 
     @FXML
     private TextField t1;
@@ -98,6 +100,9 @@ public class AddBookController {
 
     @FXML
     private Button addTranslator;
+    @FXML
+    private ChoiceBox<Integer> chooseRate;
+    private Integer[] rateNumbers = {1, 2, 3, 4, 5};
 
     public void setMainScreenController (MainScreenController mainScreenController) {
         this.mainScreenController = mainScreenController;
@@ -154,7 +159,6 @@ public class AddBookController {
             boolean hasError = false;
 
             int edition = 0;
-            int rate = 0;
             int isbn = 0;
             String date = t11.getText();
             if (!date.matches("\\d{2}/\\d{2}/\\d{4}")) {
@@ -170,7 +174,7 @@ public class AddBookController {
                 isbn = Integer.parseInt(t2.getText());
             } catch (Exception e) {
                 hasError = true;
-                t5.clear();
+                t2.clear();
                 l1.setVisible(true);
             }
 
@@ -180,14 +184,6 @@ public class AddBookController {
                 hasError = true;
                 t4.clear();
                 l2.setVisible(true);
-            }
-
-            try {
-                rate = Integer.parseInt(t5.getText());
-            } catch (Exception e) {
-                hasError = true;
-                t5.clear();
-                l3.setVisible(true);
             }
 
             if(!hasError){
@@ -201,7 +197,7 @@ public class AddBookController {
                 if (checkTranslator.isSelected()) {
                     translators.addAll(listView2.getItems());
                 }
-
+                int rate = chooseRate.getValue();
                 String language = t9.getText();
 
                 book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle,
@@ -222,6 +218,10 @@ public class AddBookController {
         }
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        chooseRate.getItems().addAll(rateNumbers);
+    }
 
     public void addAuthor(ActionEvent event){
         if (t10.getText().isBlank()) return;
@@ -245,7 +245,7 @@ public class AddBookController {
 
     public void isTextNull(ActionEvent event){
         if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
-                || t4.getText().isBlank() ||t5.getText().isBlank() ||t6.getText().isBlank()
+                || t4.getText().isBlank() ||chooseRate.getValue() == null || t6.getText().isBlank()
                 || checkSubtitle.isSelected() && t7.getText().isBlank()
                 || t9.getText().isBlank() || checkTranslator.isSelected() && listView2.getItems().isEmpty() || listView.getItems().isEmpty()){
             isNull = true;
@@ -274,6 +274,8 @@ public class AddBookController {
             addTranslator.setVisible(false);
         }
     }
+
+
 
     /*
     public void closeScreen(ActionEvent event){
