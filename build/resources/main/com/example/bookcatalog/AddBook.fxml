@@ -231,7 +231,7 @@
    <content>
       <HBox alignment="TOP_RIGHT" prefHeight="142.0" prefWidth="374.0">
          <children>
-            <Button mnemonicParsing="false" text="Cancel">
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" text="Cancel">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>

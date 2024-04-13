@@ -44,6 +44,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         }
         out.name("language").value(book.getLanguage());
         out.name("date").value(book.getDate());
+        out.name("image path").value(book.getImagePath());
         out.endObject();
     }
 
@@ -112,6 +113,9 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                     break;
                 case "language":
                     book.setLanguage(in.nextString());
+                    break;
+                case "image path":
+                    book.setImagePath(in.nextString());
                     break;
                 default:
                     in.skipValue(); // Geçersiz bir alanı atla

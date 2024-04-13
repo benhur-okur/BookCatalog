@@ -1,5 +1,112 @@
 [
   {
+    "title": "asdsad",
+    "isbn": 12421,
+    "publisher": "asd",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "asfsaf"
+    ],
+    "cover type": "asf",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "14",
+    "date": "28/03/2003",
+    "image path": "noimage.jpg"
+  },
+  {
+    "title": "2131",
+    "isbn": 123,
+    "publisher": "123",
+    "edition": 1,
+    "rate": 2,
+    "authors": [
+      "asdasdad"
+    ],
+    "cover type": "213",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "21412",
+    "date": "28/03/2003",
+    "image path": "src\\images\\IMG_0020.PNG"
+  },
+  {
+    "title": "asdas",
+    "isbn": 1231,
+    "publisher": "asf",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "asfa"
+    ],
+    "cover type": "asfga",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "asfa",
+    "date": "28/03/2000",
+    "image path": "noimage.jpg"
+  },
+  {
+    "title": "asfasf",
+    "isbn": 1234,
+    "publisher": "afas",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "asagasga"
+    ],
+    "cover type": "asfas",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "asfa",
+    "date": "28/03/2003",
+    "image path": "noimage.jpg"
+  },
+  {
+    "title": "dasdasd",
+    "isbn": 12314,
+    "publisher": "125125",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "ssddsd"
+    ],
+    "cover type": "asfas",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "asfasf",
+    "date": "28/03/2002",
+    "image path": "C:\\Users\\benhu\\OneDrive\\Masaüstü\\9789750738906_543.png"
+  },
+  {
+    "title": "assaf",
+    "isbn": 1245124,
+    "publisher": "asgag",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "asga"
+    ],
+    "cover type": "sagas",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [],
+    "language": "asga",
+    "date": "28/03/2003"
+  },
+  {
     "title": "as",
     "isbn": 2,
     "publisher": "3",

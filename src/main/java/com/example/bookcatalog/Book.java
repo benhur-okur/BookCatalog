@@ -20,11 +20,12 @@ public class Book {
     private String language;
     private ArrayList<String> authors; // yapılacak
     private String date;
+    private String imagePath;
 
 
     public Book (String title, int isbn, String publisher, int edition, int rate,
                 String coverType, String subtitle, ArrayList<String> translators, String language,
-                 ArrayList<String> authors, String date) throws InvocationTargetException {
+                 ArrayList<String> authors, String date, String imagePath) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
@@ -37,6 +38,7 @@ public class Book {
         this.language = language;
         this.authors = authors;
         this.date = date;
+        this.imagePath = imagePath;
     }
 
     public Book() {
@@ -153,4 +155,11 @@ public class Book {
         this.tags = tags;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 }

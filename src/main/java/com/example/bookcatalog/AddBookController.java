@@ -7,11 +7,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URI;
+import java.net.URL;
+import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -80,17 +87,26 @@ public class AddBookController {
     public void setBook(Book book) {
         this.book = book;
     }
-
+    private String imagePath = "src\\images\\noimage.jpg";
     @FXML
     private ImageView imageView;
 
     @FXML
     private Button addButton;
     @FXML
+    private Button cancelButton;
+
+    @FXML
     private Button addTranslator;
 
     public void setMainScreenController (MainScreenController mainScreenController) {
         this.mainScreenController = mainScreenController;
+    }
+
+    @FXML
+    private void cancel () {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
     @FXML
     private void selectImage() {
@@ -102,8 +118,27 @@ public class AddBookController {
         );
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null) {
+            // image seçildi
+            String targetDirectory = "src/images/";
+            File targetFolder = new File(targetDirectory);
+            if (!targetFolder.exists()) {
+                targetFolder.mkdirs();
+            }
+            Path sourcePath = selectedFile.toPath();
+            Path targetPath = Path.of(targetDirectory + selectedFile.getName());
+            try {
+                Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             Image image = new Image(selectedFile.toURI().toString());
             imageView.setImage(image);
+            imagePath = targetPath.toString();
+        } else {
+            Image defaultImage = new Image("src\\images\\noimage.jpg");
+            imageView.setImage(defaultImage);
+            imagePath = "src\\images\\noimage.jpg";
+
         }
     }
     public void addBook(ActionEvent event) throws InvocationTargetException, IOException {
@@ -169,7 +204,8 @@ public class AddBookController {
 
                 String language = t9.getText();
 
-                book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle, translators, language, authors, date);
+                book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle,
+                        translators, language, authors, date, imagePath);
                 if (checkSubtitle.isSelected()) {
                     book.setHasSubtitle(true);
                 }
@@ -178,6 +214,9 @@ public class AddBookController {
                 }
                 mainScreenController.getBookArrayList().add(book);
                 mainScreenController.refreshBookList();
+
+                Stage stage = (Stage) addButton.getScene().getWindow();
+                stage.close();
 
             }
         }
