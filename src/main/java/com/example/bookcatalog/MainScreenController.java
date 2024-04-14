@@ -55,6 +55,7 @@ public class MainScreenController {
 
         //setRead();
         json.saveFile();
+        showBooks();
     }
     @FXML
     public void setRead() {
@@ -74,6 +75,21 @@ public class MainScreenController {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Add Book");
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
+    }
+
+    @FXML
+    public void openBookScreen() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewBook.fxml"));
+        Parent root = fxmlLoader.load();
+
+        ViewBookController viewBookController = fxmlLoader.getController();
+        viewBookController.setMainScreenController(this);
+
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Book Information");
         stage.setScene(new Scene(root));
         stage.showAndWait();
     }
@@ -99,7 +115,13 @@ public class MainScreenController {
 
             // ImageView'i GridPane'e ekleyin
             gridPane.add(imageView, col, row);
-
+            imageView.setOnMouseClicked(e -> {
+                try {
+                    openBookScreen();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
             // Sütun numarasını bir artırın
             col++;
 

@@ -47,6 +47,7 @@ public class ViewBookController {
 
     @FXML
     private Label titleLabel;
+    private MainScreenController mainScreenController;
 
     /* TODO Melih'in yaptığı Netflix ekranındaki bir kitaba:
         - Çift tıklandığında
@@ -61,6 +62,9 @@ public class ViewBookController {
     @FXML
     void cancel(ActionEvent event) {
 
+    }
+    public void setMainScreenController (MainScreenController mainScreenController) {
+        this.mainScreenController = mainScreenController;
     }
 
 }
