@@ -45,9 +45,9 @@
       <TextField layoutX="533.0" layoutY="15.0" prefHeight="25.0" prefWidth="224.0" />
       <VBox layoutX="26.0" layoutY="87.0" prefHeight="517.0" prefWidth="773.0">
          <children>
-            <ScrollPane prefHeight="517.0" prefWidth="775.0">
+            <ScrollPane fx:id="scrollPane" prefHeight="517.0" prefWidth="775.0">
                <content>
-                  <GridPane prefHeight="520.0" prefWidth="760.0">
+                  <GridPane fx:id="gridPane" prefHeight="520.0" prefWidth="760.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

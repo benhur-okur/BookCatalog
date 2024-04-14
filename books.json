@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "title": "dsdda",
+    "isbn": 3423,
+    "publisher": "derre",
+    "edition": 332,
+    "rate": 2,
+    "authors": [
+      "erew"
+    ],
+    "cover type": "er",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "sfsfsf",
+      "dsfsdf"
+    ],
+    "language": "wrewe",
+    "date": "11/20/2002",
+    "image path": "src\\images\\noimage.jpg"
+  }
+]

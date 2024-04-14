@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -41,6 +42,8 @@ public class MainScreenController {
 
     @FXML
     private MenuItem save;
+    @FXML
+    private ScrollPane scrollPane;
     @FXML
     private FlowPane flowPane;
     //private Map<String, List<Book>> booksByTag = new HashMap<>();
@@ -102,6 +105,10 @@ public class MainScreenController {
                 row++;
             }
         }
+        scrollPane = new ScrollPane(gridPane);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
+
     }
     /*
     public void initialize() {
@@ -181,6 +188,7 @@ public class MainScreenController {
     }
 
     public void setBookArrayList(ArrayList<Book> bookArrayList) {
+
         this.bookArrayList = bookArrayList;
     }
 }
