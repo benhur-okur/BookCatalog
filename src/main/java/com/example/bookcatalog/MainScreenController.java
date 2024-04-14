@@ -131,8 +131,12 @@ public class MainScreenController {
                 row++;
             }
         }
+<<<<<<< Updated upstream
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
+=======
+
+>>>>>>> Stashed changes
 
     }
     /*
