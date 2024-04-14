@@ -169,9 +169,9 @@
                            </padding>
                         </Button>
                         <Label text="Date" GridPane.rowIndex="11">
-                           <padding>
-                              <Insets left="40.0" />
-                           </padding>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
                         </Label>
                         <TextField fx:id="t11" promptText="dd/MM/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <Label fx:id="l2" text="Please enter an integer!" textFill="#f20000" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
