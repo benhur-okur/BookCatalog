@@ -1,82 +1,22 @@
 [
   {
-    "title": "dfdsfsd",
-    "isbn": 324,
-    "publisher": "dsaf",
+    "title": "dsfse",
+    "isbn": 2324,
+    "publisher": "dsfsdf",
     "edition": 213,
     "rate": 3,
     "authors": [
-      "asdasd"
+      "sadasd"
     ],
-    "cover type": "sadasd",
+    "cover type": "adsd",
     "has subtitle": false,
     "is translation": false,
     "translators": [],
     "tags": [
-      "fassafa"
+      "sdada"
     ],
-    "language": "asdasd",
-    "date": "28/03/2000",
-    "image path": "src\\images\\noimage.jpg"
-  },
-  {
-    "title": "afasfafasf",
-    "isbn": 2131,
-    "publisher": "sadasfa",
-    "edition": 213,
-    "rate": 2,
-    "authors": [
-      "asfaf"
-    ],
-    "cover type": "asdfasdad",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "asfasfafa"
-    ],
-    "language": "asfafasf",
-    "date": "28/03/2003",
-    "image path": "src\\images\\Ekran görüntüsü 2024-01-19 224606.png"
-  },
-  {
-    "title": "dfdsfsd",
-    "isbn": 324,
-    "publisher": "dsaf",
-    "edition": 213,
-    "rate": 3,
-    "authors": [
-      "asdasd"
-    ],
-    "cover type": "sadasd",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "fassafa"
-    ],
-    "language": "asdasd",
-    "date": "28/03/2000",
-    "image path": "src\\images\\noimage.jpg"
-  },
-  {
-    "title": "sadas",
-    "isbn": 2131,
-    "publisher": "asdasd",
-    "edition": 2,
-    "rate": 2,
-    "authors": [
-      "asdasda"
-    ],
-    "cover type": "asdasddas",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "asdasda"
-    ],
-    "language": "asdasd",
-    "date": "28/03/2033",
-    "image path": "src\\images\\Ekran görüntüsü 2024-04-13 054435.png"
+    "language": "sdada",
+    "date": "22/02/2002",
+    "image path": "src\\images\\Excalibur-Clan-Wallpaper-7.jpg"
   }
 ]
