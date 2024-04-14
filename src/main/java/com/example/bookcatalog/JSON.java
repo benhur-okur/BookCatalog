@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 
 public class JSON {
-    private ArrayList<Book> bookArrayList;
+    private ArrayList<Book> bookArrayList = new ArrayList<>();
     //private ArrayList<Book> existingBookArraylist = new ArrayList<>();
     private Gson gson;
     private String myJson;

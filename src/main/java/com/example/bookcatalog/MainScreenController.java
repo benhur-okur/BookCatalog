@@ -73,10 +73,14 @@ public class MainScreenController {
         // tableView listView ile alakalı güncellemeler olucak kitap eklendikten sonra sanırım
     }
 
+    /*
     public void initialize() {
         loadBooks();
         displayBooks();
     }
+    
+     */
+    /*
     private void loadBooks() {
         ArrayList<Book> allBooks =  json.readFile(bookArrayList);
 
@@ -90,6 +94,9 @@ public class MainScreenController {
         }
     }
 
+     */
+
+    /*
     private void displayBooks() {
         for (Map.Entry<String, List<Book>> entry : booksByTag.entrySet()) {
             String tag = entry.getKey();
@@ -111,6 +118,9 @@ public class MainScreenController {
         }
     }
 
+     */
+
+    /*
     private Pane createBookPane(Book book) {
         // Create a pane to display the book with its image
         Pane pane = new Pane();
@@ -131,6 +141,8 @@ public class MainScreenController {
 
         return pane;
     }
+
+     */
 
 
 
