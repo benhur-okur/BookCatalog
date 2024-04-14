@@ -207,7 +207,7 @@ public class AddBookController implements Initializable {
                 int rate = chooseRate.getValue();
                 String language = t9.getText();
 
-                tags.addAll(tagListView.getSelectionModel().getSelectedItems());
+                tags.addAll(tagListView.getItems());
 
                 book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle,
                         translators, language, authors, date, imagePath, tags);
