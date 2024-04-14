@@ -43,6 +43,7 @@
                         <RowConstraints maxHeight="29.00000610351563" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="29.00000610351563" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="29.00000610351563" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.00000610351563" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label prefHeight="18.0" prefWidth="51.0" text="Title">
@@ -152,7 +153,7 @@
                            </GridPane.margin>
                         </Label>
                         <TextField fx:id="t10" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                        <ListView fx:id="listView" prefHeight="19.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                        <ListView fx:id="listView" prefHeight="19.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
@@ -207,6 +208,8 @@
                            </padding>
                         </Label>
                         <ChoiceBox fx:id="chooseRate" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label prefHeight="17.0" prefWidth="42.0" text="Tag" translateX="25.0" GridPane.rowIndex="12" />
+                        <TextField fx:id="t101" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                      </children>
                      <padding>
                         <Insets right="200.0" />
