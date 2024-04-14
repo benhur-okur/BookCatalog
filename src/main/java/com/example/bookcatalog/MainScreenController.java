@@ -18,7 +18,10 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javax.sound.sampled.Line;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,7 +53,7 @@ public class MainScreenController {
     @FXML
     public void setSave () {
 
-        setRead();
+        //setRead();
         json.saveFile();
     }
     @FXML
@@ -79,16 +82,17 @@ public class MainScreenController {
         // tableView listView ile alakalı güncellemeler olucak kitap eklendikten sonra sanırım
     }
     public void initialize () {
-        showBooks(new ActionEvent());
+        setRead();
+        showBooks();
     }
 
-    private void showBooks (ActionEvent actionEvent) {
-        setRead();
+    private void showBooks () {
         int row = 0;
         int col = 0;
 
         for (Book book : bookArrayList) {
-            Image image = new Image(book.getImagePath());
+            File file = new File(book.getImagePath());
+            Image image = new Image(file.toURI().toString());
             ImageView imageView = new ImageView(image);
             imageView.setFitWidth(190); // Resmi genişlik değerine sığacak şekilde ayarlayın
             imageView.setFitHeight(130); // Resmi yükseklik değerine sığacak şekilde ayarlayın
@@ -105,7 +109,6 @@ public class MainScreenController {
                 row++;
             }
         }
-        scrollPane = new ScrollPane(gridPane);
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
 

@@ -9,13 +9,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
 
 public class JSON {
     private ArrayList<Book> bookArrayList = new ArrayList<>();
-    //private ArrayList<Book> existingBookArraylist = new ArrayList<>();
+    //private ArrayList<Book> existingBooks = new ArrayList<>();
     private Gson gson;
     private String myJson;
 
@@ -31,6 +34,7 @@ public class JSON {
     public void saveFile() {
         try {
             FileWriter fileWriter = new FileWriter("books.json");
+            clearFileContent();
             gson.toJson(bookArrayList, fileWriter);
             fileWriter.close();
             JOptionPane.showMessageDialog(null, "Book catalog has been successfully saved.");
@@ -43,8 +47,8 @@ public class JSON {
         try (Reader reader = new FileReader("books.json")) {
             Type bookListType = new TypeToken<ArrayList<Book>>() {}.getType();
             ArrayList<Book> existingBooks = gson.fromJson(reader, bookListType);
-            if (existingBooks == null) {
-                existingBooks = new ArrayList<>();
+            if (existingBooks != null) {
+                bookArrayList.addAll(existingBooks);
             }
             JOptionPane.showMessageDialog(null, "Book catalog has been successfully loaded.");
             return existingBooks;
@@ -54,6 +58,10 @@ public class JSON {
     }
 
 
+    public void clearFileContent() throws IOException {
+        // Dosyanın içeriğini temizle
+        Files.write(Path.of("books.json"), Collections.emptyList());
+    }
     /*
     public ArrayList<Book> getBookArrayList() {
         return bookArrayList;
