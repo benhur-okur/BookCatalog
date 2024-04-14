@@ -14,16 +14,15 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane fx:id="dialogPane" prefHeight="651.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.AddBookController">
+<DialogPane fx:id="dialogPane" prefHeight="450.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.AddBookController">
    <header>
-      <HBox prefHeight="393.0" prefWidth="944.0">
+      <AnchorPane>
          <children>
-            <VBox fillWidth="false" prefHeight="393.0" prefWidth="712.0">
+            <HBox prefHeight="393.0" prefWidth="816.0">
                <children>
-                  <GridPane maxWidth="903.0" prefHeight="393.0" prefWidth="753.0">
+                  <GridPane prefHeight="393.0" prefWidth="815.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.79998779296875" minWidth="10.0" prefWidth="127.79998779296875" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.4000244140625" minWidth="10.0" prefWidth="152.60001220703123" />
@@ -66,7 +65,7 @@
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="Rate (Enter 0-5)" GridPane.rowIndex="4">
+                        <Label text="Rate (Enter 1-5)" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets left="25.0" />
                            </GridPane.margin>
@@ -153,7 +152,7 @@
                            </GridPane.margin>
                         </Label>
                         <TextField fx:id="t10" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                        <ListView fx:id="listView" prefHeight="19.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                        <ListView fx:id="listView" prefHeight="19.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
@@ -164,7 +163,7 @@
                            </GridPane.margin>
                         </Button>
                         <ListView fx:id="listView2" prefHeight="200.0" prefWidth="200.0" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                        <Button fx:id="addTranslator" mnemonicParsing="false" onAction="#addTranslator" prefHeight="26.0" prefWidth="97.0" text="Add Translator" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                        <Button fx:id="addTranslator" mnemonicParsing="false" onAction="#addTranslator" prefHeight="26.0" prefWidth="96.0" text="Add Translator" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="7">
                            <padding>
                               <Insets left="14.0" />
                            </padding>
@@ -216,24 +215,17 @@
                      </padding>
                   </GridPane>
                </children>
-            </VBox>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="393.0" prefWidth="133.0">
+            </HBox>
+            <HBox minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="292.0" AnchorPane.rightAnchor="-2.0">
                <children>
-                  <HBox layoutY="65.0" minHeight="0.0" minWidth="0.0" prefHeight="263.0" prefWidth="164.0" AnchorPane.rightAnchor="-2.0">
-                     <children>
-                        <ImageView fx:id="imageView" fitHeight="263.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                  </HBox>
+                  <ImageView fx:id="imageView" fitHeight="402.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true" />
                </children>
-               <HBox.margin>
-                  <Insets left="50.0" />
-               </HBox.margin>
-            </AnchorPane>
+            </HBox>
          </children>
-      </HBox>
+      </AnchorPane>
    </header>
    <content>
-      <HBox alignment="TOP_RIGHT" prefHeight="142.0" prefWidth="374.0">
+      <HBox alignment="TOP_RIGHT" prefHeight="116.0" prefWidth="1231.0">
          <children>
             <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" text="Cancel">
                <HBox.margin>
