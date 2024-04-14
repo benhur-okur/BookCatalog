@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Objects;
 import javax.swing.JOptionPane;
 
 
@@ -29,30 +28,31 @@ public class JSON {
         //myJson = gson.toJson(existingBookArraylist);
     }
 
-    public void saveFile () {
+    public void saveFile() {
         try {
             FileWriter fileWriter = new FileWriter("books.json");
             gson.toJson(bookArrayList, fileWriter);
             fileWriter.close();
-            JOptionPane.showMessageDialog(null, "Kitap kataloga başarılı bi şekilde kaydedildi");
+            JOptionPane.showMessageDialog(null, "Book catalog has been successfully saved.");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Kitap kataloga kaydedilirken bi hata oluştu");
+            JOptionPane.showMessageDialog(null, "An error occurred while saving the book catalog.");
             throw new RuntimeException(e);
         }
     }
-    public void readFile (ArrayList<Book> bookArrayList) {
-        Type bookListType = new TypeToken<ArrayList<Book>>(){}.getType();
+    public ArrayList<Book> readFile(ArrayList<Book> bookArrayList) {
         try (Reader reader = new FileReader("books.json")) {
+            Type bookListType = new TypeToken<ArrayList<Book>>() {}.getType();
             ArrayList<Book> existingBooks = gson.fromJson(reader, bookListType);
-            if (existingBooks != null) {
-                bookArrayList.addAll(existingBooks);
+            if (existingBooks == null) {
+                existingBooks = new ArrayList<>();
             }
-            reader.close();
-            JOptionPane.showMessageDialog(null, "Kitap katalog başarıyla okundu.");
+            JOptionPane.showMessageDialog(null, "Book catalog has been successfully loaded.");
+            return existingBooks;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
 
     /*
     public ArrayList<Book> getBookArrayList() {

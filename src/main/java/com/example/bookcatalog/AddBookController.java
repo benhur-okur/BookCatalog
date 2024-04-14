@@ -49,6 +49,8 @@ public class AddBookController implements Initializable {
     @FXML
     private  TextField t11;
 
+    private TextField t101;
+
     @FXML
     private Label l1;
     @FXML
@@ -62,6 +64,8 @@ public class AddBookController implements Initializable {
     private ListView<String> listView;
     @FXML
     private ListView<String> listView2;
+    @FXML
+    private ListView<String> tagListView;
 
     @FXML
     private CheckBox checkSubtitle;
@@ -97,6 +101,8 @@ public class AddBookController implements Initializable {
     private Button addButton;
     @FXML
     private Button cancelButton;
+
+    private ArrayList<String> tags = new ArrayList<>();
 
     @FXML
     private Button addTranslator;
@@ -146,7 +152,8 @@ public class AddBookController implements Initializable {
 
         }
     }
-    public void addBook(ActionEvent event) throws InvocationTargetException, IOException {
+    @FXML
+    private void addBook(ActionEvent event) throws InvocationTargetException, IOException {
 
         isTextNull(event);
         if (isNull) {
@@ -200,8 +207,11 @@ public class AddBookController implements Initializable {
                 int rate = chooseRate.getValue();
                 String language = t9.getText();
 
+                tags.addAll(tagListView.getSelectionModel().getSelectedItems());
+
                 book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle,
-                        translators, language, authors, date, imagePath);
+                        translators, language, authors, date, imagePath, tags);
+
                 if (checkSubtitle.isSelected()) {
                     book.setHasSubtitle(true);
                 }
@@ -213,7 +223,6 @@ public class AddBookController implements Initializable {
 
                 Stage stage = (Stage) addButton.getScene().getWindow();
                 stage.close();
-
             }
         }
     }
@@ -232,6 +241,13 @@ public class AddBookController implements Initializable {
         if (t8.getText().isBlank()) return;
         listView2.getItems().add(t8.getText());
         t8.clear();
+    }
+
+    public void addTag(ActionEvent event) {
+        if (t101.getText().isBlank()) return;
+        tagListView.getItems().add(t101.getText());
+        tags.add(t101.getText());
+        t101.clear();
     }
     public void NullAlert(ActionEvent event){
 

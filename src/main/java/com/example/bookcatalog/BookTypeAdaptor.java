@@ -106,7 +106,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                         tags.add(in.nextString());
                     }
                     in.endArray();
-                    book.setTags(tags);
+                    book.setTags((ArrayList<String>) tags);
                     break;
                 case "date":
                     book.setDate(in.nextString());
