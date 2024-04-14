@@ -10,6 +10,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -35,12 +36,14 @@ public class MainScreenController {
         }
     }
 
+    @FXML
+    private GridPane gridPane;
 
     @FXML
     private MenuItem save;
     @FXML
     private FlowPane flowPane;
-    private Map<String, List<Book>> booksByTag = new HashMap<>();
+    //private Map<String, List<Book>> booksByTag = new HashMap<>();
     @FXML
     public void setSave () {
 
@@ -72,13 +75,40 @@ public class MainScreenController {
         //TODO melih sende burası mainScreende
         // tableView listView ile alakalı güncellemeler olucak kitap eklendikten sonra sanırım
     }
+    public void initialize () {
+        showBooks(new ActionEvent());
+    }
 
+    private void showBooks (ActionEvent actionEvent) {
+        setRead();
+        int row = 0;
+        int col = 0;
+
+        for (Book book : bookArrayList) {
+            Image image = new Image(book.getImagePath());
+            ImageView imageView = new ImageView(image);
+            imageView.setFitWidth(190); // Resmi genişlik değerine sığacak şekilde ayarlayın
+            imageView.setFitHeight(130); // Resmi yükseklik değerine sığacak şekilde ayarlayın
+
+            // ImageView'i GridPane'e ekleyin
+            gridPane.add(imageView, col, row);
+
+            // Sütun numarasını bir artırın
+            col++;
+
+            // Eğer sütun numarası 4'e ulaşırsa, bir sonraki satıra geçin ve sütun numarasını sıfırlayın
+            if (col == 4) {
+                col = 0;
+                row++;
+            }
+        }
+    }
     /*
     public void initialize() {
         loadBooks();
         displayBooks();
     }
-    
+
      */
     /*
     private void loadBooks() {
