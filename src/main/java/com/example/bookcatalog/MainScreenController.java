@@ -139,6 +139,7 @@ public class MainScreenController {
     }
 
     public void setBookArrayList(ArrayList<Book> bookArrayList) {
+
         this.bookArrayList = bookArrayList;
     }
 }

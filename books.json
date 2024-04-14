@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "title": "doga",
+    "isbn": 23213,
+    "publisher": "szfsdfs",
+    "edition": 2123,
+    "rate": 2,
+    "authors": [
+      "zcz"
+    ],
+    "cover type": "cxzczczc",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "fsdfs",
+      "dsfdsfdsf"
+    ],
+    "language": "sczc",
+    "date": "11/20/2002",
+    "image path": "src\\images\\noimage.jpg"
+  }
+]

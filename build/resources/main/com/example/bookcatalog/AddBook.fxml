@@ -209,6 +209,12 @@
                         <ChoiceBox fx:id="chooseRate" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label prefHeight="17.0" prefWidth="42.0" text="Tag" translateX="25.0" GridPane.rowIndex="12" />
                         <TextField fx:id="t101" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <ListView fx:id="tagListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                        <Button mnemonicParsing="false" onAction="#addTag" text="Add Tag" GridPane.columnIndex="3" GridPane.rowIndex="12">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Button>
                      </children>
                      <padding>
                         <Insets right="200.0" />

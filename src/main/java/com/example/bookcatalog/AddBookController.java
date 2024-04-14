@@ -49,6 +49,7 @@ public class AddBookController implements Initializable {
     @FXML
     private  TextField t11;
 
+    @FXML
     private TextField t101;
 
     @FXML
@@ -207,7 +208,7 @@ public class AddBookController implements Initializable {
                 int rate = chooseRate.getValue();
                 String language = t9.getText();
 
-                tags.addAll(tagListView.getSelectionModel().getSelectedItems());
+                tags.addAll(tagListView.getItems());
 
                 book = new Book(title, isbn, publisher, edition, rate, coverType, subtitle,
                         translators, language, authors, date, imagePath, tags);
@@ -246,7 +247,6 @@ public class AddBookController implements Initializable {
     public void addTag(ActionEvent event) {
         if (t101.getText().isBlank()) return;
         tagListView.getItems().add(t101.getText());
-        tags.add(t101.getText());
         t101.clear();
     }
     public void NullAlert(ActionEvent event){
@@ -290,8 +290,6 @@ public class AddBookController implements Initializable {
             addTranslator.setVisible(false);
         }
     }
-
-
 
     /*
     public void closeScreen(ActionEvent event){
