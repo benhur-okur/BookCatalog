@@ -247,7 +247,7 @@
             </Button>
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
               <buttons>
-                <Button mnemonicParsing="false" onAction="#deleteBook" prefHeight="34.0" text="Delete">
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteBook" prefHeight="34.0" text="Delete">
                      <font>
                         <Font size="15.0" />
                      </font>
