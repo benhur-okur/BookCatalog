@@ -1,166 +1,6 @@
 [
   {
-    "title": "suc ve ceza",
-    "isbn": 3242,
-    "publisher": "dsfsf",
-    "edition": 4324,
-    "rate": 2,
-    "authors": [
-      "dfss"
-    ],
-    "cover type": "fdsf",
-    "has subtitle": false,
-    "is translation": false,
-    "tags": [
-      "action"
-    ],
-    "language": "dsfs",
-    "date": "01/01/2024",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2024-02-23 152857.png"
-  },
-  {
-    "title": "suc ve ceza",
-    "isbn": 3242,
-    "publisher": "dsfsf",
-    "edition": 4324,
-    "rate": 2,
-    "authors": [
-      "dfss"
-    ],
-    "cover type": "fdsf",
-    "has subtitle": false,
-    "is translation": false,
-    "tags": [
-      "action"
-    ],
-    "language": "dsfs",
-    "date": "01/01/2024",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2024-02-23 152857.png"
-  },
-  {
-    "title": "suc ve ceza",
-    "isbn": 3242,
-    "publisher": "dsfsf",
-    "edition": 4324,
-    "rate": 2,
-    "authors": [
-      "dfss"
-    ],
-    "cover type": "fdsf",
-    "has subtitle": false,
-    "is translation": false,
-    "tags": [
-      "action"
-    ],
-    "language": "dsfs",
-    "date": "01/01/2024",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2024-02-23 152857.png"
-  },
-  {
-    "title": "dogaaa",
-    "isbn": 324,
-    "publisher": "sdsad",
-    "edition": 4234,
-    "rate": 3,
-    "authors": [
-      "erwrr"
-    ],
-    "cover type": "dsfdfsf",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "comedy",
-      "horror"
-    ],
-    "language": "erere",
-    "date": "10/12/2020",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2023-11-04 235610.png"
-  },
-  {
-    "title": "aaaaaaa",
-    "isbn": 23424,
-    "publisher": "fdgdg",
-    "edition": 3434,
-    "rate": 2,
-    "authors": [
-      "dsff"
-    ],
-    "cover type": "dsfsdf",
-    "has subtitle": false,
-    "is translation": false,
-    "tags": [
-      "romantic"
-    ],
-    "language": "sdfs",
-    "date": "11/20/2002",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2024-03-12 230626.png"
-  },
-  {
-    "title": "ohaaaaa",
-    "isbn": 3243,
-    "publisher": "dffs",
-    "edition": 42334,
-    "rate": 3,
-    "authors": [
-      "dsfs"
-    ],
-    "cover type": "fgfgfd",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "comedy",
-      "horror"
-    ],
-    "language": "dsfsf",
-    "date": "22/20/2031",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2023-12-06 221245.png"
-  },
-  {
-    "title": "natuteee",
-    "isbn": 34234,
-    "publisher": "fdgfg",
-    "edition": 4354,
-    "rate": 2,
-    "authors": [
-      "defsdf"
-    ],
-    "cover type": "dfdsf",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "ROMANTï¿½C",
-      "HORROR"
-    ],
-    "language": "dsfsf",
-    "date": "11/20/2002",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2023-12-14 222639.png"
-  },
-  {
-    "title": "titleeee",
-    "isbn": 42342,
-    "publisher": "dsff",
-    "edition": 345,
-    "rate": 2,
-    "authors": [
-      "sdfsf"
-    ],
-    "cover type": "dsfsf",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "HORROR",
-      "COMEDY"
-    ],
-    "language": "dsfs",
-    "date": "33/20/2009",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2024-02-23 152857.png"
-  },
-  {
-    "title": "dogaaaaaaaaa",
+    "title": "book3",
     "isbn": 2131,
     "publisher": "3",
     "edition": 2,
@@ -179,7 +19,7 @@
     "image path": "src\\images\\noimage.jpg"
   },
   {
-    "title": "999999999",
+    "title": "book2",
     "isbn": 2132,
     "publisher": "asda",
     "edition": 2,
@@ -190,7 +30,6 @@
     "cover type": "asfasf",
     "has subtitle": false,
     "is translation": false,
-    "translators": [],
     "tags": [
       "BENHUR"
     ],
@@ -199,7 +38,7 @@
     "image path": "src\\images\\noimage.jpg"
   },
   {
-    "title": "dogaaaaaaaaa",
+    "title": "book3",
     "isbn": 2131,
     "publisher": "3",
     "edition": 2,
@@ -218,28 +57,7 @@
     "image path": "src\\images\\noimage.jpg"
   },
   {
-    "title": "dddddddddddd",
-    "isbn": 343,
-    "publisher": "dfdf",
-    "edition": 34,
-    "rate": 2,
-    "authors": [
-      "dfgg"
-    ],
-    "cover type": "dffdf",
-    "has subtitle": false,
-    "is translation": false,
-    "translators": [],
-    "tags": [
-      "ERHANNNNNNNNNNN",
-      "YARENNNNNNNNNNNN"
-    ],
-    "language": "fgfgdg",
-    "date": "10/12/2005",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2024-04-13 054435.png"
-  },
-  {
-    "title": "fsdfdf",
+    "title": "book4",
     "isbn": 3434,
     "publisher": "fgdg",
     "edition": 5,
@@ -250,7 +68,6 @@
     "cover type": "fdgdgf",
     "has subtitle": false,
     "is translation": false,
-    "translators": [],
     "tags": [
       "DFDFDSF"
     ],
@@ -259,25 +76,42 @@
     "image path": "src\\images\\noimage.jpg"
   },
   {
-    "title": "TUNA",
-    "isbn": 214124,
-    "publisher": "sadasd",
+    "title": "suç ve ceza",
+    "isbn": 123124,
+    "publisher": "kaya oguz",
+    "edition": 5,
+    "rate": 2,
+    "authors": [
+      "sadasdasd",
+      "ilber ortaylý"
+    ],
+    "cover type": "kaya oguz",
+    "has subtitle": false,
+    "is translation": false,
+    "tags": [
+      "KORKU"
+    ],
+    "language": "kaya oguz",
+    "date": "28/03/2003",
+    "image path": "src\\images\\9789750738906_543.png"
+  },
+  {
+    "title": "1984",
+    "isbn": 23131,
+    "publisher": "asdasd",
     "edition": 2,
     "rate": 3,
     "authors": [
-      "a",
-      "b"
+      "asdad"
     ],
-    "cover type": "adasd",
+    "cover type": "asdasd",
     "has subtitle": false,
     "is translation": false,
-    "translators": [],
     "tags": [
-      "SAD",
-      "FASFA"
+      "ASFASFA"
     ],
-    "language": "sadas",
-    "date": "28/03/2003",
-    "image path": "src\\images\\Ekran gï¿½rï¿½ntï¿½sï¿½ 2024-03-14 220133.png"
+    "language": "asfasf",
+    "date": "28/03/2000",
+    "image path": "src\\images\\1984.jpg"
   }
 ]
