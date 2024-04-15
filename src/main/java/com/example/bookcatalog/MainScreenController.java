@@ -1,5 +1,6 @@
 package com.example.bookcatalog;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
@@ -65,6 +67,20 @@ public class MainScreenController {
 
     @FXML
     private ChoiceBox<String> filterChoice;
+    @FXML
+    private Button exitBT;
+    @FXML
+    private void exit () {
+        Platform.exit();
+    }
+    @FXML
+    private void about() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("CAUTION !!");
+        alert.setHeaderText(null);
+        alert.setContentText("If you are troubling after editing and adding \nPlease make sure you pressed save button on the file menu");
+        alert.showAndWait();
+    }
     @FXML
     public void setSave () {
 

@@ -31,12 +31,12 @@
                   <MenuItem mnemonicParsing="false" text="Export All" />
                   <MenuItem mnemonicParsing="false" text="Export Selected" />
                   <MenuItem mnemonicParsing="false" text="Open File" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Settings">

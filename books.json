@@ -199,25 +199,6 @@
     "image path": "src\\images\\noimage.jpg"
   },
   {
-    "title": "ddddddd",
-    "isbn": 13123,
-    "publisher": "asfa",
-    "edition": 2,
-    "rate": 3,
-    "authors": [
-      "sdsad"
-    ],
-    "cover type": "asfa",
-    "has subtitle": false,
-    "is translation": false,
-    "tags": [
-      "doga"
-    ],
-    "language": "safasf",
-    "date": "28/03/2003",
-    "image path": "src\\images\\noimage.jpg"
-  },
-  {
     "title": "dogaaaaaaaaa",
     "isbn": 2131,
     "publisher": "3",
