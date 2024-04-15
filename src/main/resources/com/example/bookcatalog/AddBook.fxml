@@ -8,12 +8,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <DialogPane fx:id="dialogPane" prefHeight="450.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.AddBookController">
@@ -89,26 +91,61 @@
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </TextField>
                         <TextField fx:id="t2" promptText="xxxxxxxxxxxx" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </TextField>
                         <TextField fx:id="t3" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </TextField>
                         <TextField fx:id="t4" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </TextField>
                         <TextField fx:id="t6" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </TextField>
                         <CheckBox fx:id="checkSubtitle" mnemonicParsing="false" onAction="#checkSubtitle" prefHeight="26.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                            <graphic>
@@ -145,17 +182,38 @@
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </TextField>
                         <Label text="Author(s)" GridPane.rowIndex="10">
                            <GridPane.margin>
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </Label>
-                        <TextField fx:id="t10" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <TextField fx:id="t10" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect></TextField>
                         <ListView fx:id="listView" prefHeight="19.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect>
                         </ListView>
                         <Button mnemonicParsing="false" onAction="#addAuthor" text="Add Author" GridPane.columnIndex="3" GridPane.rowIndex="10">
                            <GridPane.margin>
@@ -208,8 +266,22 @@
                         </Label>
                         <ChoiceBox fx:id="chooseRate" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label prefHeight="17.0" prefWidth="42.0" text="Tag" translateX="25.0" GridPane.rowIndex="12" />
-                        <TextField fx:id="t101" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                        <ListView fx:id="tagListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                        <TextField fx:id="t101" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect></TextField>
+                        <ListView fx:id="tagListView" prefHeight="30.0" prefWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect></ListView>
                         <Button mnemonicParsing="false" onAction="#addTag" text="Add Tag" GridPane.columnIndex="3" GridPane.rowIndex="12">
                            <GridPane.margin>
                               <Insets left="10.0" />

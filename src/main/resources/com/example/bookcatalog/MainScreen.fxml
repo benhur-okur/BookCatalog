@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 
 <AnchorPane prefHeight="875.0" prefWidth="1176.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.MainScreenController">
    <children>
-      <MenuBar layoutY="2.0">
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1176.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -39,11 +45,32 @@
                </items>
             </Menu>
         </menus>
+         <effect>
+            <Lighting diffuseConstant="1.44" specularConstant="0.0" specularExponent="13.1" surfaceScale="2.07">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.8026315569877625" green="0.8026315569877625" blue="0.8026315569877625" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
       </MenuBar>
       <HBox layoutX="84.0" layoutY="114.0" />
       <HBox layoutX="305.0" layoutY="15.0" />
-      <Button layoutX="768.0" layoutY="15.0" mnemonicParsing="false" text="Search" />
-      <TextField layoutX="533.0" layoutY="15.0" prefHeight="25.0" prefWidth="224.0" />
+      <Button layoutX="787.0" layoutY="57.0" mnemonicParsing="false" text="Search" />
+      <TextField layoutX="553.0" layoutY="57.0" prefHeight="25.0" prefWidth="224.0" promptText="title,i sbn, author...">
+         <effect>
+            <InnerShadow height="6.34" radius="6.335">
+               <color>
+                  <Color red="0.6315789222717285" green="0.6315789222717285" blue="0.6315789222717285" />
+               </color>
+            </InnerShadow>
+         </effect></TextField>
       <VBox layoutX="26.0" layoutY="87.0" prefHeight="762.0" prefWidth="813.0">
          <children>
             <ScrollPane fx:id="scrollPane" prefHeight="762.0" prefWidth="750.0">
@@ -62,10 +89,21 @@
                     </rowConstraints>
                   </GridPane>
                </content>
+               <effect>
+                  <InnerShadow />
+               </effect>
             </ScrollPane>
          </children>
       </VBox>
-      <Button layoutX="1103.0" layoutY="90.0" mnemonicParsing="false" onAction="#showBooksByTag" text="Filter" />
-      <ListView fx:id="listForTags" layoutX="978.0" layoutY="12.0" prefHeight="181.0" prefWidth="100.0" />
+      <Button layoutX="996.0" layoutY="284.0" mnemonicParsing="false" onAction="#showBooksByTag" text="Filter" />
+      <ListView fx:id="listForTags" layoutX="957.0" layoutY="61.0" prefHeight="205.0" prefWidth="121.0">
+         <effect>
+            <InnerShadow height="0.48" radius="1.94" width="9.28">
+               <color>
+                  <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+               </color>
+            </InnerShadow>
+         </effect></ListView>
+      <Label layoutX="1004.0" layoutY="40.0" prefHeight="17.0" prefWidth="27.0" text="Tags" />
    </children>
 </AnchorPane>
