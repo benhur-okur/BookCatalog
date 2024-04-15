@@ -89,7 +89,7 @@ public class MainScreenController {
 
         ViewBookController viewBookController = fxmlLoader.getController();
         viewBookController.setMainScreenController(this);
-
+        viewBookController.showBookInfo(new Book()); // TODO SEÇİLEN KİTABI GÖNDER, edit ve delete için index'i göndermek daha iyi olur
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Book Information");
