@@ -63,7 +63,7 @@
       <HBox layoutX="84.0" layoutY="114.0" />
       <HBox layoutX="305.0" layoutY="15.0" />
       <Button layoutX="787.0" layoutY="57.0" mnemonicParsing="false" text="Search" />
-      <TextField layoutX="553.0" layoutY="57.0" prefHeight="25.0" prefWidth="224.0" promptText="title,i sbn, author...">
+      <TextField layoutX="553.0" layoutY="57.0" prefHeight="25.0" prefWidth="224.0" promptText="title, isbn, author...">
          <effect>
             <InnerShadow height="6.34" radius="6.335">
                <color>
@@ -73,7 +73,7 @@
          </effect></TextField>
       <VBox layoutX="26.0" layoutY="87.0" prefHeight="762.0" prefWidth="813.0">
          <children>
-            <ScrollPane fx:id="scrollPane" prefHeight="762.0" prefWidth="750.0">
+            <ScrollPane fx:id="scrollPane" prefHeight="718.0" prefWidth="820.0">
                <content>
                   <GridPane fx:id="gridPane" prefHeight="760.0" prefWidth="809.0">
                     <columnConstraints>
@@ -95,7 +95,7 @@
             </ScrollPane>
          </children>
       </VBox>
-      <Button layoutX="996.0" layoutY="406.0" mnemonicParsing="false" onAction="#showBooksByTag" text="Filter" />
+      <Button layoutX="1044.0" layoutY="412.0" mnemonicParsing="false" onAction="#showBooksByTag" prefHeight="26.0" prefWidth="52.0" text="Filter" />
       <ListView fx:id="listForTags" layoutX="927.0" layoutY="57.0" prefHeight="341.0" prefWidth="182.0">
          <effect>
             <InnerShadow height="0.48" radius="1.94" width="9.28">
@@ -105,5 +105,6 @@
             </InnerShadow>
          </effect></ListView>
       <Label layoutX="1004.0" layoutY="40.0" prefHeight="17.0" prefWidth="27.0" text="Tags" />
+      <Button layoutX="946.0" layoutY="412.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="52.0" text="Back" />
    </children>
 </AnchorPane>
