@@ -122,23 +122,141 @@
     "image path": "src\\images\\Ekran görüntüsü 2024-02-23 152857.png"
   },
   {
-    "title": "efeeeee",
+    "title": "fffffffff",
     "isbn": 2131,
-    "publisher": "asda",
-    "edition": 23,
-    "rate": 4,
+    "publisher": "3",
+    "edition": 2,
+    "rate": 3,
     "authors": [
-      "efe"
+      "sadasdasd"
     ],
-    "cover type": "asdasda",
+    "cover type": "asfasf",
+    "has subtitle": false,
+    "is translation": false,
+    "tags": [
+      "aaaaaaaaaa"
+    ],
+    "language": "asfasfa",
+    "date": "28/03/2000",
+    "image path": "src\\images\\noimage.jpg"
+  },
+  {
+    "title": "999999999",
+    "isbn": 2132,
+    "publisher": "asda",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "asdasd"
+    ],
+    "cover type": "asfasf",
     "has subtitle": false,
     "is translation": false,
     "translators": [],
     "tags": [
-      "ELEKTRÝKKKK"
+      "BENHUR"
     ],
-    "language": "asda",
+    "language": "asfsaf",
     "date": "28/03/2003",
+    "image path": "src\\images\\noimage.jpg"
+  },
+  {
+    "title": "ddddddd",
+    "isbn": 13123,
+    "publisher": "asfa",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "sdsad"
+    ],
+    "cover type": "asfa",
+    "has subtitle": false,
+    "is translation": false,
+    "tags": [
+      "doga"
+    ],
+    "language": "safasf",
+    "date": "28/03/2003",
+    "image path": "src\\images\\noimage.jpg"
+  },
+  {
+    "title": "fffffffff",
+    "isbn": 2131,
+    "publisher": "3",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "sadasdasd"
+    ],
+    "cover type": "asfasf",
+    "has subtitle": false,
+    "is translation": false,
+    "tags": [
+      "aaaaaaaaaa"
+    ],
+    "language": "asfasfa",
+    "date": "28/03/2000",
+    "image path": "src\\images\\noimage.jpg"
+  },
+  {
+    "title": "dddddddddddd",
+    "isbn": 343,
+    "publisher": "dfdf",
+    "edition": 34,
+    "rate": 2,
+    "authors": [
+      "dfgg"
+    ],
+    "cover type": "dffdf",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "ERHANNNNNNNNNNN",
+      "YARENNNNNNNNNNNN"
+    ],
+    "language": "fgfgdg",
+    "date": "10/12/2005",
+    "image path": "src\\images\\Ekran görüntüsü 2024-04-13 054435.png"
+  },
+  {
+    "title": "fsdfdf",
+    "isbn": 3434,
+    "publisher": "fgdg",
+    "edition": 5,
+    "rate": 3,
+    "authors": [
+      "fgdgg"
+    ],
+    "cover type": "fdgdgf",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "DFDFDSF"
+    ],
+    "language": "fdgd",
+    "date": "11/20/2007",
+    "image path": "src\\images\\noimage.jpg"
+  },
+  {
+    "title": "aaaaaaaaaaaaa",
+    "isbn": 43535,
+    "publisher": "fgdfrg",
+    "edition": 5,
+    "rate": 3,
+    "authors": [
+      "dfgdfg"
+    ],
+    "cover type": "fdgfdg",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "OOOOOOOOOOOOOOOOOOO"
+    ],
+    "language": "dfgdfg",
+    "date": "29/01/2003",
     "image path": "src\\images\\noimage.jpg"
   }
 ]
