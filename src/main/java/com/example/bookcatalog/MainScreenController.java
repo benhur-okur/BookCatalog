@@ -67,6 +67,12 @@ public class MainScreenController {
         gridPane.getChildren().clear();
         json.saveFile();
         showBooks();
+        Set<String> uniqueTags = new HashSet<>();
+        for (Book book : bookArrayList) {
+            uniqueTags.addAll(book.getTags());
+        }
+        listForTags.getItems().clear();
+        listForTags.getItems().addAll(uniqueTags);
 
     }
     @FXML
