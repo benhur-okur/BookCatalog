@@ -1,6 +1,6 @@
 [
   {
-    "title": "rahmannnn",
+    "title": "suc ve ceza",
     "isbn": 3242,
     "publisher": "dsfsf",
     "edition": 4324,
@@ -16,7 +16,7 @@
     ],
     "language": "dsfs",
     "date": "01/01/2024",
-    "image path": "src\\images\\noimage.jpg"
+    "image path": "src\\images\\Ekran görüntüsü 2024-02-23 152857.png"
   },
   {
     "title": "dogaaa",
@@ -258,5 +258,27 @@
     "language": "dfgdfg",
     "date": "29/01/2003",
     "image path": "src\\images\\noimage.jpg"
+  },
+  {
+    "title": "TUNA",
+    "isbn": 214124,
+    "publisher": "sadasd",
+    "edition": 2,
+    "rate": 3,
+    "authors": [
+      "a",
+      "b"
+    ],
+    "cover type": "adasd",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "SAD",
+      "FASFA"
+    ],
+    "language": "sadas",
+    "date": "28/03/2003",
+    "image path": "src\\images\\Ekran görüntüsü 2024-03-14 220133.png"
   }
 ]
