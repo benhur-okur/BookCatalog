@@ -71,7 +71,7 @@ public class EditBookScreenController {
 
     private boolean isNull;
     private final String dateFormat = "dd/MM/yyyy";
-
+    private MainScreenController mainScreenController;
 
 
     public void setViewBookController (ViewBookController viewBookController, Book selectedBook) {
@@ -328,7 +328,6 @@ public class EditBookScreenController {
                         break;
                     }
                 }
-                // viewBookController.getMainScreenController().getBookArrayList().ge
 
                 Stage stage = (Stage) saveButton.getScene().getWindow();
                 stage.close();

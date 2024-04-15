@@ -37,6 +37,10 @@ public class MainScreenController {
 
     private JSON json;
 
+    public GridPane getGridPane() {
+        return gridPane;
+    }
+
     {
         try {
             json = new JSON(bookArrayList);
@@ -131,7 +135,17 @@ public class MainScreenController {
 
     }
 
-    private void showBooks () {
+    @FXML
+    public void backButton(){
+        gridPane.getChildren().clear();
+        showBooks();
+        Set<String> uniqueTags = new HashSet<>();
+        for (Book book : bookArrayList) {
+            uniqueTags.addAll(book.getTags());
+        }
+        listForTags.getItems().addAll(uniqueTags);
+    }
+    public void showBooks () {
         int row = 0;
         int col = 0;
 
