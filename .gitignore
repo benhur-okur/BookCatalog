@@ -28,3 +28,5 @@ replay_pid*
 .gradle/8.2/checksums/checksums.lock
 /.gradle
 /.idea
+/build
+/.idea

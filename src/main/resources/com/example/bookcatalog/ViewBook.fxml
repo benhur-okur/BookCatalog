@@ -80,7 +80,7 @@
                                         <Insets left="25.0" />
                                     </GridPane.margin>
                                 </Label>
-                        <Label fx:id="titleLabel" textAlignment="JUSTIFY" GridPane.columnIndex="1" />
+                        <Label fx:id="bookTitleLabel" textAlignment="JUSTIFY" GridPane.columnIndex="1" />
                         <Label fx:id="bookIsbnLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="bookPublisherLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="bookEditionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -110,12 +110,12 @@
     <content>
         <HBox alignment="TOP_RIGHT" prefHeight="213.0" prefWidth="900.0">
             <children>
-                <Button fx:id="editButton" mnemonicParsing="false" onAction="#cancel" text="Edit">
+                <Button fx:id="editButton" mnemonicParsing="false" onAction="#editBook" text="Edit">
                     <HBox.margin>
                         <Insets right="10.0" />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#addBook" text="Delete" textFill="#bf3232" />
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteBook" text="Delete" textFill="#bf3232" />
             </children>
         </HBox>
     </content>

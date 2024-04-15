@@ -2,13 +2,19 @@ package com.example.bookcatalog;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class ViewBookController {
-
+    Book currentBook = null;
     @FXML
     private Label bookAuthorLabel;
 
@@ -46,7 +52,7 @@ public class ViewBookController {
     private Button editButton;
 
     @FXML
-    private Label titleLabel;
+    private Label bookTitleLabel;
     private MainScreenController mainScreenController;
 
     /* TODO Melih'in yaptığı Netflix ekranındaki bir kitaba:
@@ -54,14 +60,37 @@ public class ViewBookController {
         - Seçildikten sonra MenuBar üzerinden "edit" seçeneği basıldığında
         Basılan kitabın özelliklerini al ve
      */
+    public void showBookInfo(Book book) {
+        currentBook = book;
+        bookTitleLabel.setText(book.getTitle());
+        bookIsbnLabel.setText(String.valueOf(book.getIsbn()));
+        bookPublisherLabel.setText(book.getPublisher());
+        bookEditionLabel.setText(String.valueOf(book.getEdition()));
+        bookRatingLabel.setText(String.valueOf(book.getRate()));
+        bookCoverTypeLabel.setText(book.getCoverType());
+        bookLanguageLabel.setText(book.getLanguage());
+        bookAuthorLabel.setText(String.valueOf(book.getAuthors())); // TODO Düzgün çalışıyor mu?
+        bookDateLabel.setText(book.getDate()); // TODO date string olarak tutulmasa daha iyi olur (Tarihe göre aratma)
+        bookImageView.setImage(new Image(book.getImagePath()));
+    }
     @FXML
-    void addBook(ActionEvent event) {
+    void editBook(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
+        Parent root = fxmlLoader.load();
 
+        AddBookController addBookController = fxmlLoader.getController();
+        addBookController.setMainScreenController(this);
+
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Add Book");
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 
     @FXML
-    void cancel(ActionEvent event) {
-
+    void deleteBook(ActionEvent event) {
+        // todo Benhur'un yardımı lazım
     }
     public void setMainScreenController (MainScreenController mainScreenController) {
         this.mainScreenController = mainScreenController;
