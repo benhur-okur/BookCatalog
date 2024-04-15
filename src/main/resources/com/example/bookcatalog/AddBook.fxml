@@ -17,10 +17,6 @@
 <?import javafx.scene.text.Font?>
 
 <DialogPane fx:id="dialogPane" prefHeight="450.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.AddBookController">
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
    <header>
       <AnchorPane>
          <children>
