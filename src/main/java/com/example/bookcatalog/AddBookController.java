@@ -22,6 +22,7 @@ import java.net.URL;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AddBookController implements Initializable {
@@ -85,8 +86,8 @@ public class AddBookController implements Initializable {
     private String translator = null;
     private final String dateFormat = "dd/MM/yyyy";
     private boolean isNull = false;
-    private ArrayList<String> authors = new ArrayList<>();
-    private ArrayList<String> translators = new ArrayList<>();
+    private List<String> authors = new ArrayList<>();
+    private List<String> translators = new ArrayList<>();
     public Book getBook() {
         return book;
     }
@@ -253,7 +254,7 @@ public class AddBookController implements Initializable {
 
     public void addTag(ActionEvent event) {
         if (t101.getText().isBlank()) return;
-        tagListView.getItems().add(t101.getText());
+        tagListView.getItems().add(t101.getText().toUpperCase());
         t101.clear();
     }
     public void NullAlert(ActionEvent event){

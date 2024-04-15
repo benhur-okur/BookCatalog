@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
@@ -21,14 +22,15 @@ import javafx.stage.Stage;
 
 import javax.sound.sampled.Line;
 import java.awt.*;
+import java.awt.TextField;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 
 public class MainScreenController {
     private ArrayList<Book> bookArrayList = new ArrayList<>();
@@ -53,17 +55,28 @@ public class MainScreenController {
     @FXML
     private FlowPane flowPane;
     //private Map<String, List<Book>> booksByTag = new HashMap<>();
+
+    @FXML
+    private ListView<String> listForTags;
+
+    @FXML
+    private ChoiceBox<String> filterChoice;
     @FXML
     public void setSave () {
 
+        gridPane.getChildren().clear();
         json.saveFile();
         showBooks();
+
     }
     @FXML
     public void setRead() {
         json.readFile(bookArrayList);
 
     }
+
+    @FXML
+    private TextField filterText;
 
     @FXML
     public void openAddBookScreen(ActionEvent event) throws IOException {
@@ -99,12 +112,17 @@ public class MainScreenController {
 
      */
     public void refreshBookList() {
-        //TODO melih sende burası mainScreende
-        // tableView listView ile alakalı güncellemeler olucak kitap eklendikten sonra sanırım
+
     }
     public void initialize () {
         setRead();
         showBooks();
+        Set<String> uniqueTags = new HashSet<>();
+        for (Book book : bookArrayList) {
+            uniqueTags.addAll(book.getTags());
+        }
+        listForTags.getItems().addAll(uniqueTags);
+
     }
 
     private void showBooks () {
@@ -122,7 +140,8 @@ public class MainScreenController {
             // ImageView'i GridPane'e ekleyin
             gridPane.add(imageView, col, row);
 
-            Label titleLabel = new Label(book.getTitle());
+            Label titleLabel = new Label();
+            titleLabel.setText(book.getTitle());
             titleLabel.setFont(Font.font(24));
             GridPane.setMargin(titleLabel, new Insets(160, 0, 0, 50));
             gridPane.add(titleLabel, col, row);
@@ -144,7 +163,54 @@ public class MainScreenController {
                 row++;
             }
         }
+
     }
+
+
+
+    @FXML
+    private void showBooksByTag() {
+        int row = 0;
+        int col = 0;
+        gridPane.getChildren().clear();
+
+        String selectedTag = listForTags.getSelectionModel().getSelectedItem();
+
+        for (Book book : bookArrayList) {
+            List<String> tags = book.getTags();
+
+            if (selectedTag != null && tags.contains(selectedTag)) {
+                File file = new File(book.getImagePath());
+                Image image = new Image(file.toURI().toString());
+                ImageView imageView = new ImageView(image);
+                imageView.setFitWidth(190);
+                imageView.setFitHeight(130);
+
+                gridPane.add(imageView, col, row);
+
+                Label titleLabel = new Label();
+                titleLabel.setText(book.getTitle());
+                titleLabel.setFont(Font.font(24));
+                GridPane.setMargin(titleLabel, new Insets(160, 0, 0, 50));
+                gridPane.add(titleLabel, col, row);
+
+                imageView.setOnMouseClicked(e -> {
+                    try {
+                        showViewBookScreen(book);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                });
+
+                col++;
+                if (col == 4) {
+                    col = 0;
+                    row++;
+                }
+            }
+        }
+    }
+
     @FXML
     private void showViewBookScreen(Book currentBook) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewBook.fxml"));
