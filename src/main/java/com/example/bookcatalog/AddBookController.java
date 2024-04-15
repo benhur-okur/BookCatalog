@@ -179,7 +179,14 @@ public class AddBookController implements Initializable {
             }
 
             try {
-                isbn = Integer.parseInt(t2.getText());
+                for (Book book : mainScreenController.getBookArrayList()) {
+                    if (book.getIsbn() != Integer.parseInt(t2.getText())) {
+                        isbn = Integer.parseInt(t2.getText());
+                        hasError = false;
+                    } else {
+                        hasError = true;
+                    }
+                }
             } catch (Exception e) {
                 hasError = true;
                 t2.clear();
@@ -259,7 +266,7 @@ public class AddBookController implements Initializable {
 
     }
 
-    public void isTextNull(ActionEvent event){
+    public void isTextNull(ActionEvent event){ // TODO tag list w kontrol et
         if(t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank()
                 || t4.getText().isBlank() ||chooseRate.getValue() == null || t6.getText().isBlank()
                 || checkSubtitle.isSelected() && t7.getText().isBlank()
@@ -291,6 +298,13 @@ public class AddBookController implements Initializable {
         }
     }
 
+    public CheckBox getCheckSubtitle() {
+        return checkSubtitle;
+    }
+
+    public CheckBox getCheckTranslator() {
+        return checkTranslator;
+    }
     /*
     public void closeScreen(ActionEvent event){
         dialog.close();

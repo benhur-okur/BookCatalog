@@ -3,6 +3,7 @@ package com.example.bookcatalog;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -14,10 +15,12 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javax.sound.sampled.Line;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -53,7 +56,6 @@ public class MainScreenController {
     @FXML
     public void setSave () {
 
-        //setRead();
         json.saveFile();
         showBooks();
     }
@@ -79,6 +81,7 @@ public class MainScreenController {
         stage.showAndWait();
     }
 
+    /*
     @FXML
     public void openBookScreen() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewBook.fxml"));
@@ -93,6 +96,8 @@ public class MainScreenController {
         stage.setScene(new Scene(root));
         stage.showAndWait();
     }
+
+     */
     public void refreshBookList() {
         //TODO melih sende burası mainScreende
         // tableView listView ile alakalı güncellemeler olucak kitap eklendikten sonra sanırım
@@ -113,11 +118,19 @@ public class MainScreenController {
             imageView.setFitWidth(190); // Resmi genişlik değerine sığacak şekilde ayarlayın
             imageView.setFitHeight(130); // Resmi yükseklik değerine sığacak şekilde ayarlayın
 
+
             // ImageView'i GridPane'e ekleyin
             gridPane.add(imageView, col, row);
+
+            Label titleLabel = new Label(book.getTitle());
+            titleLabel.setFont(Font.font(24));
+            GridPane.setMargin(titleLabel, new Insets(160, 0, 0, 50));
+            gridPane.add(titleLabel, col, row);
+
+
             imageView.setOnMouseClicked(e -> {
                 try {
-                    openBookScreen();
+                    showViewBookScreen(book);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -131,13 +144,20 @@ public class MainScreenController {
                 row++;
             }
         }
-<<<<<<< Updated upstream
-        scrollPane.setFitToWidth(true);
-        scrollPane.setFitToHeight(true);
-=======
+    }
+    @FXML
+    private void showViewBookScreen(Book currentBook) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewBook.fxml"));
+        Parent root = fxmlLoader.load();
 
->>>>>>> Stashed changes
+        ViewBookController viewBookController = fxmlLoader.getController();
+        viewBookController.setMainScreenController(this, currentBook);
 
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Book Information");
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
     /*
     public void initialize() {
