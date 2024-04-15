@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -13,6 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="633.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.EditBookScreenController">
@@ -145,6 +147,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                   <TextField fx:id="t1" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
@@ -153,6 +162,13 @@
                      <GridPane.margin>
                         <Insets left="12.0" right="12.0" />
                      </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </TextField>
                    <TextField fx:id="t2" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                        <font>
@@ -161,6 +177,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t3" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                        <font>
@@ -169,6 +192,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t5" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                        <font>
@@ -177,6 +207,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t6" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                        <font>
@@ -185,6 +222,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t7" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                        <font>
@@ -193,6 +237,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t8" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                        <font>
@@ -201,6 +252,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t9" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
                        <font>
@@ -209,6 +267,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t10" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
                        <font>
@@ -217,6 +282,13 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                    <TextField fx:id="t11" prefHeight="25.0" prefWidth="69.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
                        <font>
@@ -225,21 +297,52 @@
                        <GridPane.margin>
                            <Insets left="12.0" right="12.0" />
                        </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                    </TextField>
                   <ListView fx:id="LW3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="11">
                      <GridPane.margin>
                         <Insets bottom="7.0" top="7.0" />
                      </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </ListView>
                   <ListView fx:id="LW2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="9">
                      <GridPane.margin>
                         <Insets bottom="7.0" top="7.0" />
                      </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </ListView>
                   <ListView fx:id="LW1" minWidth="0.0" prefHeight="29.0" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
                      <GridPane.margin>
                         <Insets bottom="7.0" top="7.0" />
                      </GridPane.margin>
+                     <effect>
+                        <InnerShadow height="12.21" radius="5.605" width="12.21">
+                           <color>
+                              <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
                   </ListView>
                   <Button mnemonicParsing="false" onAction="#addTranslator" text="Add" GridPane.columnIndex="4" GridPane.rowIndex="7">
                      <GridPane.margin>

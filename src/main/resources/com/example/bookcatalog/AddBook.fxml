@@ -231,7 +231,14 @@
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </Label>
-                        <TextField fx:id="t11" promptText="dd/MM/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <TextField fx:id="t11" promptText="dd/MM/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                           <effect>
+                              <InnerShadow height="12.21" radius="5.605" width="12.21">
+                                 <color>
+                                    <Color red="0.6313725709915161" green="0.6313725709915161" blue="0.6313725709915161" />
+                                 </color>
+                              </InnerShadow>
+                           </effect></TextField>
                         <Label fx:id="l2" text="Please enter an integer!" textFill="#f20000" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <font>
                               <Font size="14.0" />
