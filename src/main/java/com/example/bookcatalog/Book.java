@@ -15,18 +15,18 @@ public class Book {
     private boolean hasSubtitle;
     private String subtitle;
     private boolean isTranslation;
-    private ArrayList<String> translators;
+    private List<String> translators;
     private String language;
-    private ArrayList<String> authors; // yapılacak
+    private List<String> authors; // yapılacak
     private String date;
     private String imagePath;
 
-    private ArrayList<String> tags;
+    private List<String> tags;
 
 
     public Book (String title, int isbn, String publisher, int edition, int rate,
-                String coverType, String subtitle, ArrayList<String> translators, String language,
-                 ArrayList<String> authors, String date, String imagePath,ArrayList<String> tags) throws InvocationTargetException {
+                String coverType, String subtitle, List<String> translators, String language,
+                 List<String> authors, String date, String imagePath,List<String> tags) throws InvocationTargetException {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
@@ -70,7 +70,7 @@ public class Book {
         this.date = date;
     }
 
-    public ArrayList<String> getAuthors() {
+    public List<String> getAuthors() {
         return authors;
     }
 
@@ -90,7 +90,7 @@ public class Book {
         this.rate = rate;
     }
 
-    public void setAuthors(ArrayList<String> authors) {
+    public void setAuthors(List<String> authors) {
         this.authors = authors;
     }
 
@@ -142,19 +142,19 @@ public class Book {
         isTranslation = translation;
     }
 
-    public ArrayList<String> getTranslators() {
+    public List<String> getTranslators() {
         return translators;
     }
 
-    public void setTranslators(ArrayList<String> translators) {
+    public void setTranslators(List<String> translators) {
         this.translators = translators;
     }
 
-    public ArrayList<String> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
-    public void setTags(ArrayList<String> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 

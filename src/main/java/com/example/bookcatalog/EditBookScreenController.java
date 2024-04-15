@@ -86,7 +86,9 @@ public class EditBookScreenController {
             chooseRate.setValue(selectedBook.getRate());
             t5.setText(selectedBook.getCoverType());
             t6.setText(selectedBook.getSubtitle());
-            LW1.getItems().addAll((selectedBook.getTranslators()));
+            if (selectedBook.getTranslators() != null) {
+                LW1.getItems().addAll((selectedBook.getTranslators()));
+            }
             t8.setText(selectedBook.getLanguage());
             LW2.getItems().addAll(selectedBook.getAuthors());
             LW3.getItems().addAll(selectedBook.getTags());
@@ -179,11 +181,11 @@ public class EditBookScreenController {
 
     }
     public void isTextNull(ActionEvent event){
-        if(t0.getText().isBlank() || t1.getText().isBlank() || t3.getText().isBlank() ||
-         chooseRate.getValue() == null || t5.getText().isBlank() ||
+        if(t0.getText().isBlank() || t1.getText().isBlank() || t2.getText().isBlank() ||t3.getText().isBlank() ||
+                chooseRate.getValue() == null || t5.getText().isBlank() ||
                 (editedBook.isHasSubtitle() && t6.getText().isBlank()) ||
                 (editedBook.isTranslation() && LW1.getItems().isEmpty()) ||
-        t8.getText().isBlank() || LW2.getItems().isEmpty() || t10.getText().isBlank()
+                t8.getText().isBlank() || LW2.getItems().isEmpty() || t10.getText().isBlank()
                 || LW3.getItems().isEmpty()){
             isNull = true;
             return;
@@ -231,7 +233,7 @@ public class EditBookScreenController {
             int edition = 0;
             if (!t3.getText().isBlank()) {
                 try {
-                    edition = Integer.parseInt(t4.getText());
+                    edition = Integer.parseInt(t3.getText());
                     editedBook.setEdition(edition);
                     hasError = false;
                 } catch (Exception e) {
@@ -250,7 +252,7 @@ public class EditBookScreenController {
             }
 
             if (!t5.getText().isBlank()) {
-                editedBook.setCoverType(t0.getText());
+                editedBook.setCoverType(t5.getText());
             } else {
                 hasError = true;
             }
@@ -264,8 +266,7 @@ public class EditBookScreenController {
             }
 
             if (!LW1.getItems().isEmpty()) {
-                editedBook.setTranslators(null);
-                editedBook.getTranslators().addAll(LW1.getItems());
+                editedBook.setTranslators(LW1.getItems().stream().toList());
                 editedBook.setTranslation(true);
             } else {
                 editedBook.setTranslators(null);
@@ -280,15 +281,15 @@ public class EditBookScreenController {
             }
 
             if (!LW2.getItems().isEmpty()) {
-                editedBook.setAuthors(null);
-                editedBook.getAuthors().addAll(LW2.getItems());
+                editedBook.setAuthors(LW2.getItems().stream().toList());
+
             } else {
                 editedBook.setAuthors(null);
                 hasError = true;
             }
 
             // date uyuşuo mu ?
-            String date = t11.getText();
+            String date = t10.getText();
             if (!date.matches("\\d{2}/\\d{2}/\\d{4}")) {
                 l3.setVisible(true);
                 hasError = true;
@@ -300,10 +301,9 @@ public class EditBookScreenController {
 
             // TODO listeleri düzelt
             if (!LW3.getItems().isEmpty()) {
-                editedBook.setTags(null);
-                editedBook.getTags().addAll(LW3.getItems());
+                editedBook.setTags(LW3.getItems().stream().toList());
             } else {
-                editedBook.setAuthors(null);
+                editedBook.setTags(null);
                 hasError = true;
             }
 
@@ -328,7 +328,7 @@ public class EditBookScreenController {
                         break;
                     }
                 }
-               // viewBookController.getMainScreenController().getBookArrayList().ge
+                // viewBookController.getMainScreenController().getBookArrayList().ge
 
                 Stage stage = (Stage) saveButton.getScene().getWindow();
                 stage.close();

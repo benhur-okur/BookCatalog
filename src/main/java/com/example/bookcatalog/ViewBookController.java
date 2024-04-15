@@ -18,13 +18,14 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ViewBookController {
     private Book selectedBook;
 
+    private ArrayList<Book> books;
 
-public class ViewBookController {
     Book currentBook = null;
     @FXML
     private Label bookAuthorLabel;
@@ -82,49 +83,15 @@ public class ViewBookController {
     void back() {
         Stage stage = (Stage) backBT.getScene().getWindow();
         stage.close();
-
-    /* TODO Melih'in yaptığı Netflix ekranındaki bir kitaba:
-        - Çift tıklandığında
-        - Seçildikten sonra MenuBar üzerinden "edit" seçeneği basıldığında
-        Basılan kitabın özelliklerini al ve
-     */
-    public void showBookInfo(Book book) {
-        currentBook = book;
-        bookTitleLabel.setText(book.getTitle());
-        bookIsbnLabel.setText(String.valueOf(book.getIsbn()));
-        bookPublisherLabel.setText(book.getPublisher());
-        bookEditionLabel.setText(String.valueOf(book.getEdition()));
-        bookRatingLabel.setText(String.valueOf(book.getRate()));
-        bookCoverTypeLabel.setText(book.getCoverType());
-        bookLanguageLabel.setText(book.getLanguage());
-        bookAuthorLabel.setText(String.valueOf(book.getAuthors())); // TODO Düzgün çalışıyor mu?
-        bookDateLabel.setText(book.getDate()); // TODO date string olarak tutulmasa daha iyi olur (Tarihe göre aratma)
-        bookImageView.setImage(new Image(book.getImagePath()));
-    }
-    @FXML
-    void editBook(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
-        Parent root = fxmlLoader.load();
-
-        AddBookController addBookController = fxmlLoader.getController();
-        addBookController.setMainScreenController(this);
-
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Add Book");
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
     }
 
-    @FXML
-    void deleteBook(ActionEvent event) {
-        // todo Benhur'un yardımı lazım
-    }
+
     public void setMainScreenController (MainScreenController mainScreenController, Book selectedBook) {
         this.mainScreenController = mainScreenController;
         this.selectedBook = selectedBook;
+        this.books = mainScreenController.getBookArrayList();
         try {
-            titleLabel.setText(selectedBook.getTitle());
+            bookTitleLabel.setText(selectedBook.getTitle());
             bookIsbnLabel.setText(String.valueOf(selectedBook.getIsbn()));
             bookPublisherLabel.setText(selectedBook.getPublisher());
             bookEditionLabel.setText(String.valueOf(selectedBook.getEdition()));
@@ -137,7 +104,9 @@ public class ViewBookController {
             }
 
              */
-            translatorsLW.getItems().addAll((selectedBook.getTranslators()));
+            if (selectedBook.getTranslators() != null) {
+                translatorsLW.getItems().addAll(selectedBook.getTranslators());
+            }
             authorsLW.getItems().addAll(selectedBook.getAuthors());
             tagsLW.getItems().addAll(selectedBook.getTags());
             bookLanguageLabel.setText(selectedBook.getLanguage());
@@ -165,6 +134,10 @@ public class ViewBookController {
         stage.setTitle("Add Book");
         stage.setScene(new Scene(root));
         stage.showAndWait();
+    }
+    @FXML
+    public void deleteBook(){
+        mainScreenController.getBookArrayList().remove(selectedBook);
     }
 
     public MainScreenController getMainScreenController() {
