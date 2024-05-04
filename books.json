@@ -108,10 +108,33 @@
     "has subtitle": false,
     "is translation": false,
     "tags": [
-      "ASFASFA"
+      "ASFASFA",
+      "KORKU",
+      "ROMANTÝK"
     ],
     "language": "asfasf",
     "date": "28/03/2000",
     "image path": "src\\images\\1984.jpg"
+  },
+  {
+    "title": "dogaaaa",
+    "isbn": 2434,
+    "publisher": "dfdf",
+    "edition": 3234,
+    "rate": 2,
+    "authors": [
+      "fsdfdf"
+    ],
+    "cover type": "fdsf",
+    "has subtitle": false,
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "DOGA",
+      "ROMANTÝK"
+    ],
+    "language": "dfsdf",
+    "date": "11/11/111",
+    "image path": "src\\images\\noimage.jpg"
   }
 ]

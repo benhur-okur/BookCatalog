@@ -81,7 +81,7 @@ public class AddBookController implements Initializable {
 
     private JSON json;
     private Book book;
-
+    private ViewBookController viewBookController;
     private String subtitle = null;
     private String translator = null;
     private final String dateFormat = "dd/MM/yyyy";
@@ -229,7 +229,7 @@ public class AddBookController implements Initializable {
                 }
                 mainScreenController.getBookArrayList().add(book);
                 mainScreenController.refreshBookList();
-
+                mainScreenController.setSave();
                 Stage stage = (Stage) addButton.getScene().getWindow();
                 stage.close();
             }
