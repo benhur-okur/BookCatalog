@@ -138,6 +138,7 @@ public class ViewBookController {
     @FXML
     public void deleteBook(){
         mainScreenController.getBookArrayList().remove(selectedBook);
+        mainScreenController.setSave();
         Stage stage = (Stage) deleteButton.getScene().getWindow();
         stage.close();
     }

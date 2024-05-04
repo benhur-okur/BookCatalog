@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class EditBookScreenController {
+
     @FXML
     private ChoiceBox<Integer> chooseRate = new ChoiceBox<>();
     private Integer[] rateNumbers = {1, 2, 3, 4, 5};
@@ -71,7 +72,7 @@ public class EditBookScreenController {
 
     private boolean isNull;
     private final String dateFormat = "dd/MM/yyyy";
-    private MainScreenController mainScreenController;
+
 
 
     public void setViewBookController (ViewBookController viewBookController, Book selectedBook) {
@@ -119,7 +120,7 @@ public class EditBookScreenController {
     }
     public void addTag() {
         if (t11.getText().isBlank()) return;
-        LW3.getItems().add(t11.getText());
+        LW3.getItems().add(t11.getText().toUpperCase());
         t11.clear();
     }
 
@@ -328,7 +329,7 @@ public class EditBookScreenController {
                         break;
                     }
                 }
-
+                viewBookController.getMainScreenController().setSave();
                 Stage stage = (Stage) saveButton.getScene().getWindow();
                 stage.close();
             }

@@ -155,11 +155,7 @@ public class MainScreenController {
     public void backButton(){
         gridPane.getChildren().clear();
         showBooks();
-        Set<String> uniqueTags = new HashSet<>();
-        for (Book book : bookArrayList) {
-            uniqueTags.addAll(book.getTags());
-        }
-        listForTags.getItems().addAll(uniqueTags);
+
     }
     public void showBooks () {
         int row = 0;
@@ -201,8 +197,6 @@ public class MainScreenController {
         }
 
     }
-
-
 
     @FXML
     private void showBooksByTag() {
@@ -246,7 +240,6 @@ public class MainScreenController {
             }
         }
     }
-
     @FXML
     private void showViewBookScreen(Book currentBook) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewBook.fxml"));
