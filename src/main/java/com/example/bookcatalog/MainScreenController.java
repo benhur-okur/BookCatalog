@@ -217,9 +217,9 @@ public class MainScreenController {
         Set<String> selectedTags = new HashSet<>();
         for (Node node : tagVbox.getChildren()) {
             HBox hbox = (HBox) node;
-            CheckBox checkBox = (CheckBox) hbox.getChildren().get(1);
+            CheckBox checkBox = (CheckBox) hbox.getChildren().get(0);
             if (checkBox.isSelected()) {
-                Label tagLabel = (Label) hbox.getChildren().get(0);
+                Label tagLabel = (Label) hbox.getChildren().get(1);
                 selectedTags.add(tagLabel.getText());
             }
         }
