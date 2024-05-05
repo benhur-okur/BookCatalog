@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="875.0" prefWidth="1176.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.MainScreenController">
+<AnchorPane fx:id="tagVBox" prefHeight="875.0" prefWidth="1176.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.MainScreenController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1176.0">
         <menus>
@@ -96,15 +96,8 @@
          </children>
       </VBox>
       <Button layoutX="1044.0" layoutY="412.0" mnemonicParsing="false" onAction="#showBooksByTag" prefHeight="26.0" prefWidth="52.0" text="Filter" />
-      <ListView fx:id="listForTags" layoutX="927.0" layoutY="57.0" prefHeight="341.0" prefWidth="182.0">
-         <effect>
-            <InnerShadow height="0.48" radius="1.94" width="9.28">
-               <color>
-                  <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
-               </color>
-            </InnerShadow>
-         </effect></ListView>
       <Label layoutX="1004.0" layoutY="40.0" prefHeight="17.0" prefWidth="27.0" text="Tags" />
       <Button layoutX="946.0" layoutY="412.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="52.0" text="Back" />
+      <ListView fx:id="listForTags" layoutX="910.0" layoutY="63.0" prefHeight="341.0" prefWidth="224.0" />
    </children>
 </AnchorPane>

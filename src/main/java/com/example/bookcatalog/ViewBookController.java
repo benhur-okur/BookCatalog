@@ -131,7 +131,7 @@ public class ViewBookController {
         //yeni stage oluştur ve .fxml'i göster
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Add Book");
+        stage.setTitle("Edit Book");
         stage.setScene(new Scene(root));
         stage.showAndWait();
     }
