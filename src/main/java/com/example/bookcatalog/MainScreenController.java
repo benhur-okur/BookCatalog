@@ -185,7 +185,48 @@ public class MainScreenController {
         int col = 0;
         for (Book book : bookArrayList) {
             String title = book.getTitle().toLowerCase();
-            if (title.contains(searchText)) {
+            String isbn = String.valueOf(book.getIsbn()).toLowerCase();
+            String publisher = book.getPublisher().toLowerCase();
+            String edition = String.valueOf(book.getEdition()).toLowerCase();
+            String coverType = book.getCoverType().toLowerCase();
+            String subtitle = book.getSubtitle() != null ? book.getSubtitle().toLowerCase() : "";
+            String language = book.getLanguage().toLowerCase();
+            String date = book.getDate().toLowerCase();
+
+            // Search in authors
+            boolean foundInAuthors = false;
+            for (String author : book.getAuthors()) {
+                if (author.toLowerCase().contains(searchText)) {
+                    foundInAuthors = true;
+                    break;
+                }
+            }
+
+            // Search in translators
+            boolean foundInTranslators = false;
+            if (book.getTranslators() != null) {
+                for (String translator : book.getTranslators()) {
+                    if (translator.toLowerCase().contains(searchText)) {
+                        foundInTranslators = true;
+                        break;
+                    }
+                }
+            }
+
+            // Search in tags
+            boolean foundInTags = false;
+            for (String tag : book.getTags()) {
+                if (tag.toLowerCase().contains(searchText)) {
+                    foundInTags = true;
+                    break;
+                }
+            }
+
+            // Check if any field matches the search text
+            if (title.contains(searchText) || isbn.contains(searchText) || publisher.contains(searchText) ||
+                    edition.contains(searchText) || coverType.contains(searchText) || subtitle.contains(searchText) ||
+                    language.contains(searchText) || date.contains(searchText) || foundInAuthors || foundInTranslators ||
+                    foundInTags) {
                 File file = new File(book.getImagePath());
                 Image image = new Image(file.toURI().toString());
                 ImageView imageView = new ImageView(image);
