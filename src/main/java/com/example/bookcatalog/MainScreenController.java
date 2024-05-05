@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 
 import javax.sound.sampled.Line;
 import java.awt.*;
-import java.awt.TextField;
+import javafx.scene.control.TextField;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -51,6 +51,11 @@ public class MainScreenController {
 
     @FXML
     private GridPane gridPane;
+
+    @FXML
+    private TextField searchField;
+    @FXML
+    private Button searchButton;
 
     @FXML
     private VBox tagVbox;
@@ -167,6 +172,51 @@ public class MainScreenController {
         showBooks();
 
     }
+
+    @FXML
+    private void searchBooks() {
+        String searchText = searchField.getText().trim().toLowerCase();
+
+        // Clear the grid pane
+        gridPane.getChildren().clear();
+
+        // Show books matching the search text
+        int row = 0;
+        int col = 0;
+        for (Book book : bookArrayList) {
+            String title = book.getTitle().toLowerCase();
+            if (title.contains(searchText)) {
+                File file = new File(book.getImagePath());
+                Image image = new Image(file.toURI().toString());
+                ImageView imageView = new ImageView(image);
+                imageView.setFitWidth(190);
+                imageView.setFitHeight(130);
+
+                gridPane.add(imageView, col, row);
+
+                Label titleLabel = new Label();
+                titleLabel.setText(book.getTitle());
+                titleLabel.setFont(Font.font(24));
+                GridPane.setMargin(titleLabel, new Insets(160, 0, 0, 50));
+                gridPane.add(titleLabel, col, row);
+
+                imageView.setOnMouseClicked(e -> {
+                    try {
+                        showViewBookScreen(book);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                });
+
+                col++;
+                if (col == 4) {
+                    col = 0;
+                    row++;
+                }
+            }
+        }
+    }
+
     public void showBooks () {
         int row = 0;
         int col = 0;
