@@ -44,20 +44,7 @@
                </items>
             </Menu>
         </menus>
-         <effect>
-            <Lighting diffuseConstant="1.44" specularConstant="0.0" specularExponent="13.1" surfaceScale="2.07">
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant>
-                     <color>
-                        <Color red="0.8026315569877625" green="0.8026315569877625" blue="0.8026315569877625" />
-                     </color>
-                  </Light.Distant>
-               </light>
-            </Lighting>
-         </effect>
+
       </MenuBar>
       <HBox layoutX="84.0" layoutY="114.0" />
       <HBox layoutX="305.0" layoutY="15.0" />
