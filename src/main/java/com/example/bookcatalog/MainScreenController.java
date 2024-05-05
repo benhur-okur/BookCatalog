@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -14,10 +15,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -54,6 +52,8 @@ public class MainScreenController {
     @FXML
     private GridPane gridPane;
 
+    @FXML
+    private VBox tagVbox;
     @FXML
     private MenuItem save;
     @FXML
@@ -147,7 +147,17 @@ public class MainScreenController {
         for (Book book : bookArrayList) {
             uniqueTags.addAll(book.getTags());
         }
-        listForTags.getItems().addAll(uniqueTags);
+
+        for (String tag : uniqueTags) {
+            HBox hbox = new HBox();
+
+            Label tagLabel = new Label(tag);
+            CheckBox checkBox = new CheckBox();
+            hbox.getChildren().addAll(checkBox, tagLabel);
+            HBox.setMargin(tagLabel, new Insets(7));
+            HBox.setMargin(checkBox, new Insets(7));
+            tagVbox.getChildren().add(hbox);
+        }
 
     }
 
@@ -204,41 +214,55 @@ public class MainScreenController {
         int col = 0;
         gridPane.getChildren().clear();
 
-        String selectedTag = listForTags.getSelectionModel().getSelectedItem();
+        Set<String> selectedTags = new HashSet<>();
+        for (Node node : tagVbox.getChildren()) {
+            HBox hbox = (HBox) node;
+            CheckBox checkBox = (CheckBox) hbox.getChildren().get(1);
+            if (checkBox.isSelected()) {
+                Label tagLabel = (Label) hbox.getChildren().get(0);
+                selectedTags.add(tagLabel.getText());
+            }
+        }
 
-        for (Book book : bookArrayList) {
-            List<String> tags = book.getTags();
+        if (selectedTags.isEmpty()){
+            gridPane.getChildren().clear();
+            showBooks();
+        }else {
+            for (Book book : bookArrayList) {
+                List<String> tags = book.getTags();
 
-            if (selectedTag != null && tags.contains(selectedTag)) {
-                File file = new File(book.getImagePath());
-                Image image = new Image(file.toURI().toString());
-                ImageView imageView = new ImageView(image);
-                imageView.setFitWidth(190);
-                imageView.setFitHeight(130);
+                if (!selectedTags.isEmpty() && !Collections.disjoint(tags, selectedTags)) {
+                    File file = new File(book.getImagePath());
+                    Image image = new Image(file.toURI().toString());
+                    ImageView imageView = new ImageView(image);
+                    imageView.setFitWidth(190);
+                    imageView.setFitHeight(130);
 
-                gridPane.add(imageView, col, row);
+                    gridPane.add(imageView, col, row);
 
-                Label titleLabel = new Label();
-                titleLabel.setText(book.getTitle());
-                titleLabel.setFont(Font.font(24));
-                GridPane.setMargin(titleLabel, new Insets(160, 0, 0, 50));
-                gridPane.add(titleLabel, col, row);
+                    Label titleLabel = new Label();
+                    titleLabel.setText(book.getTitle());
+                    titleLabel.setFont(Font.font(24));
+                    GridPane.setMargin(titleLabel, new Insets(160, 0, 0, 50));
+                    gridPane.add(titleLabel, col, row);
 
-                imageView.setOnMouseClicked(e -> {
-                    try {
-                        showViewBookScreen(book);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
+                    imageView.setOnMouseClicked(e -> {
+                        try {
+                            showViewBookScreen(book);
+                        } catch (IOException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    });
+
+                    col++;
+                    if (col == 4) {
+                        col = 0;
+                        row++;
                     }
-                });
-
-                col++;
-                if (col == 4) {
-                    col = 0;
-                    row++;
                 }
             }
         }
+
     }
     @FXML
     private void showViewBookScreen(Book currentBook) throws IOException {
