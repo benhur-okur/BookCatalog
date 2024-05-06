@@ -87,8 +87,7 @@ public class MainScreenController {
         alert.showAndWait();
     }
     @FXML
-    public void setSave () {
-
+    public void setSave() {
         gridPane.getChildren().clear();
         json.saveFile();
         showBooks();
@@ -96,10 +95,22 @@ public class MainScreenController {
         for (Book book : bookArrayList) {
             uniqueTags.addAll(book.getTags());
         }
-        listForTags.getItems().clear();
-        listForTags.getItems().addAll(uniqueTags);
+        // Önce etiketleri temizleyin
+        tagVbox.getChildren().clear();
+        // Sonra yenilerini ekleyin
+        for (String tag : uniqueTags) {
+            HBox hbox = new HBox();
+            Label tagLabel = new Label(tag);
+            CheckBox checkBox = new CheckBox();
+            hbox.getChildren().addAll(checkBox, tagLabel);
+            HBox.setMargin(tagLabel, new Insets(7));
+            HBox.setMargin(checkBox, new Insets(7));
+            tagVbox.getChildren().add(hbox);
+        }
+
 
     }
+
     @FXML
     public void setRead() {
         json.readFile(bookArrayList);
