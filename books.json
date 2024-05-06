@@ -51,7 +51,9 @@
     "has subtitle": false,
     "is translation": false,
     "tags": [
-      "KORKU"
+      "KORKU",
+      "DRAM",
+      "GERÝLÝM"
     ],
     "language": "kaya oguz",
     "date": "28/03/2003",
@@ -72,7 +74,8 @@
     "tags": [
       "ASFASFA",
       "KORKU",
-      "ROMANTÝK"
+      "ROMANTÝK",
+      "RAHMAN"
     ],
     "language": "asfasf",
     "date": "28/03/2000",
@@ -90,13 +93,34 @@
     "cover type": "fdsf",
     "has subtitle": false,
     "is translation": false,
-    "translators": [],
     "tags": [
       "DOGA",
       "ROMANTÝK"
     ],
     "language": "dfsdf",
-    "date": "11/11/111",
+    "date": "28/07/2002",
     "image path": "src\\images\\noimage.jpg"
+  },
+  {
+    "title": "benhurururu",
+    "isbn": 324342,
+    "publisher": "dsfsdfd",
+    "edition": 3434,
+    "rate": 3,
+    "authors": [
+      "fsdfd"
+    ],
+    "cover type": "dsfsdfsd",
+    "has subtitle": true,
+    "subtitle": "ddffdf",
+    "is translation": false,
+    "translators": [],
+    "tags": [
+      "SELÝN",
+      "SERHAN"
+    ],
+    "language": "dsfs",
+    "date": "28/07/2002",
+    "image path": "src\\images\\ekran.jpg.png"
   }
 ]
