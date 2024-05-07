@@ -33,7 +33,7 @@ public class JSON {
 
     public void saveFile() {
         try {
-            FileWriter fileWriter = new FileWriter("books.json");
+            FileWriter fileWriter = new FileWriter(MainScreenController.selectedFile);
             clearFileContent();
             gson.toJson(bookArrayList, fileWriter);
             fileWriter.close();
@@ -44,7 +44,7 @@ public class JSON {
         }
     }
     public ArrayList<Book> readFile(ArrayList<Book> bookArrayList) {
-        try (Reader reader = new FileReader("books.json")) {
+        try (Reader reader = new FileReader(MainScreenController.selectedFile)) {
             Type bookListType = new TypeToken<ArrayList<Book>>() {}.getType();
             ArrayList<Book> existingBooks = gson.fromJson(reader, bookListType);
             if (existingBooks != null) {

@@ -228,7 +228,6 @@ public class AddBookController implements Initializable {
                     book.setTranslation(true);
                 }
                 mainScreenController.getBookArrayList().add(book);
-                mainScreenController.refreshBookList();
                 mainScreenController.setSave();
                 Stage stage = (Stage) addButton.getScene().getWindow();
                 stage.close();

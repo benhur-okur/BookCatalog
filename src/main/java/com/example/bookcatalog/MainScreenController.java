@@ -1,6 +1,7 @@
 package com.example.bookcatalog;
 
 import javafx.application.Platform;
+import javafx.stage.DirectoryChooser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -27,12 +29,17 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.*;
 import java.util.List;
 
 public class MainScreenController {
+    static File selectedFile;
+    boolean hasSelectedJSONFile;
+
     private ArrayList<Book> bookArrayList = new ArrayList<>();
 
     private JSON json;
@@ -62,13 +69,15 @@ public class MainScreenController {
     @FXML
     private MenuItem save;
     @FXML
+    private MenuItem importItem;
+    @FXML
     private ScrollPane scrollPane;
     @FXML
     private FlowPane flowPane;
     //private Map<String, List<Book>> booksByTag = new HashMap<>();
 
     @FXML
-    private ListView<String> listForTags;
+    private ListView<String> listForTags = new ListView<>();
 
     @FXML
     private ChoiceBox<String> filterChoice;
@@ -87,7 +96,8 @@ public class MainScreenController {
         alert.showAndWait();
     }
     @FXML
-    public void setSave() {
+    public void setSave () {
+
         gridPane.getChildren().clear();
         json.saveFile();
         showBooks();
@@ -100,15 +110,14 @@ public class MainScreenController {
         // Sonra yenilerini ekleyin
         for (String tag : uniqueTags) {
             HBox hbox = new HBox();
-            Label tagLabel = new Label(tag);
-            CheckBox checkBox = new CheckBox();
-            hbox.getChildren().addAll(checkBox, tagLabel);
-            HBox.setMargin(tagLabel, new Insets(7));
-            HBox.setMargin(checkBox, new Insets(7));
-            tagVbox.getChildren().add(hbox);
-        }
 
-
+                Label tagLabel = new Label(tag);
+                CheckBox checkBox = new CheckBox();
+                hbox.getChildren().addAll(checkBox, tagLabel);
+                HBox.setMargin(tagLabel, new Insets(7));
+                HBox.setMargin(checkBox, new Insets(7));
+                tagVbox.getChildren().add(hbox);
+            }
     }
 
     @FXML
@@ -121,7 +130,7 @@ public class MainScreenController {
     private TextField filterText;
 
     @FXML
-    public void openAddBookScreen(ActionEvent event) throws IOException {
+    public void openAddBookScreen() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBook.fxml"));
         Parent root = fxmlLoader.load();
 
@@ -136,44 +145,51 @@ public class MainScreenController {
         stage.showAndWait();
     }
 
-    /*
-    @FXML
-    public void openBookScreen() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewBook.fxml"));
+
+
+    public void initialize () throws IOException {
+        openSelectingFileScreen();
+
+        if (hasSelectedJSONFile) {
+            setRead();
+            showBooks();
+            Set<String> uniqueTags = new HashSet<>();
+            for (Book book : bookArrayList) {
+                uniqueTags.addAll(book.getTags());
+            }
+
+            for (String tag : uniqueTags) {
+                HBox hbox = new HBox();
+
+                Label tagLabel = new Label(tag);
+                CheckBox checkBox = new CheckBox();
+                hbox.getChildren().addAll(checkBox, tagLabel);
+                HBox.setMargin(tagLabel, new Insets(7));
+                HBox.setMargin(checkBox, new Insets(7));
+                tagVbox.getChildren().add(hbox);
+            }
+        } else {
+            Platform.exit();
+        }
+
+    }
+    private void openSelectingFileScreen () throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SelectingFile.fxml"));
         Parent root = fxmlLoader.load();
 
-        ViewBookController viewBookController = fxmlLoader.getController();
-        viewBookController.setMainScreenController(this);
-        viewBookController.showBookInfo(new Book()); // TODO SEÇİLEN KİTABI GÖNDER, edit ve delete için index'i göndermek daha iyi olur
+
+
+        //yeni stage oluştur ve .fxml'i göster
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Book Information");
+        stage.setTitle("Select FILE Screen");
         stage.setScene(new Scene(root));
+
+        SelectingFileController selectingFileController = fxmlLoader.getController();
+        selectingFileController.setMainScreenControllerAndStage(this, stage);
+
         stage.showAndWait();
-    }
 
-     */
-    public void refreshBookList() {
-
-    }
-    public void initialize () {
-        setRead();
-        showBooks();
-        Set<String> uniqueTags = new HashSet<>();
-        for (Book book : bookArrayList) {
-            uniqueTags.addAll(book.getTags());
-        }
-
-        for (String tag : uniqueTags) {
-            HBox hbox = new HBox();
-
-            Label tagLabel = new Label(tag);
-            CheckBox checkBox = new CheckBox();
-            hbox.getChildren().addAll(checkBox, tagLabel);
-            HBox.setMargin(tagLabel, new Insets(7));
-            HBox.setMargin(checkBox, new Insets(7));
-            tagVbox.getChildren().add(hbox);
-        }
 
     }
 
@@ -380,78 +396,91 @@ public class MainScreenController {
         stage.setScene(new Scene(root));
         stage.showAndWait();
     }
-    /*
-    public void initialize() {
-        loadBooks();
-        displayBooks();
+
+    @FXML
+    private void OpenAndLoadJSONFile () {
+        boolean hasSelectedJSONFile = false;
+
+        // Dosya seçiciyi oluştur
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select JSON File");
+
+        // JSON dosyası filtresi ekle (opsiyonel)
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("JSON files (*.json)", "*.json");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        // Kullanıcıdan dosyayı seçmesini iste
+        selectedFile = fileChooser.showOpenDialog(null);
+
+        // Kullanıcı dosyayı seçti mi kontrol et
+        if (selectedFile != null) {
+            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+
+            // Burada seçilen JSON dosyasını işlemek için gerekli adımları gerçekleştirebilirsiniz
+            // Örneğin, dosyayı okuyup içeriğini işleyebilirsiniz
+            hasSelectedJSONFile = true;
+        } else {
+            System.out.println("No file selected.");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText(null);
+            alert.setContentText("You didn't choose a JSON File \n " +
+                    "you can manually try select a FILE From : \n" +
+                    "File -> Open (TOP LEFT CORNER)");
+            alert.showAndWait();
+        }
+
+        if (hasSelectedJSONFile) {
+            listForTags.getItems().clear();
+            gridPane.getChildren().clear();
+            setRead();
+            showBooks();
+            Set<String> uniqueTags = new HashSet<>();
+            for (Book book : bookArrayList) {
+                uniqueTags.addAll(book.getTags());
+            }
+
+            for (String tag : uniqueTags) {
+                HBox hbox = new HBox();
+
+                Label tagLabel = new Label(tag);
+                CheckBox checkBox = new CheckBox();
+                hbox.getChildren().addAll(checkBox, tagLabel);
+                HBox.setMargin(tagLabel, new Insets(7));
+                HBox.setMargin(checkBox, new Insets(7));
+                tagVbox.getChildren().add(hbox);
+            }
+        }
     }
+    @FXML
+    private void ExportAllBooksAsJSONFile() {
+        // Hedef klasörü seçmek için DirectoryChooser oluştur
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Choose Destination Folder");
 
-     */
-    /*
-    private void loadBooks() {
-        ArrayList<Book> allBooks =  json.readFile(bookArrayList);
+        // Kullanıcıdan hedef klasörü seçmesini iste
+        File destinationFolder = directoryChooser.showDialog(null);
 
-        for (Book book : allBooks) {
-            for (String tag : book.getTags()) {
-                if (!booksByTag.containsKey(tag)) {
-                    booksByTag.put(tag, new ArrayList<>());
+        if (destinationFolder != null) {
+            try {
+                // Kaynak dosyayı ve hedef klasörü kontrol et
+                if (selectedFile.isFile() && destinationFolder.isDirectory()) {
+                    // Dosyayı hedef klasöre kopyala
+                    File copiedFile = new File(destinationFolder.getPath() + File.separator + selectedFile.getName());
+                    Files.copy(selectedFile.toPath(), copiedFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    System.out.println("File exported successfully to: " + copiedFile.getPath());
+                } else {
+                    System.out.println("Invalid file or destination folder.");
                 }
-                booksByTag.get(tag).add(book);
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Hata durumunda kullanıcıya bilgi ver
+                // ...
             }
+        } else {
+            System.out.println("No destination folder selected.");
         }
     }
-
-     */
-
-    /*
-    private void displayBooks() {
-        for (Map.Entry<String, List<Book>> entry : booksByTag.entrySet()) {
-            String tag = entry.getKey();
-            List<Book> books = entry.getValue();
-
-            // Add tag label
-            Label tagLabel = new Label(tag);
-            tagLabel.getStyleClass().add("tag-label");
-
-            // Add books to the flow pane
-            HBox tagBox = new HBox();
-            tagBox.getChildren().addAll(tagLabel);
-            flowPane.getChildren().add(tagBox);
-
-            for (Book book : books) {
-                Pane bookPane = createBookPane(book);
-                flowPane.getChildren().add(bookPane);
-            }
-        }
-    }
-
-     */
-
-    /*
-    private Pane createBookPane(Book book) {
-        // Create a pane to display the book with its image
-        Pane pane = new Pane();
-        pane.getStyleClass().add("book-pane");
-
-        // Add book image
-        ImageView imageView = new ImageView();
-        imageView.setImage(new Image(book.getImagePath()));
-        imageView.setFitWidth(100);
-        imageView.setPreserveRatio(true);
-
-        // Add book title
-        Label titleLabel = new Label(book.getTitle());
-        titleLabel.getStyleClass().add("book-title");
-
-
-        pane.getChildren().addAll(imageView, titleLabel);
-
-        return pane;
-    }
-
-     */
-
-
 
     public ArrayList<Book> getBookArrayList() {
         return bookArrayList;

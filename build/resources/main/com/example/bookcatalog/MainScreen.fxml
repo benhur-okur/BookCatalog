@@ -27,9 +27,10 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#openAddBookScreen" text="Add" />
                   <MenuItem fx:id="save" mnemonicParsing="false" onAction="#setSave" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Export All" />
+                  <MenuItem mnemonicParsing="false" text="Import" />
+                  <MenuItem mnemonicParsing="false" onAction="#ExportAllBooksAsJSONFile" text="Export All" />
                   <MenuItem mnemonicParsing="false" text="Export Selected" />
-                  <MenuItem mnemonicParsing="false" text="Open File" />
+                  <MenuItem mnemonicParsing="false" onAction="#OpenAndLoadJSONFile" text="Open File" />
                   <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
             </items>
           </Menu>
@@ -59,7 +60,7 @@
             </Lighting>
          </effect>
 
-      </MenuBar>
+            </MenuBar>
       <HBox layoutX="84.0" layoutY="114.0" />
       <HBox layoutX="305.0" layoutY="15.0" />
       <Button layoutX="787.0" layoutY="57.0" mnemonicParsing="false" text="Search" />
@@ -70,7 +71,8 @@
                   <Color red="0.6315789222717285" green="0.6315789222717285" blue="0.6315789222717285" />
                </color>
             </InnerShadow>
-         </effect></TextField>
+         </effect>
+      </TextField>
       <VBox layoutX="26.0" layoutY="87.0" prefHeight="762.0" prefWidth="813.0">
          <children>
             <ScrollPane fx:id="scrollPane" prefHeight="718.0" prefWidth="820.0">
