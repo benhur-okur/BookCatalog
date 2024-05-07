@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -29,7 +30,7 @@
                   <MenuItem fx:id="save" mnemonicParsing="false" onAction="#setSave" text="Save" />
                   <MenuItem mnemonicParsing="false" text="Import" />
                   <MenuItem mnemonicParsing="false" onAction="#ExportAllBooksAsJSONFile" text="Export All" />
-                  <MenuItem mnemonicParsing="false" text="Export Selected" />
+                  <MenuItem mnemonicParsing="false" onAction="#ExportSelectedBooksAsJSONFile" text="Export Selected" />
                   <MenuItem mnemonicParsing="false" onAction="#OpenAndLoadJSONFile" text="Open File" />
                   <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
             </items>
@@ -63,8 +64,8 @@
             </MenuBar>
       <HBox layoutX="84.0" layoutY="114.0" />
       <HBox layoutX="305.0" layoutY="15.0" />
-      <Button layoutX="787.0" layoutY="57.0" mnemonicParsing="false" text="Search" />
-      <TextField layoutX="553.0" layoutY="57.0" prefHeight="25.0" prefWidth="224.0" promptText="title, isbn, author...">
+      <Button layoutX="787.0" layoutY="57.0" mnemonicParsing="false" onAction="#searchBooks" text="Search" />
+      <TextField fx:id="searchField" layoutX="553.0" layoutY="57.0" prefHeight="25.0" prefWidth="224.0" promptText="title, isbn, author...">
          <effect>
             <InnerShadow height="6.34" radius="6.335">
                <color>
@@ -105,5 +106,10 @@
             <VBox fx:id="tagVbox" prefHeight="344.0" prefWidth="206.0" />
          </content>
       </ScrollPane>
+      <HBox layoutX="27.0" layoutY="42.0" prefHeight="37.0" prefWidth="196.0">
+         <children>
+            <CheckBox mnemonicParsing="false" prefHeight="37.0" prefWidth="194.0" text="Show Checkboxes For Exporting" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

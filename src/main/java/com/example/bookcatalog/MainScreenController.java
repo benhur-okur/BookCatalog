@@ -21,11 +21,15 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+
 
 import javax.sound.sampled.Line;
+import javax.swing.*;
 import java.awt.*;
 import javafx.scene.control.TextField;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
@@ -38,9 +42,12 @@ import java.util.List;
 
 public class MainScreenController {
     static File selectedFile;
-    boolean hasSelectedJSONFile;
+    static boolean hasSelectedJSONFile;
+    boolean hasCreatedExportFile = false;
+
 
     private ArrayList<Book> bookArrayList = new ArrayList<>();
+    private static ArrayList<Book> exportableBooks = new ArrayList<>();
 
     private JSON json;
 
@@ -76,8 +83,6 @@ public class MainScreenController {
     private FlowPane flowPane;
     //private Map<String, List<Book>> booksByTag = new HashMap<>();
 
-    @FXML
-    private ListView<String> listForTags = new ListView<>();
 
     @FXML
     private ChoiceBox<String> filterChoice;
@@ -128,6 +133,11 @@ public class MainScreenController {
     public void setRead() {
         json.readFile(bookArrayList);
 
+    }
+    @FXML
+    public void setReadNewList() {
+        bookArrayList.clear();
+        json.readFile(bookArrayList);
     }
 
     @FXML
@@ -310,6 +320,18 @@ public class MainScreenController {
             GridPane.setMargin(titleLabel, new Insets(160, 0, 0, 50));
             gridPane.add(titleLabel, col, row);
 
+            CheckBox checkBox = new CheckBox();
+            checkBox.setFont(Font.font(20));
+            GridPane.setMargin(checkBox, new Insets(160, 0, 0, 5));
+            checkBox.setOnAction(event -> {
+                if (checkBox.isSelected()) {
+                    exportableBooks.add(book); // CheckBox seçiliyse, seçilen kitapları listeye ekle
+                } else {
+                    exportableBooks.remove(book); // CheckBox seçili değilse, seçilen kitapları listeden çıkar
+                }
+            });
+            gridPane.add(checkBox, col, row);
+
 
             imageView.setOnMouseClicked(e -> {
                 try {
@@ -403,6 +425,8 @@ public class MainScreenController {
 
     @FXML
     private void OpenAndLoadJSONFile () {
+
+
         boolean hasSelectedJSONFile = false;
 
         // Dosya seçiciyi oluştur
@@ -414,6 +438,7 @@ public class MainScreenController {
         fileChooser.getExtensionFilters().add(extFilter);
 
         // Kullanıcıdan dosyayı seçmesini iste
+        selectedFile = null;
         selectedFile = fileChooser.showOpenDialog(null);
 
         // Kullanıcı dosyayı seçti mi kontrol et
@@ -435,9 +460,10 @@ public class MainScreenController {
         }
 
         if (hasSelectedJSONFile) {
-            listForTags.getItems().clear();
+            System.out.println("girio");
+            tagVbox.getChildren().clear();
             gridPane.getChildren().clear();
-            setRead();
+            setReadNewList();
             showBooks();
             Set<String> uniqueTags = new HashSet<>();
             for (Book book : bookArrayList) {
@@ -455,6 +481,10 @@ public class MainScreenController {
                 tagVbox.getChildren().add(hbox);
             }
         }
+    }
+    @FXML
+    private void ExportSelectedBooksAsJSONFile () throws IOException {
+        createNewJSONFile();
     }
     @FXML
     private void ExportAllBooksAsJSONFile() {
@@ -486,12 +516,74 @@ public class MainScreenController {
         }
     }
 
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+
     public ArrayList<Book> getBookArrayList() {
         return bookArrayList;
     }
 
-    public void setBookArrayList(ArrayList<Book> bookArrayList) {
 
-        this.bookArrayList = bookArrayList;
+    private void createNewJSONFile () {
+        // Kullanıcıdan dosya adını ve kaydetme yeri bilgisini al
+        Optional<File> selectedDirectory = askUserToSelectDirectory();
+        if (!selectedDirectory.isPresent()) {
+            return; // Kullanıcı kaydetme yeri seçmediyse işlemi sonlandır
+        }
+
+        // Kullanıcıdan dosya adını al
+        TextInputDialog dialog = new TextInputDialog("new_file");
+        dialog.setTitle("New JSON File");
+        dialog.setHeaderText("Enter the name for the new JSON file:");
+        dialog.setContentText("File Name:");
+        dialog.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.trim().isEmpty()) {
+                dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(true);
+            } else {
+                dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(false);
+            }
+        });
+        Optional<String> result = dialog.showAndWait();
+
+        result.ifPresent(fileName -> {
+            // JSON dosyasının tam yolu
+            String filePath = selectedDirectory.get().getAbsolutePath() + File.separator + fileName + ".json";
+
+            try {
+                // Dosyayı oluştur
+                File newFile = new File(filePath);
+                boolean fileCreated = newFile.createNewFile();
+
+                if (fileCreated) {
+                    System.out.println("New JSON file created: " + filePath);
+                    json.saveFileForSelectedExporting(newFile); // Kitapları JSON dosyasına yaz
+                } else {
+                    System.out.println("Failed to create new JSON file.");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Hata durumunda kullanıcıya bilgi ver
+                showAlert("Error", "An error occurred while creating the new JSON file.");
+            }
+        });
+    }
+    private Optional<File> askUserToSelectDirectory() {
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Select Directory to Save JSON File");
+        return Optional.ofNullable(directoryChooser.showDialog(new Stage()));
+    }
+
+    public static ArrayList<Book> getExportableBooks() {
+        return exportableBooks;
+    }
+
+    public static void setExportableBooks(ArrayList<Book> exportableBooks) {
+        MainScreenController.exportableBooks = exportableBooks;
     }
 }
