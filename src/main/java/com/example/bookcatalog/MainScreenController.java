@@ -92,7 +92,11 @@ public class MainScreenController {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("CAUTION !!");
         alert.setHeaderText(null);
-        alert.setContentText("If you are troubling after editing and adding \nPlease make sure you pressed save button on the file menu");
+        alert.setContentText("Add a book to the catalog by pressing the menubar-->Add\n" +
+                "Save the current state of the catalog by pressing the menubar-->Save\n" +
+                "Export your catalog by pressing the menubar-->Export All\n" +
+                "Export the selected book by pressing the menubar-->Export Selected\n" +
+                "Import a saved catalog by pressing the menubar-->Open File");
         alert.showAndWait();
     }
     @FXML
