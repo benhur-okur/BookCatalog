@@ -16,7 +16,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         out.name("isbn").value(book.getIsbn());
         out.name("publisher").value(book.getPublisher());
         out.name("edition").value(book.getEdition());
-        out.name("rate").value(book.getRate());
+        out.name("rating").value(book.getRate());
         if (book.getAuthors() != null) {
             out.name("authors").beginArray();
             for (String author : book.getAuthors()) {
@@ -44,7 +44,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
         }
         out.name("language").value(book.getLanguage());
         out.name("date").value(book.getDate());
-        out.name("image path").value(book.getImagePath());
+        out.name("cover").value(book.getImagePath());
         out.endObject();
     }
 
@@ -66,7 +66,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                 case "edition":
                     book.setEdition(in.nextInt());
                     break;
-                case "rate":
+                case "rating":
                     book.setRate(in.nextInt());
                     break;
                 case "authors":
@@ -114,7 +114,7 @@ public class BookTypeAdaptor extends TypeAdapter<Book> {
                 case "language":
                     book.setLanguage(in.nextString());
                     break;
-                case "image path":
+                case "cover":
                     book.setImagePath(in.nextString());
                     break;
                 default:

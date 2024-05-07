@@ -10,8 +10,8 @@ public class Book {
     private int isbn;
     private String publisher;
     private int edition;
-    private int rate;
-    private String coverType;
+    private int rate; // TODO rate ismi rating diye düzeltilecek bütün dosylarda
+    private String coverType; // TODO cover type diye bir şey olmayacak
     private boolean hasSubtitle;
     private String subtitle;
     private boolean isTranslation;
