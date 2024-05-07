@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-public class MainScreen extends Application {
+public class    MainScreen extends Application {
 
     public static void main(String[] args) {
         launch(args);

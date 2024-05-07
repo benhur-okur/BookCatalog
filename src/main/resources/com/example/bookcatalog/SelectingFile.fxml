@@ -7,35 +7,41 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.SelectingFileController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="231.0" prefWidth="434.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#createNewJSONFile" text="Create New JSON File">
+            <Button mnemonicParsing="false" onAction="#createNewJSONFile" text="Create New Catalog ">
                <HBox.margin>
-                  <Insets left="136.0" top="30.0" />
+                  <Insets left="155.0" top="100.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="173.0" prefWidth="448.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#selectExistingJsonFile" text="Continue With Existing JSON File">
+            <Button mnemonicParsing="false" onAction="#selectExistingJsonFile" text="Open Existing Catalog">
                <HBox.margin>
-                  <Insets left="120.0" top="30.0" />
+                  <Insets left="150.0" top="40.0" />
                </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Button>
          </children>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="203.0" prefWidth="443.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#run" text="run">
+            <Button mnemonicParsing="false" onAction="#run" text="Open Catalog">
                <HBox.margin>
-                  <Insets left="180.0" top="30.0" />
+                  <Insets left="170.0" top="10.0" />
                </HBox.margin>
             </Button>
          </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
       </HBox>
    </children>
 </VBox>
