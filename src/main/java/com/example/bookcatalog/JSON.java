@@ -4,10 +4,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,6 +40,20 @@ public class JSON {
             throw new RuntimeException(e);
         }
     }
+
+    public void saveFileForSelectedExporting (File exportFile) {
+        try {
+            FileWriter fileWriter = new FileWriter(exportFile);
+            gson.toJson(MainScreenController.getExportableBooks(), fileWriter);
+            fileWriter.close();
+            JOptionPane.showMessageDialog(null, "Book catalog has been successfully saved.");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "An error occurred while saving the book catalog.");
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public ArrayList<Book> readFile(ArrayList<Book> bookArrayList) {
         try (Reader reader = new FileReader(MainScreenController.selectedFile)) {
             Type bookListType = new TypeToken<ArrayList<Book>>() {}.getType();
@@ -57,22 +68,17 @@ public class JSON {
         }
     }
 
-
-    public void clearFileContent() throws IOException {
+    public void clearFileContent() throws IOException { // TODO buraya bi bak
         // Dosyanın içeriğini temizle
-        Files.write(Path.of("books.json"), Collections.emptyList());
-    }
-    /*
-    public ArrayList<Book> getBookArrayList() {
-        return bookArrayList;
+        Files.write(Path.of(MainScreenController.selectedFile.toURI()), Collections.emptyList());
     }
 
-    public void setBookArrayList(ArrayList<Book> bookArrayList) {
-        this.bookArrayList = bookArrayList;
+
+    public Gson getGson() {
+        return gson;
     }
 
-     */
-
-
-
+    public void setGson(Gson gson) {
+        this.gson = gson;
+    }
 }
