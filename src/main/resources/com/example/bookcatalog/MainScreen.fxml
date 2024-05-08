@@ -28,7 +28,6 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#openAddBookScreen" text="Add" />
                   <MenuItem fx:id="save" mnemonicParsing="false" onAction="#setSave" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Import" />
                   <MenuItem mnemonicParsing="false" onAction="#ExportAllBooksAsJSONFile" text="Export All" />
                   <MenuItem mnemonicParsing="false" onAction="#ExportSelectedBooksAsJSONFile" text="Export Selected" />
                   <MenuItem mnemonicParsing="false" onAction="#OpenAndLoadJSONFile" text="Open File" />
@@ -40,11 +39,6 @@
               <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Settings">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
         </menus>
          <effect>
             <Lighting diffuseConstant="1.44" specularConstant="0.0" specularExponent="13.1" surfaceScale="2.07">
