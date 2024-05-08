@@ -308,7 +308,7 @@ public class MainScreenController {
             Image image = new Image(file.toURI().toString());
             ImageView imageView = new ImageView(image);
             imageView.setFitWidth(190); // Resmi genişlik değerine sığacak şekilde ayarlayın
-            imageView.setFitHeight(130); // Resmi yükseklik değerine sığacak şekilde ayarlayın
+            imageView.setFitHeight(130); // Resmi yükseklik değerine sığacak şekilde ayarlayın // 130 idi
 
 
             // ImageView'i GridPane'e ekleyin
