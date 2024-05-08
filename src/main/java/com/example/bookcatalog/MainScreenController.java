@@ -233,6 +233,7 @@ public class MainScreenController {
             String subtitle = book.getSubtitle() != null ? book.getSubtitle().toLowerCase() : "";
             String language = book.getLanguage().toLowerCase();
             String date = book.getDate().toLowerCase();
+            String rate = String.valueOf(book.getRate()).toLowerCase(); // Convert rating to lower case for case-insensitive search
 
             // Search in authors
             boolean foundInAuthors = false;
@@ -263,11 +264,11 @@ public class MainScreenController {
                 }
             }
 
-            // Check if any field matches the search text
+            // Check if any field matches the search text or rating
             if (title.contains(searchText) || isbn.contains(searchText) || publisher.contains(searchText) ||
                     edition.contains(searchText) || coverType.contains(searchText) || subtitle.contains(searchText) ||
-                    language.contains(searchText) || date.contains(searchText) || foundInAuthors || foundInTranslators ||
-                    foundInTags) {
+                    language.contains(searchText) || date.contains(searchText) || rate.contains(searchText) || // Include rating in search
+                    foundInAuthors || foundInTranslators || foundInTags) {
                 File file = new File(book.getImagePath());
                 Image image = new Image(file.toURI().toString());
                 ImageView imageView = new ImageView(image);
