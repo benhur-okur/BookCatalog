@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookcatalog.SelectingFileController">
    <children>
       <HBox prefHeight="231.0" prefWidth="436.0">
@@ -41,7 +42,7 @@
             <Insets />
          </VBox.margin>
       </HBox>
-      <HBox prefHeight="203.0" prefWidth="443.0">
+      <HBox prefHeight="203.0" prefWidth="375.0">
          <children>
             <Button mnemonicParsing="false" onAction="#run" text="Open Catalog">
                <HBox.margin>
