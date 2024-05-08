@@ -71,6 +71,7 @@ public class EditBookScreenController {
 
 
     private boolean isNull;
+    private boolean hasError = false;
     private final String dateFormat = "dd/MM/yyyy";
 
 
@@ -144,32 +145,49 @@ public class EditBookScreenController {
     }
     @FXML
     private void selectImage() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png"),
-                new FileChooser.ExtensionFilter("All Files", "*.png", "*.jpg")
-        );
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
-            // image seçildi
-            String targetDirectory = "src/images/";
-            File targetFolder = new File(targetDirectory);
-            if (!targetFolder.exists()) {
-                targetFolder.mkdirs();
+
+        if (t1.getText().isEmpty() || t1.getText().length() > 10 || t1.getText().length() < 10) { // isbn girilmemişse kullanıcı fotograf seçemicek çünkü fotografı sibn no'ya göre tutucaz
+            // Eğer ISBN alanı boşsa, kullanıcıya uyarı göster
+            hasError = true;
+            t1.clear();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Uyarı");
+            alert.setHeaderText(null);
+            alert.setContentText("Geçerli bir ISBN yazmadığınız için fotoğraf seçemezsiniz.");
+            alert.showAndWait();
+        } else {
+            String imageNameAsIsbnNo = t2.getText();
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Select Image");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Image Files", "*.png"),
+                    new FileChooser.ExtensionFilter("All Files", "*.png", "*.jpg")
+            );
+            File selectedFile = fileChooser.showOpenDialog(null);
+            if (selectedFile != null) {
+                // image seçildi
+                String targetDirectory = "src/images/";
+                File targetFolder = new File(targetDirectory);
+                if (!targetFolder.exists()) {
+                    targetFolder.mkdirs();
+                }
+
+                String fileExtension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf("."));
+                String newFileName = imageNameAsIsbnNo + fileExtension;
+
+                Path sourcePath = selectedFile.toPath();
+                Path targetPath = Path.of(targetDirectory + newFileName);
+                try {
+                    Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Image image = new Image(selectedFile.toURI().toString());
+                imageView.setImage(image);
+                editedBook.setImagePath(targetPath.toString());
             }
-            Path sourcePath = selectedFile.toPath();
-            Path targetPath = Path.of(targetDirectory + selectedFile.getName());
-            try {
-                Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            Image image = new Image(selectedFile.toURI().toString());
-            imageView.setImage(image);
-            editedBook.setImagePath(targetPath.toString());
         }
-        // else'i olmaması lazım öncekiyle yoladevam
+
     }
 
     public void NullAlert(ActionEvent event){
@@ -203,7 +221,7 @@ public class EditBookScreenController {
             l1.setVisible(false);
             l2.setVisible(false);
             l3.setVisible(false);
-            boolean hasError = false;
+            hasError = false;
 
             if (!t0.getText().isBlank()) {
                 editedBook.setTitle(t0.getText());
@@ -215,7 +233,14 @@ public class EditBookScreenController {
             if (!t1.getText().isBlank()) {
                 try {
                     isbn = Integer.parseInt(t1.getText());
-                    editedBook.setIsbn(isbn);
+                    if (t1.getText().length() > 10 || t1.getText().length() < 10) {
+                        hasError = true;
+                        t1.clear();
+                        l1.setVisible(true);
+                    } else {
+                        editedBook.setIsbn(isbn);
+                        hasError = false;
+                    }
                 } catch (Exception e) {
                     hasError = true;
                     t1.clear();
@@ -224,6 +249,7 @@ public class EditBookScreenController {
             } else {
                 hasError = true;
             }
+
 
             if (!t2.getText().isBlank()) {
                 editedBook.setPublisher(t2.getText());
@@ -236,7 +262,6 @@ public class EditBookScreenController {
                 try {
                     edition = Integer.parseInt(t3.getText());
                     editedBook.setEdition(edition);
-                    hasError = false;
                 } catch (Exception e) {
                     hasError = true;
                     t3.clear();

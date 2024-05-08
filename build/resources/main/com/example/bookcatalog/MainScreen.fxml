@@ -62,7 +62,7 @@
          </effect>
 
             </MenuBar>
-      <HBox layoutX="161.0" layoutY="57.0" prefHeight="25.0" prefWidth="251.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <HBox layoutX="158.0" layoutY="57.0" prefHeight="25.0" prefWidth="254.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="764.0">
          <children>
             <TextField fx:id="searchField" prefHeight="25.0" prefWidth="254.0" promptText="title, isbn, author...">
                <effect>
@@ -73,7 +73,7 @@
                   </InnerShadow>
                </effect>
                <HBox.margin>
-                  <Insets left="160.0" />
+                  <Insets />
                </HBox.margin>
             </TextField>
          </children></HBox>

@@ -111,6 +111,7 @@ public class AddBookController implements Initializable {
     @FXML
     private ChoiceBox<Integer> chooseRate;
     private Integer[] rateNumbers = {1, 2, 3, 4, 5};
+    private boolean hasError = false;
 
     public void setMainScreenController (MainScreenController mainScreenController) {
         this.mainScreenController = mainScreenController;
@@ -123,6 +124,17 @@ public class AddBookController implements Initializable {
     }
     @FXML
     private void selectImage() {
+        if (t2.getText().isEmpty() || t2.getText().length() > 10 || t2.getText().length() < 10) { // isbn girilmemişse kullanıcı fotograf seçemicek çünkü fotografı sibn no'ya göre tutucaz
+            // Eğer ISBN alanı boşsa, kullanıcıya uyarı göster
+            hasError = true;
+            t2.clear();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Uyarı");
+            alert.setHeaderText(null);
+            alert.setContentText("Geçerli bir ISBN yazmadığınız için fotoğraf seçemezsiniz.");
+            alert.showAndWait();
+        } else {
+        String imageNameAsIsbnNo = t2.getText();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image");
         fileChooser.getExtensionFilters().addAll(
@@ -137,8 +149,12 @@ public class AddBookController implements Initializable {
             if (!targetFolder.exists()) {
                 targetFolder.mkdirs();
             }
+
+            String fileExtension = selectedFile.getName().substring(selectedFile.getName().lastIndexOf("."));
+            String newFileName = imageNameAsIsbnNo + fileExtension;
+
             Path sourcePath = selectedFile.toPath();
-            Path targetPath = Path.of(targetDirectory + selectedFile.getName());
+            Path targetPath = Path.of(targetDirectory + newFileName);
             try {
                 Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException e) {
@@ -154,6 +170,7 @@ public class AddBookController implements Initializable {
 
         }
     }
+    }
     @FXML
     private void addBook(ActionEvent event) throws InvocationTargetException, IOException {
 
@@ -165,7 +182,7 @@ public class AddBookController implements Initializable {
             l2.setVisible(false);
             l3.setVisible(false);
             l4.setVisible(false);
-            boolean hasError = false;
+            hasError = false;
 
             int edition = 0;
             int isbn = 0;
@@ -193,6 +210,12 @@ public class AddBookController implements Initializable {
                 t2.clear();
                 l1.setVisible(true);
             }
+            if (t2.getText().length() > 10 || t2.getText().length() < 10) {
+                hasError = true;
+                t2.clear();
+                l1.setVisible(true);
+            } else
+                hasError = false;
 
             try {
                 edition = Integer.parseInt(t4.getText());
