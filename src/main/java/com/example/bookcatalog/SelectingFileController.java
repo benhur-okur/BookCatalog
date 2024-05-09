@@ -61,6 +61,10 @@ public class SelectingFileController {
     private void createNewJSONFile () {
         mainScreenController.hasSelectedJSONFile = false;
         String directoryPath = "src/JSON_files";
+        File json_dir = new File(directoryPath);
+        if (!json_dir.exists()) {
+            json_dir.mkdir();
+        }
 
         // Kullanıcıdan dosya adını al
         TextInputDialog dialog = new TextInputDialog("new_file");
